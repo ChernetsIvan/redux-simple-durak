@@ -6,6 +6,10 @@ import {clickOnStartGameButton, clickOnBeginGameButton} from './actions';
 
 class App extends Component {
   render() {
+    let output = null;
+    if(this.props.isRenderSettingForStartNewGame){
+        
+    }
     return (
       <div>
         <button onClick={this.props.onStartGameClick}>Start game</button>
