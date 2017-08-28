@@ -11,6 +11,8 @@ class StartScreen extends Component {
   }
 }
 
-App.propTypes = {
+export default StartScreen;
+
+StartScreen.propTypes = {
         
 };

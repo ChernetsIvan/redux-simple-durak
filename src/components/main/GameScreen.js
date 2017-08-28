@@ -11,6 +11,8 @@ class GameScreen extends Component {
   }
 }
 
-App.propTypes = {
+export default GameScreen;
+
+GameScreen.propTypes = {
   
 };
