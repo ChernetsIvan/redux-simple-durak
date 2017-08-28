@@ -8,7 +8,6 @@ import GameScreen from './components/main/GameScreen';
 import StartScreen from './components/main/StartScreen';
 
 class App extends Component {
-
     render() {
         console.log(this.props);
 
@@ -22,7 +21,14 @@ class App extends Component {
         }else{
             output = 
                 <GameScreen 
-                    handleBeginGameClick={this.props.onBeginGameClick}/>
+                    handleBeginGameClick={this.props.onBeginGameClick}
+                    gameMode={this.props.gameMode}
+                    computerCards={this.props.computerCards}
+                    playerCards={this.props.playerCards}
+                    fullDeck={this.props.fullDeck}
+                    firstStart={this.props.firstStart} 
+                    aiField={this.props.aiField}
+                    playerField={this.props.playerField}/>
         }
         return (
             <div>

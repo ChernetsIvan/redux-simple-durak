@@ -16,3 +16,12 @@ export const cardSuits = [
     {suit: "П"},
     {suit: "Б"}
 ];
+
+export const statusMessages = {
+    PlayerAttack: "Ваш ход!",
+    PlayerDefence: "Защищайтесь!",
+    PlayerDiscard: "Беру! Подбрасывать будете?",
+    PlayerLose: "Вы проиграли! Сыграем ещё раз ? :)",
+    PlayerWin: "Вы выиграли! Поздравляю :)",
+    GameResultDraw: "Ничья!"
+}

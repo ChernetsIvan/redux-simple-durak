@@ -1,0 +1,27 @@
+.rotated{
+    transform: rotate(180deg);
+}
+
+.littleSuitImg{
+    height: 15px;
+    width: 15px;
+}
+
+.bigSuitImg{
+    height: 35px;
+    width: 35px;
+}
+
+.redText{
+    color: darkred;
+}
+
+.blackText{
+    color: black;
+}
+
+.shirt{
+    background-image: url('./../../assets/card-shirts/cardShirt1.png');
+    background-position: center, center;
+    height: 131px;
+}
