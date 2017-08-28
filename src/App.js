@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {clickOnStartGameButton, clickOnBeginGameButton, clickOnRadioWhoMoveFirst} from './actions';
+import * as actions from './actions';
 
 import GameScreen from './components/main/GameScreen';
 import StartScreen from './components/main/StartScreen';
@@ -54,7 +54,9 @@ App.propTypes = {
 
     onBeginGameClick: PropTypes.func.isRequired,
     onStartGameClick: PropTypes.func.isRequired,
-    onRadioChange: PropTypes.func.isRequired
+    onRadioChange: PropTypes.func.isRequired,
+    onClickPrev: PropTypes.func.isRequired,
+    onClickNext: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -75,13 +77,19 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps =  dispatch => ({    
     onStartGameClick: () => {    
-        dispatch(clickOnStartGameButton());
+        dispatch(actions.clickOnStartGameButton());
     },
     onBeginGameClick: () => {
-        dispatch(clickOnBeginGameButton());
+        dispatch(actions.clickOnBeginGameButton());
     },
     onRadioChange: (isFirstMovePlayer) => {
-        dispatch(clickOnRadioWhoMoveFirst(isFirstMovePlayer));
+        dispatch(actions.clickOnRadioWhoMoveFirst(isFirstMovePlayer));
+    },
+    onClickPrev: () => {
+        dispatch(actions.clickOnPrev());
+    },
+    onClickNext: () => {
+        dispatch(actions.clickOnNext());
     }
 });
 

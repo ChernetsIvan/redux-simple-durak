@@ -11,3 +11,11 @@ export const clickOnBeginGameButton = () => ({
 export const clickOnRadioWhoMoveFirst = (isFirstMovePlayer) => ({
     type: actionTypes.WHO_MOVE_FIRST_CHANGED, payload: isFirstMovePlayer
 });
+
+export const clickOnPrev = () => ({
+
+});
+
+export const clickOnNext = () => ({
+
+});

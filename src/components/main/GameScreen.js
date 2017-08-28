@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 //Классы-компоненты
 import './../Card/Card.css' // Подключаем единожды, чтобы не объявлять в каждом из components!
 import AI from './../AI';
-//import Player from './../Player';
+import Player from './../Player';
 import Deck from './../Deck';
 import Field from './../Field';
 import Status from './../Status';
@@ -57,7 +57,13 @@ class GameScreen extends Component {
                         <div className="row">
                             <div className="col-1"></div>
                             <div className="col-10">
-                                                                
+                                <Player 
+                                    cards={this.props.playerCards}                            
+                                    onPrevClick={this.props.onPrevClick}
+                                    onNextClick={this.props.onNextClick}
+                                    playerStartInd={this.props.playerStartInd}
+                                    playerEndInd={this.props.playerEndInd}
+                                    handlePlayerMove={this.props.handlePlayerMove} />
                             </div>
                             <div className="col-1"></div>
                         </div>
