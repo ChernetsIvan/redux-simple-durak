@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {clickOnStartGameButton, clickOnBeginGameButton} from './actions';
+import {clickOnStartGameButton, clickOnBeginGameButton, clickOnRadioWhoMoveFirst} from './actions';
 
 import GameScreen from './components/main/GameScreen';
 import StartScreen from './components/main/StartScreen';
@@ -14,14 +14,18 @@ class App extends Component {
 
         let output = null;
         if(this.props.isRenderSettingsForStartNewGame){
-            output = <StartScreen />
+            output = 
+                <StartScreen 
+                    isFirstMovePlayer={this.props.isFirstMovePlayer}
+                    onClickStartGame={this.props.onStartGameClick}
+                    onChangeRadio={this.props.onRadioChange} />
         }else{
-            output = <GameScreen />
+            output = 
+                <GameScreen 
+                    handleBeginGameClick={this.props.onBeginGameClick}/>
         }
         return (
             <div>
-                <button onClick={this.props.onStartGameClick}>Start game</button>
-                <button onClick={this.props.onBeginGameClick}>Begin game</button>
                 {output}
             </div>
         );
@@ -30,22 +34,36 @@ class App extends Component {
 
 App.propTypes = {
     isRenderSettingsForStartNewGame: PropTypes.bool.isRequired,
-    onBeginGameClick: PropTypes.func.isRequired,
-    onStartGameClick: PropTypes.func.isRequired,
+    trumpSuit: PropTypes.object.isRequired,    
     fullDeck: PropTypes.array.isRequired,
     computerCards: PropTypes.array.isRequired,
     aiField: PropTypes.array.isRequired,
     playerField: PropTypes.array.isRequired,
     playerCards: PropTypes.array.isRequired,
+    playerStartInd: PropTypes.number.isRequired,
+    playerEndInd: PropTypes.number.isRequired,
+    firstStart: PropTypes.bool.isRequired,
+    isFirstMovePlayer: PropTypes.bool.isRequired,
+    gameMode: PropTypes.string.isRequired,
+
+    onBeginGameClick: PropTypes.func.isRequired,
+    onStartGameClick: PropTypes.func.isRequired,
+    onRadioChange: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
     isRenderSettingsForStartNewGame: state.startGame.isRenderSettingsForStartNewGame,
+    trumpSuit: state.startGame.trumpSuit,
     fullDeck: state.startGame.fullDeck,
     computerCards: state.startGame.computerCards,
     aiField: state.startGame.aiField,
     playerField: state.startGame.playerField,
-    playerCards: state.startGame.playerCards
+    playerCards: state.startGame.playerCards,
+    playerStartInd: state.startGame.playerStartInd,
+    playerEndInd: state.startGame.playerEndInd,
+    firstStart: state.startGame.firstStart,
+    isFirstMovePlayer: state.startGame.isFirstMovePlayer,
+    gameMode: state.startGame.gameMode
 });
 
 
@@ -55,6 +73,9 @@ const mapDispatchToProps =  dispatch => ({
     },
     onBeginGameClick: () => {
         dispatch(clickOnBeginGameButton());
+    },
+    onRadioChange: (isFirstMovePlayer) => {
+        dispatch(clickOnRadioWhoMoveFirst(isFirstMovePlayer));
     }
 });
 

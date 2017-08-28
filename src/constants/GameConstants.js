@@ -1,13 +1,3 @@
-import Enum from 'es6-enum'
-
-export const GameMode = Enum(
-    "PlayerAttack", 
-    "PlayerDefence", 
-    "PlayerDiscard",    //AI забирает: игрок подбрасывает ему карты
-    "AiAttack",
-    "AiDefence", 
-    "AiDiscard");       //Игрок забирает: AI подбрасывает ему карты
-
 export const cardRanks = [
     {text: "6", cardValue:1},
     {text: "7", cardValue:2},

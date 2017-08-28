@@ -7,3 +7,7 @@ export const clickOnStartGameButton = () => ({
 export const clickOnBeginGameButton = () => ({
     type: actionTypes.BEGIN_GAME_CLICKED
 });
+
+export const clickOnRadioWhoMoveFirst = (isFirstMovePlayer) => ({
+    type: actionTypes.WHO_MOVE_FIRST_CHANGED, payload: isFirstMovePlayer
+});
