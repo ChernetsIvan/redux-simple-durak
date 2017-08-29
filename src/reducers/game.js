@@ -1,9 +1,10 @@
-import {START_GAME_CLICKED, BEGIN_GAME_CLICKED, WHO_MOVE_FIRST_CHANGED} from './../constants/ActionTypes';
+import * as actionTypes from './../constants/ActionTypes';
 
 import * as gameModes from './../constants/GameModes';
 
 import DeckUtils from './../utils/DeckUtils';
 import AiActions from './../utils/AiActions';
+import PlayerActionsHandler from './../utils/PlayerActionsHandler';
 
 const initialState = {
     isRenderSettingsForStartNewGame: true,
@@ -15,11 +16,14 @@ const initialState = {
     playerCards: [],
     firstStart: true,
     isFirstMovePlayer: true,
-    gameMode: gameModes.PlayerAttack
+    gameMode: gameModes.PlayerAttack,
+    playerStartInd:0,
+    playerEndInd:9,
 };
 
 export default function startGame(state = initialState, action){
-    if(action.type === START_GAME_CLICKED){
+
+    if(action.type === actionTypes.START_GAME_CLICKED){
 
         let fullDeck = [], computerCards = [], aiField = [], playerField = [], playerCards = []; 
         let trumpSuit, gameMode;
@@ -39,8 +43,8 @@ export default function startGame(state = initialState, action){
         }else{
             //Первым ходит AI:
             gameMode = gameModes.AiAttack;
-            // AiActions.makeAi_Attack_Move(gameMode, GameMode, computerCards, 
-            //     aiField, isFieldContainSuchCard, fullDeck, removeCardsFromTableAndGiveCards);
+            AiActions.makeAi_Attack_Move(
+                gameMode, computerCards, aiField, playerField, fullDeck, playerCards);
         }
 
         return {
@@ -58,17 +62,52 @@ export default function startGame(state = initialState, action){
             gameMode: gameMode
         }
     }
-    else if(action.type === BEGIN_GAME_CLICKED){
+    else if(action.type === actionTypes.BEGIN_GAME_CLICKED){
         return {
             ...state,
             isRenderSettingsForStartNewGame: true
         }
     }
-    else if(action.type === WHO_MOVE_FIRST_CHANGED){
+    else if(action.type === actionTypes.WHO_MOVE_FIRST_CHANGED){
         return {
             ...state,
             isFirstMovePlayer: action.payload
         }
+    }
+    else if(action.type === actionTypes.PREV_BUTTON_CLICKED){
+        return {
+            ...state,
+            playerStartInd: state.playerStartInd-1,
+            playerEndInd: state.playerEndInd-1
+        };
+    }
+    else if(action.type === actionTypes.NEXT_BUTTON_CLICKED){
+        return {
+            ...state,
+            playerStartInd: state.playerStartInd+1,
+            playerEndInd: state.playerEndInd+1
+        };
+    }
+    else if(action.type === actionTypes.PLAYER_TAKE_CLICKED){
+        let fullDeck = [], computerCards = [], aiField = [], playerField = [], playerCards = [];
+        fullDeck = state.fullDeck.concat();
+        computerCards = state.computerCards.concat();
+        aiField = state.computerCards.concat();
+        playerField = state.playerField.concat();
+        playerCards = state.playerCards.concat();
+        let gameMode = state.gameMode;
+        
+        PlayerActionsHandler.handleClickOnTakeButton(
+            playerField, playerCards, aiField, fullDeck, computerCards, gameMode);
+
+        return {
+            ...state,
+            fullDeck: fullDeck,
+            computerCards: computerCards,
+            aiField: aiField,
+            playerField: playerField,
+            playerCards: playerCards
+        };
     }
     return state;
 }

@@ -1,25 +1,18 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 
+import * as gameModes from './../../constants/GameModes'
+
 class PlayerTakeButton extends React.Component{
-    constructor(props){
-        super(props);
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick(){
-        this.props.onClickHandler();
-    }
-
     render(){        
         let button = null;
-        if(this.props.mode.mode === this.props.GameMode.PlayerDefence || 
-            this.props.mode.mode === this.props.GameMode.AiDiscard){
+        if(this.props.gameMode === gameModes.PlayerDefence || 
+            this.props.gameMode === gameModes.AiAttack){
             
             let dash = <span>&mdash;</span>;
             if(this.props.playerCards.length > 0 ){
                 button = (
-                    <button className="btn btn-danger" onClick={this.onClick}>
+                    <button className="btn btn-danger" onClick={this.props.onPlayerTakeClick}>
                         {dash} Беру!
                     </button>
                 );
@@ -32,8 +25,7 @@ class PlayerTakeButton extends React.Component{
 export default PlayerTakeButton;
 
 PlayerTakeButton.propTypes = {
-    mode: PropTypes.array,
-    GameMode:PropTypes.any,
-    onClickHandler: PropTypes.any,
-    playerCards: PropTypes.array
+    gameMode: PropTypes.string.isRequired,
+    onPlayerTakeClick: PropTypes.func.isRequired,
+    playerCards: PropTypes.array.isRequired
 };

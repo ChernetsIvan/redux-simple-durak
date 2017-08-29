@@ -9,8 +9,6 @@ import StartScreen from './components/main/StartScreen';
 
 class App extends Component {
     render() {
-        console.log(this.props);
-
         let output = null;
         if(this.props.isRenderSettingsForStartNewGame){
             output = 
@@ -21,7 +19,7 @@ class App extends Component {
         }else{
             output = 
                 <GameScreen 
-                    handleBeginGameClick={this.props.onBeginGameClick}
+                    onBeginGameClick={this.props.onBeginGameClick}
                     gameMode={this.props.gameMode}
                     computerCards={this.props.computerCards}
                     playerCards={this.props.playerCards}
@@ -30,7 +28,8 @@ class App extends Component {
                     aiField={this.props.aiField}
                     playerField={this.props.playerField}
                     onPrevClick={this.props.onPrevClick}
-                    onNextClick={this.props.onNextClick} />
+                    onNextClick={this.props.onNextClick} 
+                    onPlayerTakeClick={this.props.onPlayerTakeClick}/>
         }
         return (
             <div>
@@ -58,23 +57,23 @@ App.propTypes = {
     onStartGameClick: PropTypes.func.isRequired,
     onRadioChange: PropTypes.func.isRequired,
     onPrevClick: PropTypes.func.isRequired,
-    onNextClick: PropTypes.func.isRequired
+    onNextClick: PropTypes.func.isRequired,
+    onPlayerTakeClick: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-    isRenderSettingsForStartNewGame: state.startGame.isRenderSettingsForStartNewGame,
-    trumpSuit: state.startGame.trumpSuit,
-    fullDeck: state.startGame.fullDeck,
-    computerCards: state.startGame.computerCards,
-    aiField: state.startGame.aiField,
-    playerField: state.startGame.playerField,
-    playerCards: state.startGame.playerCards,    
-    firstStart: state.startGame.firstStart,
-    isFirstMovePlayer: state.startGame.isFirstMovePlayer,
-    gameMode: state.startGame.gameMode,
-
-    playerStartInd: state.pagination.playerStartInd,
-    playerEndInd: state.pagination.playerEndInd,
+    isRenderSettingsForStartNewGame: state.game.isRenderSettingsForStartNewGame,
+    trumpSuit: state.game.trumpSuit,
+    fullDeck: state.game.fullDeck,
+    computerCards: state.game.computerCards,
+    aiField: state.game.aiField,
+    playerField: state.game.playerField,
+    playerCards: state.game.playerCards,    
+    firstStart: state.game.firstStart,
+    isFirstMovePlayer: state.game.isFirstMovePlayer,
+    gameMode: state.game.gameMode,
+    playerStartInd: state.game.playerStartInd,
+    playerEndInd: state.game.playerEndInd,
 });
 
 

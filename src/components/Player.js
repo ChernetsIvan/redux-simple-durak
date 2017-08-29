@@ -6,6 +6,8 @@ import Card from './Card/Card';
 
 class Player extends React.Component{
     render(){
+        console.log('Player props:', this.props);
+
         let cards = this.props.cards.map((el)=>{
             return <Card id = {el.id} key={el.id} rank={el.rank} suit={el.suit}
                 onCardClick={this.props.handlePlayerMove} bootStrapColClass="col-1" hidden={false} />

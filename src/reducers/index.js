@@ -1,11 +1,7 @@
 import {combineReducers} from 'redux';
 
-import startGame from './startGame';
-import pagination from './pagination';
-import playControl from './playControl';
+import game from './game';
 
 export default combineReducers({
-    startGame,
-    pagination,
-    playControl
+    game
 });

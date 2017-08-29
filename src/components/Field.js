@@ -9,7 +9,7 @@ class Field extends React.Component{
         let output = null;
 
         let cards = this.props.cards.map((el)=>{
-            return <Card rank={el.rank} suit={el.suit}
+            return <Card key={el.id} rank={el.rank} suit={el.suit}
                 bootStrapColClass={"col-1"} hidden={false} />
         });
 

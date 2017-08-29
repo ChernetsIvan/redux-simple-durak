@@ -8,6 +8,8 @@ import Player from './../Player';
 import Deck from './../Deck';
 import Field from './../Field';
 import Status from './../Status';
+//компоненты-кнопки:
+import PlayerTakeButton from './../buttons/PlayerTakeButton';
 
 class GameScreen extends Component {    
     render() {
@@ -18,7 +20,7 @@ class GameScreen extends Component {
                         <div className="col-auto">
                             <button
                                 className="btn btn-secondary mr-3" 
-                                onClick={this.props.handleBeginGameClick}>
+                                onClick={this.props.onBeginGameClick}>
                                 
                                 Новая игра
                             </button>
@@ -69,7 +71,10 @@ class GameScreen extends Component {
                         </div>
                         <div className="row justify-content-center">
                             <div className="col-auto">
-                                
+                                <PlayerTakeButton 
+                                    gameMode={this.props.gameMode}
+                                    onPlayerTakeClick={this.props.onPlayerTakeClick}
+                                    playerCards={this.props.playerCards} />
                             </div> 
                         </div>
                     </div>                                 
@@ -89,8 +94,11 @@ GameScreen.propTypes = {
     firstStart: PropTypes.bool.isRequired,
     aiField: PropTypes.array.isRequired,
     playerField: PropTypes.array.isRequired,
+    playerStartInd: PropTypes.number.isRequired,
+    playerEndInd: PropTypes.number.isRequired,
 
-    handleBeginGameClick: PropTypes.func.isRequired,
+    onBeginGameClick: PropTypes.func.isRequired,
     onPrevClick: PropTypes.func.isRequired,
-    onNextClick: PropTypes.func.isRequired
+    onNextClick: PropTypes.func.isRequired,
+    onPlayerTakeClick: PropTypes.func.isRequired
 };
