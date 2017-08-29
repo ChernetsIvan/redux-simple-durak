@@ -1,11 +1,9 @@
 import {START_GAME_CLICKED, BEGIN_GAME_CLICKED, WHO_MOVE_FIRST_CHANGED} from './../constants/ActionTypes';
-import {cardRanks, cardSuits} from './../constants/GameConstants';
+
 import * as gameModes from './../constants/GameModes';
 
 import DeckUtils from './../utils/DeckUtils';
 import AiActions from './../utils/AiActions';
-
-import CardModel from './../models/CardModel';
 
 const initialState = {
     isRenderSettingsForStartNewGame: true,
@@ -15,8 +13,6 @@ const initialState = {
     aiField: [],
     playerField: [],
     playerCards: [],
-    playerStartInd:0,
-    playerEndInd:9,
     firstStart: true,
     isFirstMovePlayer: true,
     gameMode: gameModes.PlayerAttack
@@ -25,36 +21,12 @@ const initialState = {
 export default function startGame(state = initialState, action){
     if(action.type === START_GAME_CLICKED){
 
-        let fullDeck = [];
-        let computerCards = [];
-        let aiField = [];
-        let playerField = [];
-        let playerCards = []; 
-        let gameMode;
-
-        let trumpSuit = DeckUtils.chooseSuitForTrumpCardInFuture(cardSuits);
-
-        //Наполняем колоду картами
-        //На ходу устанавливаем power для каждой карты по принципу:
-        //козырь->10*rank.cardValue, НЕкозырь->1*rank.cardValue
-        let z = 0;
-        let power, coef;               
-        cardSuits.forEach(function(element,index, array){
-            if(element.suit === trumpSuit.suit){
-                coef = 10;
-            }else{
-                coef = 1;
-            }
-            cardRanks.forEach(function(element2, index2, array2){
-                power = coef * element2.cardValue;
-                fullDeck.push(
-                    new CardModel(z, element2, element, power)
-                );
-                z++;
-            });
-        });
+        let fullDeck = [], computerCards = [], aiField = [], playerField = [], playerCards = []; 
+        let trumpSuit, gameMode;
         
-        //Вызов этих и выше методов именно в таком порядке!    
+        //Вызов именно в таком порядке!  
+        trumpSuit = DeckUtils.chooseSuitForTrumpCardInFuture();
+        fullDeck = DeckUtils.fillCards(trumpSuit);          
         fullDeck = DeckUtils.shuffle(fullDeck); 
         DeckUtils.moveAnyCardWithTrumpSuitToTailOfFullDeck(trumpSuit, fullDeck);
         DeckUtils.giveUpToSixCards(fullDeck, computerCards);

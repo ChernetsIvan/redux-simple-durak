@@ -6,6 +6,8 @@ import diamondSuit from './../../assets/card-suits/diamond.png';
 import heartSuit from './../../assets/card-suits/heart.png';
 import spadeSuit from './../../assets/card-suits/spade.png';
 
+import { uniqueId } from 'lodash-es';
+
 class Card extends React.Component{
     constructor(props){
         super(props);
@@ -21,13 +23,14 @@ class Card extends React.Component{
         let classAttr = this.props.bootStrapColClass + " card mb-1"; 
 
         let output = null;
+        let randKey = uniqueId();
         if(this.props.hidden === true){
             //Отрисовываем карту рубашкой кверху
 
             classAttr = classAttr + " shirt";
-
+            
             output = (
-                <div key={this.props.key}
+                <div key={randKey}
                     className={classAttr}>
                 </div>
             );
@@ -64,7 +67,7 @@ class Card extends React.Component{
             }
 
             output = (
-                <div key={this.props.key}
+                <div key={randKey}
                     onClick={this.handleClickOnCard}
                     className={classAttr}>
                     
@@ -95,7 +98,6 @@ export default Card;
 
 Card.propTypes = {
     id: PropTypes.number,
-    key: PropTypes.number,
     rank: PropTypes.shape({
         text: PropTypes.text,
         cardValue: PropTypes.number

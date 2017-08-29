@@ -81,6 +81,16 @@ class GameScreen extends Component {
 
 export default GameScreen;
 
-GameScreen.propTypes = {
-    handleBeginGameClick: PropTypes.func.isRequired
+GameScreen.propTypes = {    
+    gameMode: PropTypes.string.isRequired,
+    computerCards: PropTypes.array.isRequired,
+    playerCards: PropTypes.array.isRequired,
+    fullDeck: PropTypes.array.isRequired,
+    firstStart: PropTypes.bool.isRequired,
+    aiField: PropTypes.array.isRequired,
+    playerField: PropTypes.array.isRequired,
+
+    handleBeginGameClick: PropTypes.func.isRequired,
+    onPrevClick: PropTypes.func.isRequired,
+    onNextClick: PropTypes.func.isRequired
 };

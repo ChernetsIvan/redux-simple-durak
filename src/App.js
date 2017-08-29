@@ -28,7 +28,9 @@ class App extends Component {
                     fullDeck={this.props.fullDeck}
                     firstStart={this.props.firstStart} 
                     aiField={this.props.aiField}
-                    playerField={this.props.playerField}/>
+                    playerField={this.props.playerField}
+                    onPrevClick={this.props.onPrevClick}
+                    onNextClick={this.props.onNextClick} />
         }
         return (
             <div>
@@ -55,8 +57,8 @@ App.propTypes = {
     onBeginGameClick: PropTypes.func.isRequired,
     onStartGameClick: PropTypes.func.isRequired,
     onRadioChange: PropTypes.func.isRequired,
-    onClickPrev: PropTypes.func.isRequired,
-    onClickNext: PropTypes.func.isRequired
+    onPrevClick: PropTypes.func.isRequired,
+    onNextClick: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -66,31 +68,37 @@ const mapStateToProps = state => ({
     computerCards: state.startGame.computerCards,
     aiField: state.startGame.aiField,
     playerField: state.startGame.playerField,
-    playerCards: state.startGame.playerCards,
-    playerStartInd: state.startGame.playerStartInd,
-    playerEndInd: state.startGame.playerEndInd,
+    playerCards: state.startGame.playerCards,    
     firstStart: state.startGame.firstStart,
     isFirstMovePlayer: state.startGame.isFirstMovePlayer,
-    gameMode: state.startGame.gameMode
+    gameMode: state.startGame.gameMode,
+
+    playerStartInd: state.pagination.playerStartInd,
+    playerEndInd: state.pagination.playerEndInd,
 });
 
 
-const mapDispatchToProps =  dispatch => ({    
-    onStartGameClick: () => {    
-        dispatch(actions.clickOnStartGameButton());
-    },
+const mapDispatchToProps =  dispatch => ({
     onBeginGameClick: () => {
         dispatch(actions.clickOnBeginGameButton());
-    },
+    },    
+    onStartGameClick: () => {    
+        dispatch(actions.clickOnStartGameButton());
+    },    
     onRadioChange: (isFirstMovePlayer) => {
         dispatch(actions.clickOnRadioWhoMoveFirst(isFirstMovePlayer));
     },
-    onClickPrev: () => {
+    
+    onPrevClick: () => {
         dispatch(actions.clickOnPrev());
     },
-    onClickNext: () => {
+    onNextClick: () => {
         dispatch(actions.clickOnNext());
-    }
+    },
+
+    onPlayerTakeClick: () => {
+        dispatch(actions.clickOnPlayerTake());
+    },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

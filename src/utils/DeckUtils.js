@@ -1,5 +1,9 @@
 import { pull, find } from 'lodash-es';
 
+import {cardRanks, cardSuits} from './../constants/GameConstants';
+
+import CardModel from './../models/CardModel';
+
 class DeckUtils{
     //отсортировать входной массив карт по возрастанию isAsc=true
     //(убыванию-> isAsc=false)  по параметру 'power'
@@ -11,6 +15,30 @@ class DeckUtils{
                 return b.power - a.power;
             }        
         });
+    }
+
+    //Возвращает наполненную всеми 36-ю картами колоду
+    static fillCards(trumpSuit){
+        let fullDeck = [];
+        //Устанавливает power для каждой карты по принципу:
+        //козырь->10*rank.cardValue, НЕкозырь->1*rank.cardValue
+        let z = 0;
+        let power, coef;               
+        cardSuits.forEach(function(element,index, array){
+            if(element.suit === trumpSuit.suit){
+                coef = 10;
+            }else{
+                coef = 1;
+            }
+            cardRanks.forEach(function(element2, index2, array2){
+                power = coef * element2.cardValue;
+                fullDeck.push(
+                    new CardModel(z, element2, element, power)
+                );
+                z++;
+            });
+        });
+        return fullDeck;
     }
 
     //Возвращает перемешанную колоду
@@ -50,7 +78,7 @@ class DeckUtils{
     }
 
     //Возвращает козырную масть (не карту!) для будущей игры
-    static chooseSuitForTrumpCardInFuture(cardSuits){
+    static chooseSuitForTrumpCardInFuture(){
         let randIndex = Math.random() * (cardSuits.length-1);
         randIndex = Math.round(randIndex);
         return cardSuits[randIndex];

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Card from './Card/Card';
 
+import { uniqueId } from 'lodash-es';
+
 class Deck extends React.Component{
     render(){ 
         //перекопируем массив, дабы не влиять...
@@ -16,7 +18,7 @@ class Deck extends React.Component{
         if(trumpCard !== undefined){
             //"Переопределяем" bootstrap-класс col-6 вместо col-1:
             output_TrumpCard = 
-                <Card key={trumpCard.id} rank={trumpCard.rank} suit={trumpCard.suit}
+                <Card rank={trumpCard.rank} suit={trumpCard.suit}
                     bootStrapColClass="col-6" hidden={false} />;
         }
         
@@ -24,9 +26,9 @@ class Deck extends React.Component{
         let output_MockDeck = null;
         let output_CountOfCardsInDeck = null;
         if(cardsWithoutLast.length > 0){
-            //37 - заведомо уникальный key
+            let randKey = uniqueId();
             output_MockDeck = 
-                <Card key={37} bootStrapColClass="col-6" hidden={true} />;
+                <Card key={randKey} bootStrapColClass="col-6" hidden={true} />;
             output_CountOfCardsInDeck = cardsWithoutLast.length;
         }
 
