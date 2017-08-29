@@ -1,7 +1,7 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 
-import * as gameModes from './../../constants/GameModes'
+import * as gameModes from './../../../../constants/GameModes'
 
 class PlayerTakeButton extends React.Component{
     render(){        

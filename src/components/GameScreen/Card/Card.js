@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import clubSuit from './../../assets/card-suits/club.png';
-import diamondSuit from './../../assets/card-suits/diamond.png';
-import heartSuit from './../../assets/card-suits/heart.png';
-import spadeSuit from './../../assets/card-suits/spade.png';
+import clubSuit from './../../../assets/card-suits/club.png';
+import diamondSuit from './../../../assets/card-suits/diamond.png';
+import heartSuit from './../../../assets/card-suits/heart.png';
+import spadeSuit from './../../../assets/card-suits/spade.png';
 
 import { uniqueId } from 'lodash-es';
 

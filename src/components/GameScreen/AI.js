@@ -38,7 +38,17 @@ class AI extends React.Component{
         }else{
             output = <InvisibleCard />;
         }
-        return output;
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col-10">
+                        {output}
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+            </div>
+        );
     }
 }
 

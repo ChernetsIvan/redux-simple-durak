@@ -88,7 +88,9 @@ export default function startGame(state = initialState, action){
             playerEndInd: state.playerEndInd+1
         };
     }
-    else if(action.type === actionTypes.PLAYER_TAKE_CLICKED){
+    else if(action.type === actionTypes.PLAYER_TAKE_CLICKED || 
+            action.type === actionTypes.SOME_PLAYERS_CARD_CLICKED){
+
         let fullDeck = [], computerCards = [], aiField = [], playerField = [], playerCards = [];
         fullDeck = state.fullDeck.concat();
         computerCards = state.computerCards.concat();
@@ -97,8 +99,22 @@ export default function startGame(state = initialState, action){
         playerCards = state.playerCards.concat();
         let gameMode = state.gameMode;
         
-        PlayerActionsHandler.handleClickOnTakeButton(
-            playerField, playerCards, aiField, fullDeck, computerCards, gameMode);
+        switch(action.type){
+            case actionTypes.PLAYER_TAKE_CLICKED: {
+                PlayerActionsHandler.handleClickOnTakeButton(
+                    playerField, playerCards, aiField, fullDeck, computerCards, gameMode);
+                break;
+            }
+            case actionTypes.SOME_PLAYERS_CARD_CLICKED: {
+                PlayerActionsHandler.handleClickOnCard(
+                    action.payload, playerCards, gameMode, playerField, 
+                    aiField, state.trumpSuit, fullDeck, computerCards);
+                break;
+            }
+            default: {
+                break;
+            }
+        }       
 
         return {
             ...state,
@@ -106,7 +122,8 @@ export default function startGame(state = initialState, action){
             computerCards: computerCards,
             aiField: aiField,
             playerField: playerField,
-            playerCards: playerCards
+            playerCards: playerCards,
+            gameMode: gameMode
         };
     }
     return state;

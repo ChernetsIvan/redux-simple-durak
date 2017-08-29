@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {statusMessages} from './../constants/GameConstants';
-import * as gameModes from './../constants/GameModes';
+import {statusMessages} from './../../constants/GameConstants';
+import * as gameModes from './../../constants/GameModes';
 
 class Status extends React.Component{
     render(){

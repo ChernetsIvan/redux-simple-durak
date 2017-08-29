@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import InvisibleCard from './Card/InvisibleCard';
-import Card from './Card/Card';
+import InvisibleCard from './../Card/InvisibleCard';
+import Card from './../Card/Card';
+
+//Классы-контейнеры кнопок
+import PlayerTakeButtonContainer from './../../../containers/GameScreen/Player/Buttons/PlayerTakeButtonContainer';
 
 class Player extends React.Component{
     render(){
-        console.log('Player props:', this.props);
-
         let cards = this.props.cards.map((el)=>{
             return <Card id = {el.id} key={el.id} rank={el.rank} suit={el.suit}
                 onCardClick={this.props.handlePlayerMove} bootStrapColClass="col-1" hidden={false} />
@@ -58,17 +59,32 @@ class Player extends React.Component{
         }else{
             output = <InvisibleCard />;
         }      
-        return output;
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col-10">
+                        {output}
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row justify-content-center">
+                    <div className="col-auto">
+                        <PlayerTakeButtonContainer />
+                    </div> 
+                </div>
+            </div> 
+        );
     }
 }
 
 export default Player;
 
 Player.propTypes = {
-    cards: PropTypes.array,
-    onPrevClick: PropTypes.func,
-    onNextClick: PropTypes.func,
-    playerStartInd: PropTypes.number,
-    playerEndInd: PropTypes.number,
-    handlePlayerMove: PropTypes.func
+    cards: PropTypes.array.isRequired,    
+    playerStartInd: PropTypes.number.isRequired,
+    playerEndInd: PropTypes.number.isRequired,
+    onPrevClick: PropTypes.func.isRequired,
+    onNextClick: PropTypes.func.isRequired,
+    onCardClick: PropTypes.func.isRequired
 };

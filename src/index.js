@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
  
-import App from './App';
+import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 
 import reducer from './reducers';
@@ -13,7 +13,7 @@ const store = createStore(reducer, composeWithDevTools());
 
 ReactDOM.render(
     <Provider store={store}>
-        <App /> 
+        <AppContainer /> 
     </Provider>,
     document.getElementById('root')
 );

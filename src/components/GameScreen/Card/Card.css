@@ -21,7 +21,7 @@
 }
 
 .shirt{
-    background-image: url('./../../assets/card-shirts/cardShirt1.png');
+    background-image: url('./../../../assets/card-shirts/cardShirt1.png');
     background-position: center, center;
     height: 131px;
 }
