@@ -6,12 +6,14 @@ import Card from './../Card/Card';
 
 //Классы-контейнеры кнопок
 import PlayerTakeButtonContainer from './../../../containers/GameScreen/Player/Buttons/PlayerTakeButtonContainer';
+import AiTakeButtonContainer from './../../../containers/GameScreen/Player/Buttons/AiTakeButtonContainer';
+import RemoveCardsButtonContainer from './../../../containers/GameScreen/Player/Buttons/RemoveCardsButtonContainer';
 
 class Player extends React.Component{
     render(){
         let cards = this.props.cards.map((el)=>{
             return <Card id = {el.id} key={el.id} rank={el.rank} suit={el.suit}
-                onCardClick={this.props.handlePlayerMove} bootStrapColClass="col-1" hidden={false} />
+                onCardClick={this.props.onCardClick} bootStrapColClass="col-1" hidden={false} />
         });        
          
         let output = null;
@@ -70,6 +72,8 @@ class Player extends React.Component{
                 </div>
                 <div className="row justify-content-center">
                     <div className="col-auto">
+                        <RemoveCardsButtonContainer />
+                        <AiTakeButtonContainer />
                         <PlayerTakeButtonContainer />
                     </div> 
                 </div>

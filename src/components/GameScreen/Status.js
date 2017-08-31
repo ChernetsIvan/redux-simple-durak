@@ -22,11 +22,13 @@ class Status extends React.Component{
 
         if(outText === null) {
             switch(this.props.gameMode){
-                case gameModes.PlayerAttack || gameModes.AiDefence: {
+                case gameModes.PlayerAttack :
+                case gameModes.AiDefence: {
                     outText = statusMessages.PlayerAttack;
                     break;
                 }
-                case gameModes.PlayerDefence || gameModes.AiAttack: {
+                case gameModes.PlayerDefence :
+                case gameModes.AiAttack: {
                     outText = statusMessages.PlayerDefence;
                     break;
                 }

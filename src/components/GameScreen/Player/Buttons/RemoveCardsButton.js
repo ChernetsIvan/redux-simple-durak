@@ -1,16 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class RemoveCardsFromTableButton extends React.Component{
-    constructor(props){
-        super(props);
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick(){
-        this.props.onClickHandler();
-    }
-
+class RemoveCardsButton extends React.Component{
     render(){        
         let button = null;
         if(this.props.aiField.length === this.props.playerField.length &&
@@ -19,7 +10,7 @@ class RemoveCardsFromTableButton extends React.Component{
 
             let dash = <span>&mdash;</span>;
             button = (
-                <button className="btn btn-info" onClick={this.onClick}>
+                <button className="btn btn-info" onClick={this.props.onRemoveCardsClick}>
                     {dash} Отбой!
                 </button> 
             );
@@ -30,10 +21,10 @@ class RemoveCardsFromTableButton extends React.Component{
     }
 }
 
-export default RemoveCardsFromTableButton;
+export default RemoveCardsButton;
 
-RemoveCardsFromTableButton.propTypes = {
-    aiField: PropTypes.array,
-    playerField: PropTypes.array,
-    onClickHandler: PropTypes.any
+RemoveCardsButton.propTypes = {
+    aiField: PropTypes.array.isRequired,
+    playerField: PropTypes.array.isRequired,
+    onRemoveCardsClick: PropTypes.func.isRequired
 };

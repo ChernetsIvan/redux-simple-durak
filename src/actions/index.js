@@ -26,4 +26,10 @@ export const clickOnCard = (cardId) => ({
 
 export const clickOnPlayerTake = () => ({
     type: actionTypes.PLAYER_TAKE_CLICKED
+});
+export const clickOnAiTake = () => ({
+    type: actionTypes.AI_TAKE_CLICKED
+});
+export const clickOnRemoveCards = () => ({
+    type: actionTypes.REMOVE_CARDS_CLICKED
 })

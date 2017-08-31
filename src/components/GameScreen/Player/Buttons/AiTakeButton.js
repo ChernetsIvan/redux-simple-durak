@@ -1,24 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import * as gameModes from './../../../../constants/GameModes';
+
 class AiTakeButton extends React.Component{
-    constructor(props){
-        super(props);
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick(){
-        this.props.onClickHandler();
-    }
-
     render(){        
         let dash = <span>&mdash;</span>;
         let button = null;
-        if(this.props.mode.mode === this.props.GameMode.PlayerDiscard){
+        if(this.props.gameMode === gameModes.PlayerDiscard){
             button = (
                 <button
                 className="btn btn-success" 
-                onClick={this.onClick}>
+                onClick={this.props.onAiTakeClick}>
                     {dash} Подбросить нечего, забирай!
                 </button>
             );
@@ -32,7 +25,6 @@ class AiTakeButton extends React.Component{
 export default AiTakeButton;
 
 AiTakeButton.propTypes = {
-    mode: PropTypes.array,
-    GameMode:PropTypes.any,
-    onClickHandler: PropTypes.any
+    gameMode: PropTypes.string.isRequired,
+    onAiTakeClick: PropTypes.func.isRequired,
 };

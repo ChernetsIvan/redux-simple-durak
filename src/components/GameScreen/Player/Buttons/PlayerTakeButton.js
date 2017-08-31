@@ -1,7 +1,7 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 
-import * as gameModes from './../../../../constants/GameModes'
+import * as gameModes from './../../../../constants/GameModes';
 
 class PlayerTakeButton extends React.Component{
     render(){        
@@ -25,7 +25,7 @@ class PlayerTakeButton extends React.Component{
 export default PlayerTakeButton;
 
 PlayerTakeButton.propTypes = {
-    gameMode: PropTypes.string.isRequired,
-    onPlayerTakeClick: PropTypes.func.isRequired,
-    playerCards: PropTypes.array.isRequired
+    gameMode: PropTypes.string.isRequired,    
+    playerCards: PropTypes.array.isRequired,
+    onPlayerTakeClick: PropTypes.func.isRequired
 };
