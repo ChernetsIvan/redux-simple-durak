@@ -120,6 +120,7 @@ export default function game(state = initialState, action){
             case actionTypes.REMOVE_CARDS_CLICKED: {
                 FieldsUtils.removeCardsFromFieldsAndGiveCards(
                     true, aiField, playerField, fullDeck, playerCards, computerCards);
+                gameMode = gameModes.AiAttack;
                 gameMode = AiActions.makeAi_Attack_Move(
                     gameMode, computerCards, aiField, playerField, fullDeck, playerCards);
                 break;
