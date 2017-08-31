@@ -24,7 +24,7 @@ class PlayerActionsHandler{
                             playerCards.splice(index, 1);                         
                             gameMode = gameModes.AiDefence;                        
                             //заставляем AI сделать ход защиты
-                            AiActions.makeAi_Defence_Move(gameMode, playerField, 
+                            gameMode = AiActions.makeAi_Defence_Move(gameMode, playerField, 
                                 computerCards, aiField, trumpSuit);
                         }
                         return false;
@@ -50,7 +50,7 @@ class PlayerActionsHandler{
                                 playerCards.splice(index, 1);
                                 gameMode = gameModes.AiAttack;   
                                 //заставляем AI сделать ход атаки
-                                AiActions.makeAi_Attack_Move(gameMode, computerCards, aiField, playerField, fullDeck, playerCards);     
+                                gameMode = AiActions.makeAi_Attack_Move(gameMode, computerCards, aiField, playerField, fullDeck, playerCards);     
                             }                    
                         }
                         return false;
@@ -58,6 +58,7 @@ class PlayerActionsHandler{
                 }
                 return true;
             });
+            return gameMode;
         }        
     }
 
@@ -79,7 +80,8 @@ class PlayerActionsHandler{
         DeckUtils.giveUpToSixCards(fullDeck, computerCards);
 
         gameMode = gameModes.AiAttack;
-        AiActions.makeAi_Attack_Move(gameMode, computerCards, aiField, playerField, fullDeck, playerCards);
+        gameMode = AiActions.makeAi_Attack_Move(gameMode, computerCards, aiField, playerField, fullDeck, playerCards);
+        return gameMode;
     }
 
     //Обработка нажатия на кнопку "Подбросить нечего, забирай!"
@@ -99,6 +101,7 @@ class PlayerActionsHandler{
         DeckUtils.sortInputDeckByPower(playerCards, true);
 
         gameMode = gameModes.PlayerAttack;
+        return gameMode;
     }
 
 }

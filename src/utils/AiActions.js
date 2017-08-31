@@ -28,7 +28,7 @@ class AiActions{
                 return true;
             });
             if(result===false){
-                return;
+                return gameMode;
             }            
 
             //Пытаемся отбиться козырем
@@ -50,11 +50,12 @@ class AiActions{
                 return true;
             });
             if(result===false){
-                return;
+                return gameMode;
             }
 
             //AI отбиться не смог. Меняем режим игры на "Игрок Подбрасывает"
             gameMode = gameModes.PlayerDiscard;
+            return gameMode;
         }
     }
 
@@ -77,14 +78,13 @@ class AiActions{
                             if(cCard.rank.cardValue === 
                             computerCards[j].rank.cardValue){                            
                                 //Одинаковые по размеру. 
-                                //Тогда ходим этой и выходим.
-                                AiActions.aiContinueAttack(i, aiField, computerCards, gameMode);                            
-                                return;        
+                                //Тогда ходим этой и выходим.               
+                                return AiActions.aiContinueAttack(i, aiField, computerCards, gameMode);       
                             }        
                         }
                     }
                     //Одинаковых по rank.cardValue и power не нашлось, ходим самой слабой.
-                    AiActions.aiContinueAttack(0, aiField, computerCards, gameMode);                    
+                    return AiActions.aiContinueAttack(0, aiField, computerCards, gameMode);                    
                 }else{
                     //Это продолжение атаки.
                     //Можем атаковать только такими по размеру,
@@ -102,14 +102,13 @@ class AiActions{
 
                     if(indexCardWeMayAttack===null){
                         //Не найдена ни одна карта, которой МОЖНО было бы атаковать.
-                        AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards);
-                        return;
+                        return AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards);                        
                     }
                     //Найдена карта, которой МОЖНО было бы атаковать.
                     //А это ВЫГОДНО?
                     if(computerCards[indexCardWeMayAttack].power < 10){
                         //Эта карта - даже не козырь. Атакуем.
-                        AiActions.aiContinueAttack(indexCardWeMayAttack, aiField, computerCards, gameMode);
+                        return AiActions.aiContinueAttack(indexCardWeMayAttack, aiField, computerCards, gameMode);
                     }else{
                         //Козырь - а его жалко. Анализируем дальше.
                         //Этот козырь - больше 10-ки?
@@ -117,21 +116,21 @@ class AiActions{
                             //Это В,Д,К или Т.
                             if(fullDeck.length === 0){
                                 if(computerCards.length === 1){
-                                    AiActions.aiContinueAttack(indexCardWeMayAttack, aiField, computerCards, gameMode);
+                                    return AiActions.aiContinueAttack(indexCardWeMayAttack, aiField, computerCards, gameMode);
                                 }else{
-                                    AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards)
+                                    return AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards)
                                 }
                             }else{
-                                AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards);
+                                return AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards);
                             }
                         }else{
                             //Это или 10 или ниже.
                             if(fullDeck.length > 5){
                                 //До конца игры далеко. Жалко козыря - отбой.
-                                AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards);
+                                return AiActions.aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards);
                             }else{
                                 //Близок конец игры. Атакуем.
-                                AiActions.aiContinueAttack(indexCardWeMayAttack, aiField, computerCards, gameMode);
+                                return AiActions.aiContinueAttack(indexCardWeMayAttack, aiField, computerCards, gameMode);
                             }
                         } 
                     }
@@ -144,12 +143,14 @@ class AiActions{
         aiField.push(computerCards[indexCardToAttack]);
         computerCards.splice(indexCardToAttack,1);
         gameMode = gameModes.PlayerDefence;
+        return gameMode;
     }
 
     static aiStopAttack(gameMode, aiField, playerField, fullDeck, playerCards, computerCards){
         FieldsUtils.removeCardsFromFieldsAndGiveCards(
             false, aiField, playerField, fullDeck, playerCards, computerCards);
         gameMode = gameModes.PlayerAttack;
+        return gameMode;
     }
 }
 

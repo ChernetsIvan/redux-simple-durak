@@ -5,9 +5,14 @@ import { find } from 'lodash-es';
 class FieldsUtils{
     static removeCardsFromFieldsAndGiveCards(
         givePlayerFirst, aiField, playerField, fullDeck, playerCards, computerCards){
+        
+        while(aiField.length > 0){
+            aiField.pop();
+        }
+        while(playerField.length > 0){
+            playerField.pop();
+        }
 
-        aiField = [];
-        playerField = [];
         if(givePlayerFirst){
             DeckUtils.giveUpToSixCards(fullDeck,playerCards);
             DeckUtils.giveUpToSixCards(fullDeck, computerCards);        

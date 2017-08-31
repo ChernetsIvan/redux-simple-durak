@@ -35,7 +35,7 @@ export default function game(state = initialState, action){
         fullDeck = DeckUtils.shuffle(fullDeck); 
         DeckUtils.moveAnyCardWithTrumpSuitToTailOfFullDeck(trumpSuit, fullDeck);
         DeckUtils.giveUpToSixCards(fullDeck, computerCards);
-        DeckUtils.giveUpToSixCards(fullDeck,playerCards);
+        DeckUtils.giveUpToSixCards(fullDeck, playerCards);
         DeckUtils.sortInputDeckByPower(playerCards, true);   
         
         if(state.isFirstMovePlayer){
@@ -43,7 +43,7 @@ export default function game(state = initialState, action){
         }else{            
             gameMode = gameModes.AiAttack;
             //"Заставляем" AI сделать ход:
-            AiActions.makeAi_Attack_Move(
+            gameMode = AiActions.makeAi_Attack_Move(
                 gameMode, computerCards, aiField, playerField, fullDeck, playerCards);
         }
 
@@ -108,24 +108,24 @@ export default function game(state = initialState, action){
         
         switch(action.type){
             case actionTypes.PLAYER_TAKE_CLICKED: {
-                PlayerActionsHandler.handleClickOnTakeButton(
+                gameMode = PlayerActionsHandler.handleClickOnTakeButton(
                     playerField, playerCards, aiField, fullDeck, computerCards, gameMode);
                 break;
             }
             case actionTypes.AI_TAKE_CLICKED: {
-                PlayerActionsHandler.handleClickOnAiTakeButton(
+                gameMode = PlayerActionsHandler.handleClickOnAiTakeButton(
                     playerField, computerCards, aiField, fullDeck, playerCards, gameMode);
                 break;
             }
             case actionTypes.REMOVE_CARDS_CLICKED: {
                 FieldsUtils.removeCardsFromFieldsAndGiveCards(
                     true, aiField, playerField, fullDeck, playerCards, computerCards);
-                AiActions.makeAi_Attack_Move(
+                gameMode = AiActions.makeAi_Attack_Move(
                     gameMode, computerCards, aiField, playerField, fullDeck, playerCards);
                 break;
             }
             case actionTypes.SOME_PLAYERS_CARD_CLICKED: {
-                PlayerActionsHandler.handleClickOnCard(
+                gameMode = PlayerActionsHandler.handleClickOnCard(
                     action.payload, playerCards, gameMode, playerField, 
                     aiField, state.trumpSuit, fullDeck, computerCards);
                 break;
