@@ -1,9 +1,9 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import App from './../components/App';
+import App from "./../components/App";
 
 const mapStateToProps = store => ({
-    isRenderSettingsForStartNewGame: store.game.isRenderSettingsForStartNewGame
+  isRenderSettingsForStartNewGame: store.game.isRenderSettingsForStartNewGame
 });
 
 export default connect(mapStateToProps)(App);

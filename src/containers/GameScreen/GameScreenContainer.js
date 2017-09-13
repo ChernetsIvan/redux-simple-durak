@@ -1,18 +1,18 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import GameScreen from './../../components/GameScreen/GameScreen';
+import GameScreen from "./../../components/GameScreen/GameScreen";
 
-import {clickOnBeginGameButton} from './../../actions';
+import { clickOnBeginGameButton } from "./../../actions";
 
 const mapStateToProps = store => ({
-    aiField: store.game.aiField,
-    playerField: store.game.playerField
+  aiField: store.game.aiField,
+  playerField: store.game.playerField
 });
 
-const mapDispatchToProps =  dispatch => ({  
-    onBeginGameClick: () => {
-        dispatch(clickOnBeginGameButton());
-    }
+const mapDispatchToProps = dispatch => ({
+  onBeginGameClick: () => {
+    dispatch(clickOnBeginGameButton());
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameScreen);

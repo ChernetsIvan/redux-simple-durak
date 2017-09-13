@@ -1,16 +1,16 @@
-import { connect } from 'react-redux';
-import PlayerTakeButton from './../../../../components/GameScreen/Player/Buttons/PlayerTakeButton';
-import {clickOnPlayerTake} from './../../../../actions';
+import { connect } from "react-redux";
+import PlayerTakeButton from "./../../../../components/GameScreen/Player/Buttons/PlayerTakeButton";
+import { clickOnPlayerTake } from "./../../../../actions";
 
 const mapStateToProps = store => ({
-    gameMode: store.game.gameMode,
-    playerCards: store.game.playerCards
+  gameMode: store.game.gameMode,
+  playerCards: store.game.playerCards
 });
 
-const mapDispatchToProps = dispatch => ({ 
-    onPlayerTakeClick: () => {
-        dispatch(clickOnPlayerTake());
-    }
+const mapDispatchToProps = dispatch => ({
+  onPlayerTakeClick: () => {
+    dispatch(clickOnPlayerTake());
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerTakeButton);
