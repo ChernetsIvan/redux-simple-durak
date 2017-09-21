@@ -2,26 +2,11 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
 
-import { Button, Welcome } from "@storybook/react/demo";
+import "./../../../../public/libs/bootstrap/css/bootstrap.min.css";
+//а js-файлы (и bootstrap'a) подключены в .storybook/preview-head.html
 
-import "./../../public/libs/bootstrap/css/bootstrap.min.css";
-
-import Card from "./../components/GameScreen/Card/Card";
-
-
-storiesOf("Welcome", module).add("to Storybook", () => (
-  <Welcome showApp={linkTo("Button")} />
-));
-
-storiesOf("Button", module)
-  .add("with text", () => (
-    <Button onClick={action("clicked")}>Hello Button</Button>
-  ))
-  .add("with some emoji", () => (
-    <Button onClick={action("clicked")}>😀 😎 👍 💯</Button>
-  ));
+import Card from "./Card";
 
 storiesOf("Card", module)
   .addDecorator(story => (
