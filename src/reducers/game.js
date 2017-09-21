@@ -78,19 +78,7 @@ export default function game(state = initialState, action) {
     return {
       ...state,
       isFirstMovePlayer: action.payload
-    };
-  } else if (action.type === actionTypes.PREV_BUTTON_CLICKED) {
-    return {
-      ...state,
-      playerStartInd: state.playerStartInd - 1,
-      playerEndInd: state.playerEndInd - 1
-    };
-  } else if (action.type === actionTypes.NEXT_BUTTON_CLICKED) {
-    return {
-      ...state,
-      playerStartInd: state.playerStartInd + 1,
-      playerEndInd: state.playerEndInd + 1
-    };
+    };  
   } else if (
     action.type === actionTypes.PLAYER_TAKE_CLICKED ||
     action.type === actionTypes.AI_TAKE_CLICKED ||

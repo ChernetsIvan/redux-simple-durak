@@ -10,6 +10,32 @@ import AiTakeButtonContainer from "./../../../containers/GameScreen/Player/Butto
 import RemoveCardsButtonContainer from "./../../../containers/GameScreen/Player/Buttons/RemoveCardsButtonContainer";
 
 class Player extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onPrevClick = this.onPrevClick.bind(this);
+    this.onNextClick = this.onNextClick.bind(this);
+
+    this.state = {
+      playerStartInd: 0,
+      playerEndInd: 9
+    };
+  }
+
+  onPrevClick() {
+    this.setState({
+      playerStartInd: this.state.playerStartInd - 1,
+      playerEndInd: this.state.playerEndInd - 1
+    });
+  }
+
+  onNextClick() {
+    this.setState({
+      playerStartInd: this.state.playerStartInd + 1,
+      playerEndInd: this.state.playerEndInd + 1
+    });
+  }
+
   render() {
     let cards = this.props.cards.map(el => {
       return (
@@ -25,26 +51,33 @@ class Player extends React.Component {
       );
     });
 
+    if (cards.length < 10) {
+      this.setState({
+        playerStartInd: 0,
+        playerEndInd: 9
+      });
+    }
+
     let output = null;
     if (this.props.cards.length > 0) {
       //Показ кнопок Prev и Next
       let out_PrevButton = null;
-      if (this.props.playerStartInd > 0 && this.props.cards.length > 10) {
+      if (this.state.playerStartInd > 0 && this.props.cards.length > 10) {
         out_PrevButton = (
-          <button onClick={this.props.onPrevClick} className="btn btn-info">
-            <b>&larr;{this.props.playerStartInd}</b>
+          <button onClick={this.onPrevClick} className="btn btn-info">
+            <b>&larr;{this.state.playerStartInd}</b>
           </button>
         );
       }
 
       let out_NextButton = null;
       if (
-        this.props.playerEndInd < this.props.cards.length - 1 &&
+        this.state.playerEndInd < this.props.cards.length - 1 &&
         this.props.cards.length > 10
       ) {
         out_NextButton = (
-          <button onClick={this.props.onNextClick} className="btn btn-info">
-            <b>{this.props.cards.length - 1 - this.props.playerEndInd}&rarr;</b>
+          <button onClick={this.onNextClick} className="btn btn-info">
+            <b>{this.props.cards.length - 1 - this.state.playerEndInd}&rarr;</b>
           </button>
         );
       }
@@ -53,8 +86,8 @@ class Player extends React.Component {
       let outCards = [];
       if (this.props.cards.length > 10) {
         outCards = cards.slice(
-          this.props.playerStartInd,
-          this.props.playerEndInd + 1
+          this.state.playerStartInd,
+          this.state.playerEndInd + 1
         );
       } else {
         outCards = cards;
@@ -95,9 +128,5 @@ export default Player;
 
 Player.propTypes = {
   cards: PropTypes.array.isRequired,
-  playerStartInd: PropTypes.number.isRequired,
-  playerEndInd: PropTypes.number.isRequired,
-  onPrevClick: PropTypes.func.isRequired,
-  onNextClick: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired
 };

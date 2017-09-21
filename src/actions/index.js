@@ -11,13 +11,6 @@ export const clickOnRadioWhoMoveFirst = isFirstMovePlayer => ({
   payload: isFirstMovePlayer
 });
 
-export const clickOnPrev = () => ({
-  type: actionTypes.PREV_BUTTON_CLICKED
-});
-export const clickOnNext = () => ({
-  type: actionTypes.NEXT_BUTTON_CLICKED
-});
-
 export const clickOnCard = cardId => ({
   type: actionTypes.SOME_PLAYERS_CARD_CLICKED,
   payload: cardId

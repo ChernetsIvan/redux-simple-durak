@@ -3,18 +3,10 @@ import Player from "./../../../components/GameScreen/Player/Player";
 import { clickOnPrev, clickOnNext, clickOnCard } from "./../../../actions";
 
 const mapStateToProps = store => ({
-  cards: store.game.playerCards,
-  playerStartInd: store.game.playerStartInd,
-  playerEndInd: store.game.playerEndInd
+  cards: store.game.playerCards
 });
 
 const mapDispatchToProps = dispatch => ({
-  onPrevClick: () => {
-    dispatch(clickOnPrev());
-  },
-  onNextClick: () => {
-    dispatch(clickOnNext());
-  },
   onCardClick: cardId => {
     dispatch(clickOnCard(cardId));
   }
