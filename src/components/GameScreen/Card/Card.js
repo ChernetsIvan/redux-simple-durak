@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./Card.css";
+
 import clubSuit from "./../../../assets/card-suits/club.png";
 import diamondSuit from "./../../../assets/card-suits/diamond.png";
 import heartSuit from "./../../../assets/card-suits/heart.png";

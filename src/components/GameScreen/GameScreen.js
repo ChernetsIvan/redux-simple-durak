@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import "./Card/Card.css"; // Подключаем единожды, чтобы не объявлять в каждом из components
-
 //Компонент-представление
 import Field from "./Field";
 
