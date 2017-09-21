@@ -9,7 +9,7 @@ import { Button, Welcome } from "@storybook/react/demo";
 import "./../../public/libs/bootstrap/css/bootstrap.min.css";
 
 import Card from "./../components/GameScreen/Card/Card";
-import "./../components/GameScreen/Card/Card.css";
+
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -29,16 +29,16 @@ storiesOf("Card", module)
       <div class="row">{story()}</div>
     </div>
   ))
-  .add("Card with FALSE hidden flag", () => (
+  .add("with hidden=FALSE", () => (
     <Card
       id={1}
       rank={new Object({ text: "6", cardValue: 1 })}
-      suit={new Object({ suit: "K" })}
+      suit={new Object({ suit: "К" })}
       onCardClick={action("Card was clicked!")}
       bootStrapColClass={"col-1"}
       hidden={false}
     />
   ))
-  .add("Card with TRUE hidden flag", () => (
+  .add("with hidden=TRUE", () => (
     <Card key={2} bootStrapColClass="col-1" hidden={true} />
   ));
