@@ -7,7 +7,7 @@ class Status extends React.Component {
   render() {
     let outText = null;
 
-    if (this.props.fullDeck.length === 0 && !this.props.firstStart) {
+    if (this.props.fullDeck.length === 0) {
       if (this.props.computerCards.length === 0) {
         outText = statusMessages.PlayerLose;
       }
@@ -61,6 +61,5 @@ Status.propTypes = {
   gameMode: PropTypes.string,
   computerCards: PropTypes.array,
   playerCards: PropTypes.array,
-  fullDeck: PropTypes.array,
-  firstStart: PropTypes.bool
+  fullDeck: PropTypes.array
 };
