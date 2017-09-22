@@ -7,7 +7,7 @@ import GameScreenContainer from "./../containers/GameScreen/GameScreenContainer"
 class App extends Component {
   render() {
     let output = null;
-    if (this.props.isRenderSettingsForStartNewGame) {
+    if (this.props.showStartScreen) {
       output = <StartScreenContainer />;
     } else {
       output = <GameScreenContainer />;
@@ -17,7 +17,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  isRenderSettingsForStartNewGame: PropTypes.bool.isRequired
+  showStartScreen: PropTypes.bool.isRequired
 };
 
 export default App;

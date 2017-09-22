@@ -8,7 +8,7 @@ import PlayerActionsHandler from "./../utils/PlayerActionsHandler";
 import FieldsUtils from "./../utils/FieldsUtils";
 
 const initialState = {
-  isRenderSettingsForStartNewGame: true,
+  showStartScreen: true,
   trumpSuit: {},
   fullDeck: [],
   computerCards: [],
@@ -55,7 +55,7 @@ export default function game(state = initialState, action) {
 
     return {
       ...state,
-      isRenderSettingsForStartNewGame: false,
+      showStartScreen: false,
       trumpSuit: trumpSuit,
       fullDeck: fullDeck,
       computerCards: computerCards,
@@ -68,7 +68,7 @@ export default function game(state = initialState, action) {
   } else if (action.type === actionTypes.BEGIN_GAME_CLICKED) {
     return {
       ...state,
-      isRenderSettingsForStartNewGame: true
+      showStartScreen: true
     };
   } else if (action.type === actionTypes.WHO_MOVE_FIRST_CHANGED) {
     return {
