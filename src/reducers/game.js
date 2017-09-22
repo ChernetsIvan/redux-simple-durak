@@ -74,7 +74,7 @@ export default function game(state = initialState, action) {
     return {
       ...state,
       isFirstMovePlayer: action.payload
-    };  
+    };
   } else if (
     action.type === actionTypes.PLAYER_TAKE_CLICKED ||
     action.type === actionTypes.AI_TAKE_CLICKED ||

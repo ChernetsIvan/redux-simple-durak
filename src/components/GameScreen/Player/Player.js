@@ -51,13 +51,6 @@ class Player extends React.Component {
       );
     });
 
-    if (cards.length < 10) {
-      this.setState({
-        startInd: 0,
-        endInd: 9
-      });
-    }
-
     let output = null;
     if (this.props.cards.length > 0) {
       //Показ кнопок Prev и Next
