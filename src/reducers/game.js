@@ -17,9 +17,7 @@ const initialState = {
   playerCards: [],
   firstStart: true,
   isFirstMovePlayer: true,
-  gameMode: gameModes.PlayerAttack,
-  playerStartInd: 0,
-  playerEndInd: 9
+  gameMode: gameModes.PlayerAttack
 };
 
 export default function game(state = initialState, action) {
@@ -64,8 +62,6 @@ export default function game(state = initialState, action) {
       aiField: aiField,
       playerField: playerField,
       playerCards: playerCards,
-      playerStartInd: 0,
-      playerEndInd: 9,
       firstStart: false,
       gameMode: gameMode
     };
