@@ -11,12 +11,10 @@ storiesOf("Deck", module)
   .addDecorator(story => (
     <div className="container">
       <div className="row">
-        <div className="col-2">
-          {story()}
-        </div>
+        <div className="col-2">{story()}</div>
       </div>
     </div>
   ))
   .add("with 10 cards", () => <Deck cards={cards.slice(0, 10)} />)
   .add("with 30 cards", () => <Deck cards={cards.slice(5, 35)} />)
-  .add("with 1 cards", () => <Deck cards={cards.slice(35, 36)} />);
+  .add("with 1 card", () => <Deck cards={cards.slice(35, 36)} />);
