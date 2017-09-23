@@ -24,6 +24,16 @@ storiesOf("Card", module)
       hidden={false}
     />
   ))
+  .add("yet another", () => (
+    <Card
+      id={2}
+      rank={new Object({ text: "Д", cardValue: 7 })}
+      suit={new Object({ suit: "Б" })}
+      onCardClick={action("Card was clicked!")}
+      bootStrapColClass={"col-1"}
+      hidden={false}
+    />
+  ))
   .add("with hidden=TRUE", () => (
-    <Card key={2} bootStrapColClass="col-1" hidden={true} />
+    <Card id={3} bootStrapColClass="col-1" hidden={true} />
   ));
