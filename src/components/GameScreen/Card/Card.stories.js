@@ -10,8 +10,8 @@ import Card from "./Card";
 
 storiesOf("Card", module)
   .addDecorator(story => (
-    <div class="container">
-      <div class="row">{story()}</div>
+    <div className="container">
+      <div className="row">{story()}</div>
     </div>
   ))
   .add("with hidden=FALSE", () => (
