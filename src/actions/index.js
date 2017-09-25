@@ -25,3 +25,13 @@ export const clickOnAiTake = () => ({
 export const clickOnRemoveCards = () => ({
   type: actionTypes.REMOVE_CARDS_CLICKED
 });
+
+export const playerWin = () => ({
+  type: actionTypes.GAME_OVER_PLAYER_WIN
+});
+export const aiWin = () => ({
+  type: actionTypes.GAME_OVER_AI_WIN
+});
+export const theDraw = () => ({
+  type: actionTypes.GAME_OVER_WITH_DRAW
+});
