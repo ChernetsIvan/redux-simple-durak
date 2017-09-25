@@ -23,7 +23,7 @@ class AI extends React.Component {
 
       let outputCards = inputCards.map(elem => {
         return (
-          <Card id={elem.id} bootStrapColClass="col-1 ml-3" hidden={true} />
+          <Card key={elem.id} bootStrapColClass="col-1 ml-3" hidden={true} />
         );
       });
 

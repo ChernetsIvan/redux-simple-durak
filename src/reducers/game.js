@@ -6,6 +6,7 @@ import DeckUtils from "./../utils/DeckUtils";
 import AiActions from "./../utils/AiActions";
 import PlayerActionsHandler from "./../utils/PlayerActionsHandler";
 import FieldsUtils from "./../utils/FieldsUtils";
+import { analyze } from "./../utils/GameResultAnalyzer";
 
 const initialState = {
   showStartScreen: true,
@@ -150,6 +151,11 @@ export default function game(state = initialState, action) {
       default: {
         break;
       }
+    }
+
+    let gameResult = analyze(computerCards, playerCards, fullDeck);
+    if (gameResult !== "") {
+      gameMode = gameResult;
     }
 
     return {

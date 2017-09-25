@@ -6,41 +6,39 @@ import * as gameModes from "./../../constants/GameModes";
 class Status extends React.Component {
   render() {
     let outText = null;
-
-    if (this.props.fullDeck.length === 0) {
-      if (this.props.computerCards.length === 0) {
-        outText = statusMessages.PlayerLose;
+    switch (this.props.gameMode) {
+      case gameModes.PlayerAttack:
+      case gameModes.AiDefence: {
+        outText = statusMessages.PlayerAttack;
+        break;
       }
-      if (this.props.playerCards.length === 0) {
+      case gameModes.PlayerDefence:
+      case gameModes.AiAttack: {
+        outText = statusMessages.PlayerDefence;
+        break;
+      }
+      case gameModes.PlayerDiscard: {
+        outText = statusMessages.PlayerDiscard;
+        break;
+      }
+
+      case gameModes.PlayerWin: {
         outText = statusMessages.PlayerWin;
+        this.props.onPlayerWin();
+        break;
       }
-      if (
-        this.props.computerCards.length === 0 &&
-        this.props.playerCards.length === 0
-      ) {
+      case gameModes.AIWin: {
+        outText = statusMessages.PlayerLose;
+        this.props.onAiWin();
+        break;
+      }
+      case gameModes.TheDraw: {
         outText = statusMessages.GameResultDraw;
+        this.props.onTheDraw();
+        break;
       }
-    }
-
-    if (outText === null) {
-      switch (this.props.gameMode) {
-        case gameModes.PlayerAttack:
-        case gameModes.AiDefence: {
-          outText = statusMessages.PlayerAttack;
-          break;
-        }
-        case gameModes.PlayerDefence:
-        case gameModes.AiAttack: {
-          outText = statusMessages.PlayerDefence;
-          break;
-        }
-        case gameModes.PlayerDiscard: {
-          outText = statusMessages.PlayerDiscard;
-          break;
-        }
-        default: {
-          outText = null;
-        }
+      default: {
+        outText = null;
       }
     }
 
@@ -58,8 +56,5 @@ class Status extends React.Component {
 export default Status;
 
 Status.propTypes = {
-  gameMode: PropTypes.string,
-  computerCards: PropTypes.array,
-  playerCards: PropTypes.array,
-  fullDeck: PropTypes.array
+  gameMode: PropTypes.string
 };
