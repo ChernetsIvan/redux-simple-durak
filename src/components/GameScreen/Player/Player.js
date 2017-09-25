@@ -8,6 +8,7 @@ import Card from "./../Card/Card";
 import PlayerTakeButtonContainer from "./../../../containers/GameScreen/Player/Buttons/PlayerTakeButtonContainer";
 import AiTakeButtonContainer from "./../../../containers/GameScreen/Player/Buttons/AiTakeButtonContainer";
 import RemoveCardsButtonContainer from "./../../../containers/GameScreen/Player/Buttons/RemoveCardsButtonContainer";
+import ShowStatisticsLinkContainer from "./../../../containers/GameScreen/Player/ShowStatisticsLinkContainer";
 
 class Player extends React.Component {
   constructor(props) {
@@ -23,14 +24,14 @@ class Player extends React.Component {
   }
 
   onPrevClick() {
-    this.setState((prevState)=>({
+    this.setState(prevState => ({
       startInd: prevState.startInd - 1,
       endInd: prevState.endInd - 1
     }));
   }
 
   onNextClick() {
-    this.setState((prevState)=>({
+    this.setState(prevState => ({
       startInd: prevState.startInd + 1,
       endInd: prevState.endInd + 1
     }));
@@ -78,10 +79,7 @@ class Player extends React.Component {
       //Выводим максимум 10 карт: от startInd до endInd
       let outCards = [];
       if (this.props.cards.length > 10) {
-        outCards = cards.slice(
-          this.state.startInd,
-          this.state.endInd + 1
-        );
+        outCards = cards.slice(this.state.startInd, this.state.endInd + 1);
       } else {
         outCards = cards;
       }
@@ -110,6 +108,7 @@ class Player extends React.Component {
             <RemoveCardsButtonContainer />
             <AiTakeButtonContainer />
             <PlayerTakeButtonContainer />
+            <ShowStatisticsLinkContainer />
           </div>
         </div>
       </div>

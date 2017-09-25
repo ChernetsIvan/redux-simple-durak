@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router";
 
 class StartScreen extends Component {
   constructor(props) {
@@ -66,6 +67,11 @@ class StartScreen extends Component {
               >
                 {dash} Поехали!
               </button>
+            </div>
+          </div>
+          <div className="row justify-content-center mt-3">
+            <div className="col-auto">
+              <Link to="/statistics">Статистика игр</Link>
             </div>
           </div>
         </div>
