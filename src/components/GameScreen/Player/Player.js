@@ -10,6 +10,9 @@ import AiTakeButtonContainer from "./../../../containers/GameScreen/Player/Butto
 import RemoveCardsButtonContainer from "./../../../containers/GameScreen/Player/Buttons/RemoveCardsButtonContainer";
 import ShowStatisticsLinkContainer from "./../../../containers/GameScreen/Player/ShowStatisticsLinkContainer";
 
+import { PrevButton } from "./Buttons/PrevButton";
+import { NextButton } from "./Buttons/NextButton";
+
 class Player extends React.Component {
   constructor(props) {
     super(props);
@@ -38,45 +41,38 @@ class Player extends React.Component {
   }
 
   render() {
-    let cards = this.props.cards.map(el => {
-      return (
-        <Card
-          id={el.id}
-          key={el.id}
-          rank={el.rank}
-          suit={el.suit}
-          onCardClick={this.props.onCardClick}
-          bootStrapColClass="col-1"
-          hidden={false}
-        />
-      );
-    });
-
     let output = null;
     if (this.props.cards.length > 0) {
       //Показ кнопок Prev и Next
-      let out_PrevButton = null;
-      if (this.state.startInd > 0 && this.props.cards.length > 10) {
-        out_PrevButton = (
-          <button onClick={this.onPrevClick} className="btn btn-info">
-            <b>&larr;{this.state.startInd}</b>
-          </button>
-        );
-      }
-
-      let out_NextButton = null;
-      if (
-        this.state.endInd < this.props.cards.length - 1 &&
-        this.props.cards.length > 10
-      ) {
-        out_NextButton = (
-          <button onClick={this.onNextClick} className="btn btn-info">
-            <b>{this.props.cards.length - 1 - this.state.endInd}&rarr;</b>
-          </button>
-        );
-      }
+      let out_PrevButton = (
+        <PrevButton
+          startInd={this.state.startInd}
+          cards={this.props.cards}
+          onPrevClick={this.onPrevClick}
+        />
+      );
+      let out_NextButton = (
+        <NextButton
+          endInd={this.state.endInd}
+          cards={this.props.cards}
+          onNextClick={this.onNextClick}
+        />
+      );
 
       //Выводим максимум 10 карт: от startInd до endInd
+      let cards = this.props.cards.map(el => {
+        return (
+          <Card
+            id={el.id}
+            key={el.id}
+            rank={el.rank}
+            suit={el.suit}
+            onCardClick={this.props.onCardClick}
+            bootStrapColClass="col-1"
+            hidden={false}
+          />
+        );
+      });
       let outCards = [];
       if (this.props.cards.length > 10) {
         outCards = cards.slice(this.state.startInd, this.state.endInd + 1);
