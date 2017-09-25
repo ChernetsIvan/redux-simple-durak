@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 
-import StartScreenContainer from "./../containers/StartScreen/StartScreenContainer";
-import GameScreenContainer from "./../containers/GameScreen/GameScreenContainer";
-
-export const GameStatistics = props => {
+export const GameStatistics = ({
+  playerWins,
+  aiWins,
+  draws,
+  onBeginGameClick
+}) => {
   return (
     <div className="container">
       <div className="row justify-content-center mb-3 mt-5">
@@ -21,17 +23,15 @@ export const GameStatistics = props => {
           <h4 className="text-right">Всего сыграно, игр:</h4>
         </div>
         <div className="col-6">
-          <h4>{props.playerWins}</h4>
-          <h4>{props.draws}</h4>
-          <h4>{props.aiWins}</h4>
-          <h4>
-            {props.playerWins + props.aiWins + props.draws}
-          </h4>
+          <h4>{playerWins}</h4>
+          <h4>{draws}</h4>
+          <h4>{aiWins}</h4>
+          <h4>{playerWins + aiWins + draws}</h4>
         </div>
       </div>
       <div className="row justify-content-center">
         <div className="col-auto">
-          <Link to="/" onClick={props.onBeginGameClick}>
+          <Link to="/" onClick={onBeginGameClick}>
             Новая игра
           </Link>
         </div>
