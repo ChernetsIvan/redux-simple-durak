@@ -56,5 +56,8 @@ class Status extends React.Component {
 export default Status;
 
 Status.propTypes = {
-  gameMode: PropTypes.string
+  gameMode: PropTypes.string,
+  onPlayerWin: PropTypes.func,
+  onAiWin: PropTypes.func,
+  onTheDraw: PropTypes.func
 };

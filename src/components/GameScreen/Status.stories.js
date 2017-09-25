@@ -3,10 +3,9 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import Status from "./Status";
-import DeckUtils from "./../../utils/DeckUtils";
 import * as gameModes from "./../../constants/GameModes";
 
-const cards = DeckUtils.fillCards({ suit: "Б" });
+const emptyFunc = () => {};
 
 storiesOf("Status", module)
   .addDecorator(story => (
@@ -16,49 +15,49 @@ storiesOf("Status", module)
   ))
   .add("player lose", () => (
     <Status
-      gameMode={gameModes.PlayerAttack}
-      computerCards={cards.slice(0, 0)}
-      playerCards={cards.slice(0, 10)}
-      fullDeck={cards.slice(0, 0)}
+      gameMode={gameModes.AIWin}
+      onPlayerWin={emptyFunc}
+      onAiWin={emptyFunc}
+      onTheDraw={emptyFunc}
     />
   ))
   .add("player win", () => (
     <Status
-      gameMode={gameModes.PlayerAttack}
-      computerCards={cards.slice(0, 10)}
-      playerCards={cards.slice(0, 0)}
-      fullDeck={cards.slice(0, 0)}
+      gameMode={gameModes.PlayerWin}
+      onPlayerWin={emptyFunc}
+      onAiWin={emptyFunc}
+      onTheDraw={emptyFunc}
     />
   ))
   .add("the draw", () => (
     <Status
-      gameMode={gameModes.PlayerAttack}
-      computerCards={cards.slice(0, 0)}
-      playerCards={cards.slice(0, 0)}
-      fullDeck={cards.slice(0, 0)}
+      gameMode={gameModes.TheDraw}
+      onPlayerWin={emptyFunc}
+      onAiWin={emptyFunc}
+      onTheDraw={emptyFunc}
     />
   ))
   .add("player attack, AI defence", () => (
     <Status
       gameMode={gameModes.PlayerAttack}
-      computerCards={cards.slice(0, 10)}
-      playerCards={cards.slice(0, 10)}
-      fullDeck={cards}
+      onPlayerWin={emptyFunc}
+      onAiWin={emptyFunc}
+      onTheDraw={emptyFunc}
     />
   ))
   .add("AI attack, player defence", () => (
     <Status
       gameMode={gameModes.AiAttack}
-      computerCards={cards.slice(0, 10)}
-      playerCards={cards.slice(0, 10)}
-      fullDeck={cards}
+      onPlayerWin={emptyFunc}
+      onAiWin={emptyFunc}
+      onTheDraw={emptyFunc}
     />
   ))
   .add("AI taking cards, player discard him another cards", () => (
     <Status
       gameMode={gameModes.PlayerDiscard}
-      computerCards={cards.slice(0, 10)}
-      playerCards={cards.slice(0, 10)}
-      fullDeck={cards}
+      onPlayerWin={emptyFunc}
+      onAiWin={emptyFunc}
+      onTheDraw={emptyFunc}
     />
   ));
