@@ -79,7 +79,6 @@ export default Card;
 
 Card.propTypes = {
   id: PropTypes.number,
-  key: PropTypes.number.isRequired,
   rank: PropTypes.shape({
     text: PropTypes.text,
     cardValue: PropTypes.number

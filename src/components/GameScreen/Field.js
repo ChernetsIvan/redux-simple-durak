@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { InvisibleCard } from "./Card/InvisibleCard";
 import Card from "./Card/Card";
 
+import { uniqueId } from "lodash-es";
+
 export const Field = ({ cards }) => {
   let output = null;
 
@@ -12,9 +14,10 @@ export const Field = ({ cards }) => {
     output = <InvisibleCard />;
   } else {
     let out_cards = cards.map(el => {
+      let randKey = uniqueId();
       return (
         <Card
-          key={el.id}
+          key={randKey}
           rank={el.rank}
           suit={el.suit}
           bootStrapColClass={"col-1"}

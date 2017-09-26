@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { uniqueId } from "lodash-es";
 
 import { InvisibleCard } from "./../Card/InvisibleCard";
 import Card from "./../Card/Card";
@@ -61,10 +62,11 @@ class Player extends React.Component {
 
       //Выводим максимум 10 карт: от startInd до endInd
       let cards = this.props.cards.map(el => {
+        let randKey = uniqueId();
         return (
           <Card
+            key={randKey}
             id={el.id}
-            key={el.id}
             rank={el.rank}
             suit={el.suit}
             onCardClick={this.props.onCardClick}

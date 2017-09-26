@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import Card from "./Card/Card";
 import { HiddenCard } from "./Card/HiddenCard";
 
-import { uniqueId } from "lodash-es";
-
 export const Deck = ({cards}) => {
     var cardsWithoutLast = [];
     cardsWithoutLast = cards.concat();
@@ -29,9 +27,8 @@ export const Deck = ({cards}) => {
     let output_MockDeck = null;
     let output_CountOfCardsInDeck = null;
     if (cardsWithoutLast.length > 0) {
-      let randKey = uniqueId();
       output_MockDeck = (
-        <HiddenCard key={randKey} bootStrapColClass="col-6" />
+        <HiddenCard bootStrapColClass="col-6" />
       );
       output_CountOfCardsInDeck = cardsWithoutLast.length;
     }
