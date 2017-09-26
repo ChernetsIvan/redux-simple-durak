@@ -1,4 +1,5 @@
 import * as actionTypes from "./../constants/ActionTypes";
+import * as gameModes from "./../constants/GameModes";
 
 const initialState = {
   playerWins: 0,
@@ -7,21 +8,30 @@ const initialState = {
 };
 
 export default function statistics(state = initialState, action) {
-  if (action.type === actionTypes.GAME_OVER_AI_WIN) {
-    return {
-      ...state,
-      aiWins: state.aiWins + 1
-    };
-  } else if (action.type === actionTypes.GAME_OVER_PLAYER_WIN) {
-    return {
-      ...state,
-      playerWins: state.playerWins + 1
-    };
-  } else if (action.type === actionTypes.GAME_OVER_WITH_DRAW) {
-    return {
-      ...state,
-      draws: state.draws + 1
-    };
+  if (action.type === actionTypes.GAME_OVER) {
+    switch (action.payload) {
+      case gameModes.AIWin: {
+        return {
+          ...state,
+          aiWins: state.aiWins + 1
+        };
+      }
+      case gameModes.PlayerWin: {
+        return {
+          ...state,
+          playerWins: state.playerWins + 1
+        };
+      }
+      case gameModes.TheDraw: {
+        return {
+          ...state,
+          draws: state.draws + 1
+        };
+      }
+      default:{
+        return state;
+      }
+    }
   }
   return state;
 }

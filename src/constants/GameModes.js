@@ -8,3 +8,5 @@ export const AiDiscard = "AiDiscard"; //Игрок забирает: AI подб
 export const PlayerWin = "PlayerWin";
 export const AIWin = "AIWin";
 export const TheDraw = "TheDraw"; //Ничья
+
+export const NoCardsAI = "NoCardsAI";

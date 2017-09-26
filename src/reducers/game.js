@@ -6,7 +6,7 @@ import DeckUtils from "./../utils/DeckUtils";
 import AiActions from "./../utils/AiActions";
 import PlayerActionsHandler from "./../utils/PlayerActionsHandler";
 import FieldsUtils from "./../utils/FieldsUtils";
-import { analyze } from "./../utils/GameResultAnalyzer";
+import { analyze } from "./../utils/GameStatusAnalyzer";
 
 const initialState = {
   showStartScreen: true,

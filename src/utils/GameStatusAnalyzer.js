@@ -1,4 +1,4 @@
-import {PlayerWin, AIWin, TheDraw} from "./../constants/GameModes";
+import {PlayerWin, AIWin, TheDraw, NoCardsAI} from "./../constants/GameModes";
 
 export const analyze = (computerCards, playerCards, fullDeck) => {
   if (fullDeck.length === 0) {
@@ -11,6 +11,9 @@ export const analyze = (computerCards, playerCards, fullDeck) => {
     if (computerCards.length === 0 && playerCards.length === 0) {
       return TheDraw;
     }
+  }
+  if(computerCards.length===0){
+    return NoCardsAI;
   }
   return "";
 };

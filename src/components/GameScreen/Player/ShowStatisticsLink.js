@@ -5,6 +5,16 @@ import { Link } from "react-router";
 import * as gameModes from "./../../../constants/GameModes";
 
 class ShowStatisticsLink extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+  
+  onClick(){
+    this.props.onGameOverClick(this.props.gameMode);
+  }
+
   render() {
     let dash = <span>&mdash;</span>;
     let link = null;
@@ -17,8 +27,9 @@ class ShowStatisticsLink extends React.Component {
         <Link
           to="/statistics"
           className="btn btn-secondary ml-2"
+          onClick={this.onClick}
         >
-          {dash} Показать статистику!
+          {dash} Игра закончена, смотреть статистику!
         </Link>
       );
     }
@@ -29,5 +40,6 @@ class ShowStatisticsLink extends React.Component {
 export default ShowStatisticsLink;
 
 ShowStatisticsLink.propTypes = {
-  gameMode: PropTypes.string.isRequired
+  gameMode: PropTypes.string.isRequired,
+  onGameOverClick: PropTypes.func.isRequired
 };
