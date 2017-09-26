@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const NextButton = props => {
+export const NextButton = ({endInd, cards, onNextClick}) => {
   let out = null;
-  if (props.endInd < props.cards.length - 1 && props.cards.length > 10) {
+  if (endInd < cards.length - 1 && cards.length > 10) {
     out = (
-      <button onClick={props.onNextClick} className="btn btn-info">
-        <b>{props.cards.length - 1 - props.endInd}&rarr;</b>
+      <button onClick={onNextClick} className="btn btn-info">
+        <b>{cards.length - 1 - endInd}&rarr;</b>
       </button>
     );
   }

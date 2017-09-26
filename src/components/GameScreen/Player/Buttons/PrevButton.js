@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const PrevButton = props => {
+export const PrevButton = ({startInd, cards, onPrevClick}) => {
   let out = null;
-  if (props.startInd > 0 && props.cards.length > 10) {
+  if (startInd > 0 && cards.length > 10) {
     out = (
-      <button onClick={props.onPrevClick} className="btn btn-info">
-        <b>&larr;{props.startInd}</b>
+      <button onClick={onPrevClick} className="btn btn-info">
+        <b>&larr;{startInd}</b>
       </button>
     );
   }
