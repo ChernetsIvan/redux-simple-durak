@@ -21,6 +21,7 @@ export const statusMessages = {
   PlayerAttack: "Ваш ход!",
   PlayerDefence: "Защищайтесь!",
   PlayerDiscard: "Беру! Подбрасывать будете?",
+  NoCardsAI: "У меня закончились карты!",
   PlayerLose: "Вы проиграли! Сыграем ещё раз ? :)",
   PlayerWin: "Вы выиграли! Поздравляю :)",
   GameResultDraw: "Ничья!"

@@ -15,8 +15,8 @@ class PlayerActionsHandler {
     fullDeck,
     computerCards
   ) {
-    //У Игрока есть карты?
-    if (playerCards.length > 0) {
+    //У Игрока и у AI есть карты?
+    if (playerCards.length > 0 && computerCards.length > 0) {
       playerCards.every(function(element, index, array) {
         //Это та карта, что выбрал Игрок?
         if (element.id === cardID) {

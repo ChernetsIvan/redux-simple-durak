@@ -73,7 +73,7 @@ class AiActions {
     playerCards
   ) {
     if (gameMode === gameModes.AiAttack) {
-      if (computerCards.length > 0) {
+      if (computerCards.length > 0 && playerCards.length > 0) {
         DeckUtils.sortInputDeckByPower(computerCards, true);
 
         //Это начало Атаки - первый ход?

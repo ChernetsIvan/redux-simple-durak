@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
-import Status from "./../../components/GameScreen/Status";
+import { Status } from "./../../components/GameScreen/Status";
 
 import { playerWin, aiWin, theDraw } from "./../../actions";
 
 const mapStateToProps = store => ({
-  gameMode: store.game.gameMode
+  gameMode: store.game.gameMode,
+  computerCards: store.game.computerCards,
+  fullDeck: store.game.fullDeck
 });
 
 const mapDispatchToProps = dispatch => ({
