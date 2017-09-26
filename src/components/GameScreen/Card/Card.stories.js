@@ -14,26 +14,21 @@ storiesOf("Card", module)
       <div className="row">{story()}</div>
     </div>
   ))
-  .add("with hidden=FALSE", () => (
+  .add("first", () => (
     <Card
       id={1}
       rank={new Object({ text: "6", cardValue: 1 })}
       suit={new Object({ suit: "К" })}
       onCardClick={action("Card was clicked!")}
       bootStrapColClass={"col-1"}
-      hidden={false}
     />
   ))
-  .add("yet another", () => (
+  .add("second", () => (
     <Card
       id={2}
       rank={new Object({ text: "Д", cardValue: 7 })}
       suit={new Object({ suit: "Б" })}
       onCardClick={action("Card was clicked!")}
       bootStrapColClass={"col-1"}
-      hidden={false}
     />
-  ))
-  .add("with hidden=TRUE", () => (
-    <Card id={3} bootStrapColClass="col-1" hidden={true} />
   ));
