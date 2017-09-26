@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import GameScreen from "./../../components/GameScreen/GameScreen";
+import { GameScreen } from "./../../components/GameScreen/GameScreen";
 
 import { clickOnBeginGameButton } from "./../../actions";
 

@@ -98,6 +98,7 @@ export default Card;
 
 Card.propTypes = {
   id: PropTypes.number,
+  key: PropTypes.number.isRequired,
   rank: PropTypes.shape({
     text: PropTypes.text,
     cardValue: PropTypes.number
@@ -106,6 +107,6 @@ Card.propTypes = {
     suit: PropTypes.string
   }),
   onCardClick: PropTypes.func,
-  bootStrapColClass: PropTypes.string,
-  hidden: PropTypes.bool
+  bootStrapColClass: PropTypes.string.isRequired,
+  hidden: PropTypes.bool.isRequired
 };

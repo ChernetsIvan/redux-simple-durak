@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import InvisibleCard from "./../Card/InvisibleCard";
+import { InvisibleCard } from "./../Card/InvisibleCard";
 import Card from "./../Card/Card";
 
 //Классы-контейнеры кнопок

@@ -46,8 +46,6 @@ export const GameScreen = ({ onBeginGameClick, aiField, playerField }) => {
   );
 };
 
-export default GameScreen;
-
 GameScreen.propTypes = {
   onBeginGameClick: PropTypes.func.isRequired,
   aiField: PropTypes.array.isRequired,
