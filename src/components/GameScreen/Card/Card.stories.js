@@ -14,7 +14,7 @@ storiesOf("Card", module)
       <div className="row">{story()}</div>
     </div>
   ))
-  .add("first", () => (
+  .add("first example", () => (
     <Card
       id={1}
       rank={new Object({ text: "6", cardValue: 1 })}
@@ -23,7 +23,7 @@ storiesOf("Card", module)
       bootStrapColClass={"col-1"}
     />
   ))
-  .add("second", () => (
+  .add("second example", () => (
     <Card
       id={2}
       rank={new Object({ text: "Д", cardValue: 7 })}
