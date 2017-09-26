@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 //Компонент-представление
-import Field from "./Field";
+import { Field } from "./Field";
 
 //Компоненты-контейнеры
 import StatusContainer from "./../../containers/GameScreen/StatusContainer";

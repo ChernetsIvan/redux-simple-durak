@@ -69,7 +69,6 @@ class Player extends React.Component {
             suit={el.suit}
             onCardClick={this.props.onCardClick}
             bootStrapColClass="col-1"
-            hidden={false}
           />
         );
       });

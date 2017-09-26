@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "./Card";
+import { HiddenCard } from "./HiddenCard";
 
 import { uniqueId } from "lodash-es";
 
@@ -11,7 +11,7 @@ export const InvisibleCard = () => {
   return (
     <div className="container invisible">
       <div className="row">
-        <Card key={randKey} bootStrapColClass="col-1" hidden={true} />
+        <HiddenCard key={randKey} bootStrapColClass="col-1" />
       </div>
     </div>
   );

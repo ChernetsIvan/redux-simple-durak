@@ -4,38 +4,32 @@ import PropTypes from "prop-types";
 import { InvisibleCard } from "./Card/InvisibleCard";
 import Card from "./Card/Card";
 
-class Field extends React.Component {
-  render() {
-    let output = null;
+export const Field = ({ cards }) => {
+  let output = null;
 
-    let cards = this.props.cards.map(el => {
+  //Чтобы "не скакала" разметка:
+  if (cards.length === 0) {
+    output = <InvisibleCard />;
+  } else {
+    let out_cards = cards.map(el => {
       return (
         <Card
           key={el.id}
           rank={el.rank}
           suit={el.suit}
           bootStrapColClass={"col-1"}
-          hidden={false}
         />
       );
     });
-
-    //Чтобы "не скакала" разметка:
-    if (this.props.cards.length === 0) {
-      output = <InvisibleCard />;
-    } else {
-      output = (
-        <div className="container">
-          <div className="row">{cards}</div>
-        </div>
-      );
-    }
-    return output;
+    output = (
+      <div className="container">
+        <div className="row">{out_cards}</div>
+      </div>
+    );
   }
-}
-
-export default Field;
+  return output;
+};
 
 Field.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.array.isRequired
 };

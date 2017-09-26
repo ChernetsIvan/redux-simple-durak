@@ -22,74 +22,55 @@ class Card extends React.Component {
   }
 
   render() {
-    let classAttr = this.props.bootStrapColClass + " card mb-1";
-
-    let output = null;
-    let randKey = uniqueId();
-    if (this.props.hidden === true) {
-      //Отрисовываем карту рубашкой кверху
-
-      classAttr = classAttr + " shirt";
-
-      output = <div key={randKey} className={classAttr} />;
-    } else {
-      //Показываем карту Игроку
-
-      let suit = this.props.suit.suit.toString();
-      let rank = this.props.rank.text.toString();
-
-      let suitImg;
-      let sizeText;
-      switch (suit) {
-        case "Ч": {
-          suitImg = heartSuit;
-          sizeText = <b className="redText">{rank}</b>;
-          break;
-        }
-        case "К": {
-          suitImg = clubSuit;
-          sizeText = <b className="blackText">{rank}</b>;
-          break;
-        }
-        case "П": {
-          suitImg = spadeSuit;
-          sizeText = <b className="blackText">{rank}</b>;
-          break;
-        }
-        case "Б": {
-          suitImg = diamondSuit;
-          sizeText = <b className="redText">{rank}</b>;
-          break;
-        }
-        default:
-          suitImg = null;
+    let suit = this.props.suit.suit.toString();
+    let rank = this.props.rank.text.toString();
+    let suitImg, sizeText;
+    switch (suit) {
+      case "Ч": {
+        suitImg = heartSuit;
+        sizeText = <b className="redText">{rank}</b>;
+        break;
       }
-
-      output = (
-        <div
-          key={randKey}
-          onClick={this.handleClickOnCard}
-          className={classAttr}
-        >
-          <div className="row">
-            <b className="ml-1">{sizeText}</b>
-          </div>
-          <div className="row">
-            <img className="littleSuitImg ml-1" src={suitImg} alt="" />
-          </div>
-          <div className="row justify-content-center">
-            <img className="bigSuitImg my-2" src={suitImg} alt="" />
-          </div>
-          <div className="row justify-content-end">
-            <img className="littleSuitImg rotated mr-1" src={suitImg} alt="" />
-          </div>
-          <div className="row justify-content-end">
-            <b className="rotated mr-1">{sizeText}</b>
-          </div>
-        </div>
-      );
+      case "К": {
+        suitImg = clubSuit;
+        sizeText = <b className="blackText">{rank}</b>;
+        break;
+      }
+      case "П": {
+        suitImg = spadeSuit;
+        sizeText = <b className="blackText">{rank}</b>;
+        break;
+      }
+      case "Б": {
+        suitImg = diamondSuit;
+        sizeText = <b className="redText">{rank}</b>;
+        break;
+      }
+      default:
+        break;
     }
 
+    let classAttr = this.props.bootStrapColClass + " card mb-1";
+    let randKey = uniqueId();
+    let output = (
+      <div key={randKey} onClick={this.handleClickOnCard} className={classAttr}>
+        <div className="row">
+          <b className="ml-1">{sizeText}</b>
+        </div>
+        <div className="row">
+          <img className="littleSuitImg ml-1" src={suitImg} alt="" />
+        </div>
+        <div className="row justify-content-center">
+          <img className="bigSuitImg my-2" src={suitImg} alt="" />
+        </div>
+        <div className="row justify-content-end">
+          <img className="littleSuitImg rotated mr-1" src={suitImg} alt="" />
+        </div>
+        <div className="row justify-content-end">
+          <b className="rotated mr-1">{sizeText}</b>
+        </div>
+      </div>
+    );
     return output;
   }
 }
@@ -102,11 +83,10 @@ Card.propTypes = {
   rank: PropTypes.shape({
     text: PropTypes.text,
     cardValue: PropTypes.number
-  }),
+  }).isRequired,
   suit: PropTypes.shape({
     suit: PropTypes.string
-  }),
+  }).isRequired,
   onCardClick: PropTypes.func,
-  bootStrapColClass: PropTypes.string.isRequired,
-  hidden: PropTypes.bool.isRequired
+  bootStrapColClass: PropTypes.string.isRequired
 };

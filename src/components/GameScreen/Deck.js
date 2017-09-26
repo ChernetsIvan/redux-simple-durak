@@ -2,18 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Card from "./Card/Card";
+import { HiddenCard } from "./Card/HiddenCard";
 
 import { uniqueId } from "lodash-es";
 
-class Deck extends React.Component {
-  render() {
-    //перекопируем массив, дабы не влиять...
-    //...на массив cards при pop() после 'отделения' последнего - козыря игры
+export const Deck = ({cards}) => {
     var cardsWithoutLast = [];
-    cardsWithoutLast = this.props.cards.concat();
+    cardsWithoutLast = cards.concat();
     let trumpCard = cardsWithoutLast.pop();
 
-    //1)Козырь.
+    //1)Козырная карта.
     let output_TrumpCard = null;
     if (trumpCard !== undefined) {
       //"Переопределяем" bootstrap-класс col-6 вместо col-1:
@@ -27,13 +25,13 @@ class Deck extends React.Component {
       );
     }
 
-    //2)Колода.
+    //2)Имитация колоды.
     let output_MockDeck = null;
     let output_CountOfCardsInDeck = null;
     if (cardsWithoutLast.length > 0) {
       let randKey = uniqueId();
       output_MockDeck = (
-        <Card key={randKey} bootStrapColClass="col-6" hidden={true} />
+        <HiddenCard key={randKey} bootStrapColClass="col-6" />
       );
       output_CountOfCardsInDeck = cardsWithoutLast.length;
     }
@@ -59,10 +57,7 @@ class Deck extends React.Component {
       </div>
     );
     return output;
-  }
-}
-
-export default Deck;
+};
 
 Deck.propTypes = {
   cards: PropTypes.array

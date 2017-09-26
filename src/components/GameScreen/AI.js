@@ -2,58 +2,50 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { InvisibleCard } from "./Card/InvisibleCard";
-import Card from "./Card/Card";
+import { HiddenCard } from "./Card/HiddenCard";
 
-class AI extends React.Component {
-  render() {
-    let output = null;
-    if (this.props.cards.length > 0) {
-      //Не забываем, что выводим только первые 9 рубашкой кверху карт
-
-      let inputCards = [];
-      inputCards = this.props.cards.concat();
-      //И показываем, сколько не видно
-      let countOfCardsThatNotShown = 0;
-      let out_countOfCardsThatNotShown = null;
-      while (inputCards.length > 9) {
-        inputCards.pop();
-        countOfCardsThatNotShown++;
-        out_countOfCardsThatNotShown = <b>+{countOfCardsThatNotShown}</b>;
-      }
-
-      let outputCards = inputCards.map(elem => {
-        return (
-          <Card key={elem.id} bootStrapColClass="col-1 ml-3" hidden={true} />
-        );
-      });
-
-      output = (
-        <div className="container mt-1">
-          <div className="row justify-content-center">
-            {outputCards}
-            <div className="col-1 align-self-center">
-              {out_countOfCardsThatNotShown}
-            </div>
-          </div>
-        </div>
-      );
-    } else {
-      output = <InvisibleCard />;
+export const AI = ({ cards }) => {
+  let output = null;
+  if (cards.length > 0) {
+    let inputCards = [];
+    inputCards = cards.concat();
+    let countOfCardsThatNotShown = 0; //сколько карт не видно
+    let out_countOfCardsThatNotShown = null;
+    //Выводим только первые 9 рубашкой кверху карт
+    while (inputCards.length > 9) {
+      inputCards.pop();
+      countOfCardsThatNotShown++;
+      out_countOfCardsThatNotShown = <b>+{countOfCardsThatNotShown}</b>;
     }
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-1" />
-          <div className="col-10">{output}</div>
-          <div className="col-1" />
+
+    let outputCards = inputCards.map(elem => {
+      return <HiddenCard key={elem.id} bootStrapColClass="col-1 ml-3" />;
+    });
+
+    output = (
+      <div className="container mt-1">
+        <div className="row justify-content-center">
+          {outputCards}
+          <div className="col-1 align-self-center">
+            {out_countOfCardsThatNotShown}
+          </div>
         </div>
       </div>
     );
+  } else {
+    output = <InvisibleCard />;
   }
-}
-
-export default AI;
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-1" />
+        <div className="col-10">{output}</div>
+        <div className="col-1" />
+      </div>
+    </div>
+  );
+};
 
 AI.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.array.isRequired
 };

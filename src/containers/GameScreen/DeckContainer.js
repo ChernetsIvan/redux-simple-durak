@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Deck from "./../../components/GameScreen/Deck";
+import { Deck } from "./../../components/GameScreen/Deck";
 
 const mapStateToProps = store => ({
   cards: store.game.fullDeck
