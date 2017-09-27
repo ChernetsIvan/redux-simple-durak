@@ -11,4 +11,4 @@ storiesOf("HiddenCard", module)
       <div className="row">{story()}</div>
     </div>
   ))
-  .add("first", () => <HiddenCard bootStrapColClass={"col-1"} />);
+  .add("example", () => <HiddenCard bootStrapColClass={"col-1"} />);

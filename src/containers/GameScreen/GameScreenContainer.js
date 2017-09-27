@@ -6,7 +6,8 @@ import { clickOnBeginGameButton } from "./../../actions";
 
 const mapStateToProps = store => ({
   aiField: store.game.aiField,
-  playerField: store.game.playerField
+  playerField: store.game.playerField,
+  gameMode: store.game.gameMode
 });
 
 const mapDispatchToProps = dispatch => ({
