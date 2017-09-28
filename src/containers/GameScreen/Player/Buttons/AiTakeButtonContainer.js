@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import AiTakeButton from "./../../../../components/GameScreen/Player/Buttons/AiTakeButton";
+import { AiTakeButton } from "./../../../../components/GameScreen/Player/Buttons/AiTakeButton";
 import { clickOnAiTake } from "./../../../../actions";
 
 const mapStateToProps = store => ({

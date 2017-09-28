@@ -3,24 +3,20 @@ import PropTypes from "prop-types";
 
 import * as gameModes from "./../../../../constants/GameModes";
 
-class AiTakeButton extends React.Component {
-  render() {
-    let dash = <span>&mdash;</span>;
-    let button = null;
-    if (this.props.gameMode === gameModes.PlayerDiscard) {
-      button = (
-        <button className="btn btn-success" onClick={this.props.onAiTakeClick}>
-          {dash} Подбросить нечего, забирай!
-        </button>
-      );
-    } else {
-      button = null;
-    }
-    return button;
+export const AiTakeButton = ({ gameMode, onAiTakeClick }) => {
+  let dash = <span>&mdash;</span>;
+  let button = null;
+  if (gameMode === gameModes.PlayerDiscard) {
+    button = (
+      <button className="btn btn-success" onClick={onAiTakeClick}>
+        {dash} Подбросить нечего, забирай!
+      </button>
+    );
+  } else {
+    button = null;
   }
-}
-
-export default AiTakeButton;
+  return button;
+};
 
 AiTakeButton.propTypes = {
   gameMode: PropTypes.string.isRequired,
