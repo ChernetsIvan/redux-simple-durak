@@ -7,7 +7,7 @@ import { GameStatistics } from "./GameStatistics";
 
 storiesOf("GameStatistics", module).add("example", () => (
   <GameStatistics
-    playerWins={3}
+    playerWins={7}
     aiWins={4}
     draws={5}
     onBeginGameClick={action("Link was clicked!")}
