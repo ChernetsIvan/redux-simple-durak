@@ -1,20 +1,20 @@
 import {PlayerWin, AIWin, TheDraw, NoCardsAI} from "./../constants/GameModes";
 
-export const analyze = (computerCards, playerCards, fullDeck) => {
+export const analyze = (aiCards, playerCards, fullDeck) => {
   let result = "";
+  if(aiCards.length===0){
+    result =  NoCardsAI;
+  }
   if (fullDeck.length === 0) {
-    if (computerCards.length === 0) {
+    if (aiCards.length === 0) {
       result = AIWin;
     }
     if (playerCards.length === 0) {
       result = PlayerWin;
     }
-    if (computerCards.length === 0 && playerCards.length === 0) {
+    if (aiCards.length === 0 && playerCards.length === 0) {
       result = TheDraw;
     }
-  }
-  if(computerCards.length===0){
-    result =  NoCardsAI;
-  }
+  }  
   return result;
 };

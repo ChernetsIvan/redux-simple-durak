@@ -13,10 +13,10 @@ class PlayerActionsHandler {
     aiField,
     trumpSuit,
     fullDeck,
-    computerCards
+    aiCards
   ) {
     //У Игрока и у AI есть карты?
-    if (playerCards.length > 0 && computerCards.length > 0) {
+    if (playerCards.length > 0 && aiCards.length > 0) {
       playerCards.every(function(element, index, array) {
         //Это та карта, что выбрал Игрок?
         if (element.id === cardID) {
@@ -37,7 +37,7 @@ class PlayerActionsHandler {
               gameMode = AiActions.makeAi_Defence_Move(
                 gameMode,
                 playerField,
-                computerCards,
+                aiCards,
                 aiField,
                 trumpSuit
               );
@@ -73,7 +73,7 @@ class PlayerActionsHandler {
                 //заставляем AI сделать ход атаки
                 gameMode = AiActions.makeAi_Attack_Move(
                   gameMode,
-                  computerCards,
+                  aiCards,
                   aiField,
                   playerField,
                   fullDeck,
@@ -96,7 +96,7 @@ class PlayerActionsHandler {
     playerCards,
     aiField,
     fullDeck,
-    computerCards,
+    aiCards,
     gameMode
   ) {
     //TODO - тут написать обработку сброса карт для AI
@@ -111,12 +111,12 @@ class PlayerActionsHandler {
     DeckUtils.sortInputDeckByPower(playerCards, true);
 
     //AI набирает из fullDeck
-    DeckUtils.giveUpToSixCards(fullDeck, computerCards);
+    DeckUtils.giveUpToSixCards(fullDeck, aiCards);
 
     gameMode = gameModes.AiAttack;
     gameMode = AiActions.makeAi_Attack_Move(
       gameMode,
-      computerCards,
+      aiCards,
       aiField,
       playerField,
       fullDeck,
@@ -128,7 +128,7 @@ class PlayerActionsHandler {
   //Обработка нажатия на кнопку "Подбросить нечего, забирай!"
   static handleClickOnAiTakeButton(
     playerField,
-    computerCards,
+    aiCards,
     aiField,
     fullDeck,
     playerCards,
@@ -136,10 +136,10 @@ class PlayerActionsHandler {
   ) {
     //Позволяем AI Забрать все карты: и с playerField, и с aiField
     while (playerField.length > 0) {
-      computerCards.push(playerField.pop());
+      aiCards.push(playerField.pop());
     }
     while (aiField.length > 0) {
-      computerCards.push(aiField.pop());
+      aiCards.push(aiField.pop());
     }
 
     //Player набирает из fullDeck

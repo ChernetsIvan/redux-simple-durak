@@ -9,7 +9,7 @@ class FieldsUtils {
     playerField,
     fullDeck,
     playerCards,
-    computerCards
+    aiCards
   ) {
     while (aiField.length > 0) {
       aiField.pop();
@@ -20,9 +20,9 @@ class FieldsUtils {
 
     if (givePlayerFirst) {
       DeckUtils.giveUpToSixCards(fullDeck, playerCards);
-      DeckUtils.giveUpToSixCards(fullDeck, computerCards);
+      DeckUtils.giveUpToSixCards(fullDeck, aiCards);
     } else {
-      DeckUtils.giveUpToSixCards(fullDeck, computerCards);
+      DeckUtils.giveUpToSixCards(fullDeck, aiCards);
       DeckUtils.giveUpToSixCards(fullDeck, playerCards);
     }
     DeckUtils.sortInputDeckByPower(playerCards, true);

@@ -8,23 +8,23 @@ class AiActions {
   static makeAi_Defence_Move(
     gameMode,
     playerField,
-    computerCards,
+    aiCards,
     aiField,
     trumpSuit
   ) {
     if (gameMode === gameModes.AiDefence) {
       let cardToBeat = playerField[playerField.length - 1];
-      DeckUtils.sortInputDeckByPower(computerCards, true);
+      DeckUtils.sortInputDeckByPower(aiCards, true);
 
       //Сначала пытаемся отбиться НЕ козырем
-      let result = computerCards.every(function(element, index, array) {
+      let result = aiCards.every(function(element, index, array) {
         if (element.power > cardToBeat.power) {
           if (element.suit.suit === cardToBeat.suit.suit) {
             //сила карты больше, масть сходится ->
             //делаем ход минимально возможной по силе - картой.
             //возможно - козырной, если отбиваем тоже козырную.
             aiField.push(element);
-            computerCards.splice(index, 1);
+            aiCards.splice(index, 1);
             gameMode = gameModes.PlayerAttack;
             return false;
           }
@@ -37,7 +37,7 @@ class AiActions {
 
       //Пытаемся отбиться козырем
       //Значит "отбиваемая" карта -> НЕ козырная
-      result = computerCards.every(function(element, index, array) {
+      result = aiCards.every(function(element, index, array) {
         if (element.power > cardToBeat.power) {
           if (element.suit.suit === trumpSuit.suit) {
             //ВОТ ТУТ будем модифицировать, чтобы при козыре Б не
@@ -46,7 +46,7 @@ class AiActions {
             //сила карты больше, масть НЕ сходится ->
             //делаем ход козырной, минимально возможной по силе - картой.
             aiField.push(element);
-            computerCards.splice(index, 1);
+            aiCards.splice(index, 1);
             gameMode = gameModes.PlayerAttack;
             return false;
           }
@@ -66,33 +66,33 @@ class AiActions {
   //AI: Сделать ход 'атаки'
   static makeAi_Attack_Move(
     gameMode,
-    computerCards,
+    aiCards,
     aiField,
     playerField,
     fullDeck,
     playerCards
   ) {
     if (gameMode === gameModes.AiAttack) {
-      if (computerCards.length > 0 && playerCards.length > 0) {
-        DeckUtils.sortInputDeckByPower(computerCards, true);
+      if (aiCards.length > 0 && playerCards.length > 0) {
+        DeckUtils.sortInputDeckByPower(aiCards, true);
 
         //Это начало Атаки - первый ход?
         if (aiField.length === 0) {
           //Выясняем, с чего бы лучше походить.
           //Ищем одинаковые по power и rank.cardValue.
-          //Для этого сначала нужно выяснить, есть ли в computerCards
+          //Для этого сначала нужно выяснить, есть ли в aiCards
           //одинаковые по rank.cardValue карты. А уже благодаря
           //сортировке по power они будут рядом
-          for (let i = 0; i < computerCards.length - 1; i++) {
-            let cCard = computerCards[i];
-            for (let j = i + 1; j < computerCards.length; j++) {
-              if (cCard.rank.cardValue === computerCards[j].rank.cardValue) {
+          for (let i = 0; i < aiCards.length - 1; i++) {
+            let cCard = aiCards[i];
+            for (let j = i + 1; j < aiCards.length; j++) {
+              if (cCard.rank.cardValue === aiCards[j].rank.cardValue) {
                 //Одинаковые по размеру.
                 //Тогда ходим этой и выходим.
                 return AiActions.aiContinueAttack(
                   i,
                   aiField,
-                  computerCards,
+                  aiCards,
                   gameMode
                 );
               }
@@ -102,7 +102,7 @@ class AiActions {
           return AiActions.aiContinueAttack(
             0,
             aiField,
-            computerCards,
+            aiCards,
             gameMode
           );
         } else {
@@ -112,7 +112,7 @@ class AiActions {
           //Поочерёдно проверяем наши отсортированные карты и выбираем ту,
           //которой МОЖНО (см. далее - будет проверка->ВЫГОДНО) атаковать
           let indexCardWeMayAttack = null;
-          computerCards.every(function(element, index, array) {
+          aiCards.every(function(element, index, array) {
             if (
               FieldsUtils.isFieldsContainSuchCard(element, aiField, playerField)
             ) {
@@ -130,30 +130,30 @@ class AiActions {
               playerField,
               fullDeck,
               playerCards,
-              computerCards
+              aiCards
             );
           }
           //Найдена карта, которой МОЖНО было бы атаковать.
           //А это ВЫГОДНО?
-          if (computerCards[indexCardWeMayAttack].power < 10) {
+          if (aiCards[indexCardWeMayAttack].power < 10) {
             //Эта карта - даже не козырь. Атакуем.
             return AiActions.aiContinueAttack(
               indexCardWeMayAttack,
               aiField,
-              computerCards,
+              aiCards,
               gameMode
             );
           } else {
             //Козырь - а его жалко. Анализируем дальше.
             //Этот козырь - больше 10-ки?
-            if (computerCards[indexCardWeMayAttack].power > 50) {
+            if (aiCards[indexCardWeMayAttack].power > 50) {
               //Это В,Д,К или Т.
               if (fullDeck.length === 0) {
-                if (computerCards.length === 1) {
+                if (aiCards.length === 1) {
                   return AiActions.aiContinueAttack(
                     indexCardWeMayAttack,
                     aiField,
-                    computerCards,
+                    aiCards,
                     gameMode
                   );
                 } else {
@@ -163,7 +163,7 @@ class AiActions {
                     playerField,
                     fullDeck,
                     playerCards,
-                    computerCards
+                    aiCards
                   );
                 }
               } else {
@@ -173,7 +173,7 @@ class AiActions {
                   playerField,
                   fullDeck,
                   playerCards,
-                  computerCards
+                  aiCards
                 );
               }
             } else {
@@ -186,14 +186,14 @@ class AiActions {
                   playerField,
                   fullDeck,
                   playerCards,
-                  computerCards
+                  aiCards
                 );
               } else {
                 //Близок конец игры. Атакуем.
                 return AiActions.aiContinueAttack(
                   indexCardWeMayAttack,
                   aiField,
-                  computerCards,
+                  aiCards,
                   gameMode
                 );
               }
@@ -204,9 +204,9 @@ class AiActions {
     }
   }
 
-  static aiContinueAttack(indexCardToAttack, aiField, computerCards, gameMode) {
-    aiField.push(computerCards[indexCardToAttack]);
-    computerCards.splice(indexCardToAttack, 1);
+  static aiContinueAttack(indexCardToAttack, aiField, aiCards, gameMode) {
+    aiField.push(aiCards[indexCardToAttack]);
+    aiCards.splice(indexCardToAttack, 1);
     gameMode = gameModes.PlayerDefence;
     return gameMode;
   }
@@ -217,7 +217,7 @@ class AiActions {
     playerField,
     fullDeck,
     playerCards,
-    computerCards
+    aiCards
   ) {
     FieldsUtils.removeCardsFromFieldsAndGiveCards(
       false,
@@ -225,7 +225,7 @@ class AiActions {
       playerField,
       fullDeck,
       playerCards,
-      computerCards
+      aiCards
     );
     gameMode = gameModes.PlayerAttack;
     return gameMode;

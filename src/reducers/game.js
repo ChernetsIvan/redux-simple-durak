@@ -12,18 +12,18 @@ const initialState = {
   showStartScreen: true,
   trumpSuit: {},
   fullDeck: [],
-  computerCards: [],
+  aiCards: [],
   aiField: [],
   playerField: [],
   playerCards: [],
-  isFirstMovePlayer: true,
+  isPlayerMoveFirst: true,
   gameMode: gameModes.PlayerAttack
 };
 
 export default function game(state = initialState, action) {
   if (action.type === actionTypes.START_GAME_CLICKED) {
     let fullDeck = [],
-      computerCards = [],
+      aiCards = [],
       aiField = [],
       playerField = [],
       playerCards = [];
@@ -34,18 +34,18 @@ export default function game(state = initialState, action) {
     fullDeck = DeckUtils.fillCards(trumpSuit);
     fullDeck = DeckUtils.shuffle(fullDeck);
     DeckUtils.moveAnyCardWithTrumpSuitToTailOfFullDeck(trumpSuit, fullDeck);
-    DeckUtils.giveUpToSixCards(fullDeck, computerCards);
+    DeckUtils.giveUpToSixCards(fullDeck, aiCards);
     DeckUtils.giveUpToSixCards(fullDeck, playerCards);
     DeckUtils.sortInputDeckByPower(playerCards, true);
 
-    if (state.isFirstMovePlayer) {
+    if (state.isPlayerMoveFirst) {
       gameMode = gameModes.PlayerAttack;
     } else {
       gameMode = gameModes.AiAttack;
       //"Заставляем" AI сделать ход:
       gameMode = AiActions.makeAi_Attack_Move(
         gameMode,
-        computerCards,
+        aiCards,
         aiField,
         playerField,
         fullDeck,
@@ -58,7 +58,7 @@ export default function game(state = initialState, action) {
       showStartScreen: false,
       trumpSuit: trumpSuit,
       fullDeck: fullDeck,
-      computerCards: computerCards,
+      aiCards: aiCards,
       aiField: aiField,
       playerField: playerField,
       playerCards: playerCards,
@@ -72,7 +72,7 @@ export default function game(state = initialState, action) {
   } else if (action.type === actionTypes.WHO_MOVE_FIRST_CHANGED) {
     return {
       ...state,
-      isFirstMovePlayer: action.payload
+      isPlayerMoveFirst: action.payload
     };
   } else if (
     action.type === actionTypes.PLAYER_TAKE_CLICKED ||
@@ -81,12 +81,12 @@ export default function game(state = initialState, action) {
     action.type === actionTypes.SOME_PLAYERS_CARD_CLICKED
   ) {
     let fullDeck = [],
-      computerCards = [],
+      aiCards = [],
       aiField = [],
       playerField = [],
       playerCards = [];
     fullDeck = state.fullDeck.concat();
-    computerCards = state.computerCards.concat();
+    aiCards = state.aiCards.concat();
     aiField = state.aiField.concat();
     playerField = state.playerField.concat();
     playerCards = state.playerCards.concat();
@@ -99,7 +99,7 @@ export default function game(state = initialState, action) {
           playerCards,
           aiField,
           fullDeck,
-          computerCards,
+          aiCards,
           gameMode
         );
         break;
@@ -107,7 +107,7 @@ export default function game(state = initialState, action) {
       case actionTypes.AI_TAKE_CLICKED: {
         gameMode = PlayerActionsHandler.handleClickOnAiTakeButton(
           playerField,
-          computerCards,
+          aiCards,
           aiField,
           fullDeck,
           playerCards,
@@ -122,12 +122,12 @@ export default function game(state = initialState, action) {
           playerField,
           fullDeck,
           playerCards,
-          computerCards
+          aiCards
         );
         gameMode = gameModes.AiAttack;
         gameMode = AiActions.makeAi_Attack_Move(
           gameMode,
-          computerCards,
+          aiCards,
           aiField,
           playerField,
           fullDeck,
@@ -144,7 +144,7 @@ export default function game(state = initialState, action) {
           aiField,
           state.trumpSuit,
           fullDeck,
-          computerCards
+          aiCards
         );
         break;
       }
@@ -153,7 +153,7 @@ export default function game(state = initialState, action) {
       }
     }
 
-    let gameResult = analyze(computerCards, playerCards, fullDeck);
+    let gameResult = analyze(aiCards, playerCards, fullDeck);
     if (gameResult !== "") {
       gameMode = gameResult;
     }
@@ -161,7 +161,7 @@ export default function game(state = initialState, action) {
     return {
       ...state,
       fullDeck: fullDeck,
-      computerCards: computerCards,
+      aiCards: aiCards,
       aiField: aiField,
       playerField: playerField,
       playerCards: playerCards,
