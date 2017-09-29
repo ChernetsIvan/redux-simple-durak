@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 
-export const GameStatistics = ({
+export default function GameStatistics(
   playerWins,
   aiWins,
   draws,
   onBeginGameClick
-}) => {
+) {
   return (
     <div className="container">
       <div className="row justify-content-center mb-3 mt-5">
@@ -38,7 +38,7 @@ export const GameStatistics = ({
       </div>
     </div>
   );
-};
+}
 
 GameStatistics.propTypes = {
   playerWins: PropTypes.number.isRequired,
@@ -46,5 +46,3 @@ GameStatistics.propTypes = {
   draws: PropTypes.number.isRequired,
   onBeginGameClick: PropTypes.func.isRequired
 };
-
-export default GameStatistics;
