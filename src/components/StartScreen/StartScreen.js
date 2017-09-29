@@ -43,7 +43,7 @@ class StartScreen extends Component {
                   type="radio"
                   name="PlayerFirst"
                   className=""
-                  checked={this.props.isFirstMovePlayer}
+                  checked={this.props.isPlayerMoveFirst}
                   onChange={this.onPlayerRadioClick}
                 />
                 <span className="ml-2">Игрок</span>
@@ -52,7 +52,7 @@ class StartScreen extends Component {
                 <input
                   type="radio"
                   name="AiFirst"
-                  checked={!this.props.isFirstMovePlayer}
+                  checked={!this.props.isPlayerMoveFirst}
                   onChange={this.onAiRadioClick}
                 />
                 <span className="ml-2">Компьютер</span>
@@ -83,7 +83,7 @@ class StartScreen extends Component {
 export default StartScreen;
 
 StartScreen.propTypes = {
-  isFirstMovePlayer: PropTypes.bool.isRequired,
+  isPlayerMoveFirst: PropTypes.bool.isRequired,
   onClickStartGame: PropTypes.func.isRequired,
   onChangeRadio: PropTypes.func.isRequired
 };

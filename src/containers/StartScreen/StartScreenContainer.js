@@ -8,15 +8,15 @@ import {
 } from "./../../actions";
 
 const mapStateToProps = store => ({
-  isFirstMovePlayer: store.game.isFirstMovePlayer
+  isPlayerMoveFirst: store.game.isPlayerMoveFirst
 });
 
 const mapDispatchToProps = dispatch => ({
   onClickStartGame: () => {
     dispatch(clickOnStartGameButton());
   },
-  onChangeRadio: isFirstMovePlayer => {
-    dispatch(clickOnRadioWhoMoveFirst(isFirstMovePlayer));
+  onChangeRadio: isPlayerMoveFirst => {
+    dispatch(clickOnRadioWhoMoveFirst(isPlayerMoveFirst));
   }
 });
 
