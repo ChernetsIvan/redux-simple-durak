@@ -10,29 +10,17 @@ import AIContainer from "./../../containers/GameScreen/AIContainer";
 import DeckContainer from "./../../containers/GameScreen/DeckContainer";
 import PlayerContainer from "./../../containers/GameScreen/Player/PlayerContainer";
 
-import * as gameModes from "./../../constants/GameModes";
-
 export const GameScreen = ({
   onBeginGameClick,
   aiField,
-  playerField,
-  gameMode
+  playerField
 }) => {
-  let classAttr = "btn btn-secondary mr-3";
-  if (
-    gameMode === gameModes.AIWin ||
-    gameMode === gameModes.PlayerWin ||
-    gameMode === gameModes.TheDraw
-  ) {
-    classAttr += " invisible";
-  }
-
   return (
     <div>
       <div className="container  my-1">
         <div className="row justify-content-between">
           <div className="col-auto">
-            <button className={classAttr} onClick={onBeginGameClick}>
+            <button className="btn btn-secondary mr-3" onClick={onBeginGameClick}>
               Новая игра
             </button>
           </div>
@@ -62,6 +50,5 @@ export const GameScreen = ({
 GameScreen.propTypes = {
   onBeginGameClick: PropTypes.func.isRequired,
   aiField: PropTypes.array.isRequired,
-  playerField: PropTypes.array.isRequired,
-  gameMode: PropTypes.string.isRequired
+  playerField: PropTypes.array.isRequired
 };
