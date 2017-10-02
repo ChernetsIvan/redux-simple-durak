@@ -89,3 +89,7 @@ Card.propTypes = {
   onCardClick: PropTypes.func,
   bootStrapColClass: PropTypes.string.isRequired
 };
+Card.defaultProps = {
+  id: 0,
+  onCardClick: null
+};

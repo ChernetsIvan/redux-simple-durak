@@ -1,10 +1,10 @@
-import "./../../../../public/libs/bootstrap/css/bootstrap.min.css";
-//а js-файлы (и bootstrap'a) подключены в .storybook/preview-head.html
-
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+
+import "./../../../../public/libs/bootstrap/css/bootstrap.min.css";
+// а js-файлы (и bootstrap'a) подключены в .storybook/preview-head.html
 
 import Card from "./Card";
 
@@ -17,8 +17,8 @@ storiesOf("Card", module)
   .add("first example", () => (
     <Card
       id={1}
-      rank={new Object({ text: "6", cardValue: 1 })}
-      suit={new Object({ suit: "К" })}
+      rank={{ text: "6", cardValue: 1 }}
+      suit={{ suit: "К" }}
       onCardClick={action("Card was clicked!")}
       bootStrapColClass={"col-1"}
     />
@@ -26,8 +26,8 @@ storiesOf("Card", module)
   .add("second example", () => (
     <Card
       id={2}
-      rank={new Object({ text: "Д", cardValue: 7 })}
-      suit={new Object({ suit: "Б" })}
+      rank={{ text: "Д", cardValue: 7 }}
+      suit={{ suit: "Б" }}
       onCardClick={action("Card was clicked!")}
       bootStrapColClass={"col-1"}
     />
