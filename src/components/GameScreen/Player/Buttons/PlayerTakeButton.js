@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import * as gameModes from "./../../../../constants/GameModes";
 
-export const PlayerTakeButton = ({
+const PlayerTakeButton = ({
   gameMode,
   playerCards,
   onPlayerTakeClick
@@ -17,6 +17,8 @@ export const PlayerTakeButton = ({
     </button>
   ) : null;
 };
+
+export default PlayerTakeButton;
 
 PlayerTakeButton.propTypes = {
   gameMode: PropTypes.string.isRequired,

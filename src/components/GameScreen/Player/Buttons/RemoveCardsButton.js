@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const RemoveCardsButton = ({
+const RemoveCardsButton = ({
   aiField,
   playerField,
   onRemoveCardsClick
@@ -15,6 +15,8 @@ export const RemoveCardsButton = ({
     </button>
   ) : null;
 };
+
+export default RemoveCardsButton;
 
 RemoveCardsButton.propTypes = {
   aiField: PropTypes.array.isRequired,

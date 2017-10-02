@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { InvisibleCard } from "./Card/InvisibleCard";
+import InvisibleCard from "./Card/InvisibleCard";
 import Card from "./Card/Card";
 
 import { uniqueId } from "lodash-es";
 
-export const Field = ({ cards }) => {
+const Field = ({ cards }) => {
   let output = null;
 
   //Чтобы "не скакала" разметка:
@@ -32,6 +32,8 @@ export const Field = ({ cards }) => {
   }
   return output;
 };
+
+export default Field;
 
 Field.propTypes = {
   cards: PropTypes.array.isRequired

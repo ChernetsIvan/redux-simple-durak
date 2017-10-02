@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const PrevButton = ({startInd, cards, onPrevClick}) => {
+const PrevButton = ({startInd, cards, onPrevClick}) => {
   let out = null;
   if (startInd > 0 && cards.length > 10) {
     out = (
@@ -12,6 +12,8 @@ export const PrevButton = ({startInd, cards, onPrevClick}) => {
   }
   return out;
 };
+
+export default PrevButton;
 
 PrevButton.propTypes = {
   startInd: PropTypes.number.isRequired,

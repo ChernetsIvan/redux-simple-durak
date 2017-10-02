@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 
-export const GameStatistics = ({
+const GameStatistics = ({
   playerWins,
   aiWins,
   draws,
@@ -40,11 +40,11 @@ export const GameStatistics = ({
   );
 };
 
+export default GameStatistics;
+
 GameStatistics.propTypes = {
   playerWins: PropTypes.number.isRequired,
   aiWins: PropTypes.number.isRequired,
   draws: PropTypes.number.isRequired,
   onBeginGameClick: PropTypes.func.isRequired
 };
-
-export default GameStatistics;

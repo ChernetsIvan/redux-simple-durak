@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { uniqueId } from "lodash-es";
 
-import { InvisibleCard } from "./Card/InvisibleCard";
-import { HiddenCard } from "./Card/HiddenCard";
+import InvisibleCard from "./Card/InvisibleCard";
+import HiddenCard from "./Card/HiddenCard";
 
-export const AI = ({ cards }) => {
+const AI = ({ cards }) => {
   let output = null;
   if (cards.length > 0) {
     let inputCards = [];
@@ -47,6 +47,8 @@ export const AI = ({ cards }) => {
     </div>
   );
 };
+
+export default AI;
 
 AI.propTypes = {
   cards: PropTypes.array.isRequired

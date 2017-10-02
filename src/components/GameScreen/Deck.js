@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Card from "./Card/Card";
-import { HiddenCard } from "./Card/HiddenCard";
+import HiddenCard from "./Card/HiddenCard";
 
-export const Deck = ({cards}) => {
+const Deck = ({cards}) => {
     var cardsWithoutLast = [];
     cardsWithoutLast = cards.concat();
     let trumpCard = cardsWithoutLast.pop();
@@ -55,6 +55,8 @@ export const Deck = ({cards}) => {
     );
     return output;
 };
+
+export default Deck;
 
 Deck.propTypes = {
   cards: PropTypes.array

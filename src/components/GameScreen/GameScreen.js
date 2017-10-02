@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-//Компонент-представление
-import { Field } from "./Field";
+// Компонент-представление
+import Field from "./Field";
 
-//Компоненты-контейнеры
+// Компоненты-контейнеры
 import StatusContainer from "./../../containers/GameScreen/StatusContainer";
 import AIContainer from "./../../containers/GameScreen/AIContainer";
 import DeckContainer from "./../../containers/GameScreen/DeckContainer";
 import PlayerContainer from "./../../containers/GameScreen/Player/PlayerContainer";
 
-export const GameScreen = ({
+const GameScreen = ({
   onBeginGameClick,
   aiField,
   playerField
@@ -46,6 +46,8 @@ export const GameScreen = ({
     </div>
   );
 };
+
+export default GameScreen;
 
 GameScreen.propTypes = {
   onBeginGameClick: PropTypes.func.isRequired,

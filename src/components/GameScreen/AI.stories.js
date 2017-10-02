@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import { AI } from "./AI";
+import AI from "./AI";
 import DeckUtils from "./../../utils/DeckUtils";
 
 const cards = DeckUtils.fillCards({ suit: "Б" });

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const NextButton = ({endInd, cards, onNextClick}) => {
+const NextButton = ({endInd, cards, onNextClick}) => {
   let out = null;
   if (endInd < cards.length - 1 && cards.length > 10) {
     out = (
@@ -12,6 +12,8 @@ export const NextButton = ({endInd, cards, onNextClick}) => {
   }
   return out;
 };
+
+export default NextButton;
 
 NextButton.propTypes = {
   endInd: PropTypes.number.isRequired,

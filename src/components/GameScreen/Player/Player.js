@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { uniqueId } from "lodash-es";
 
-import { InvisibleCard } from "./../Card/InvisibleCard";
+import InvisibleCard from "./../Card/InvisibleCard";
 import Card from "./../Card/Card";
 
-//Классы-контейнеры кнопок
+// Классы-контейнеры кнопок
 import PlayerTakeButtonContainer from "./../../../containers/GameScreen/Player/Buttons/PlayerTakeButtonContainer";
 import AiTakeButtonContainer from "./../../../containers/GameScreen/Player/Buttons/AiTakeButtonContainer";
 import RemoveCardsButtonContainer from "./../../../containers/GameScreen/Player/Buttons/RemoveCardsButtonContainer";
 import ShowStatisticsLinkContainer from "./../../../containers/GameScreen/Player/ShowStatisticsLinkContainer";
 
-import { PrevButton } from "./Buttons/PrevButton";
-import { NextButton } from "./Buttons/NextButton";
+import PrevButton from "./Buttons/PrevButton";
+import NextButton from "./Buttons/NextButton";
 
 class Player extends React.Component {
   constructor(props) {

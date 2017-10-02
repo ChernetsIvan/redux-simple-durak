@@ -4,6 +4,17 @@ import { statusMessages } from "./../../constants/GameConstants";
 import * as gameModes from "./../../constants/GameModes";
 
 class Status extends React.Component {
+
+  componentDidUpdate() {
+    if (
+      this.props.gameMode === gameModes.AIWin ||
+      this.props.gameMode === gameModes.PlayerWin ||
+      this.props.gameMode === gameModes.TheDraw
+    ) {
+      this.props.onGameOver(this.props.gameMode);
+    }
+  }
+
   render() {
     let outText = null;
     switch (this.props.gameMode) {
@@ -52,17 +63,7 @@ class Status extends React.Component {
         </h3>
       </div>
     );
-  }
-
-  componentDidUpdate() {
-    if (
-      this.props.gameMode === gameModes.AIWin ||
-      this.props.gameMode === gameModes.PlayerWin ||
-      this.props.gameMode === gameModes.TheDraw
-    ) {
-      this.props.onGameOver(this.props.gameMode);
-    }
-  }
+  }  
 }
 
 export default Status;

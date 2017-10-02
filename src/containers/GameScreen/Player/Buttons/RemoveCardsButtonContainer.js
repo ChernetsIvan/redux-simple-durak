@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { RemoveCardsButton } from "./../../../../components/GameScreen/Player/Buttons/RemoveCardsButton";
+import RemoveCardsButton from "./../../../../components/GameScreen/Player/Buttons/RemoveCardsButton";
 import { clickOnRemoveCards } from "./../../../../actions";
 
 const mapStateToProps = store => ({

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 import * as gameModes from "./../../../constants/GameModes";
 
-export const ShowStatisticsLink = ({ gameMode }) => {
+const ShowStatisticsLink = ({ gameMode }) => {
   let dash = <span>&mdash;</span>;
   return gameMode === gameModes.AIWin ||
   gameMode === gameModes.PlayerWin ||
@@ -17,6 +17,8 @@ export const ShowStatisticsLink = ({ gameMode }) => {
     </Link>
   ) : null;
 };
+
+export default ShowStatisticsLink;
 
 ShowStatisticsLink.propTypes = {
   gameMode: PropTypes.string.isRequired

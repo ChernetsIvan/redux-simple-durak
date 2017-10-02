@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import { Status } from "./Status";
+import Status from "./Status";
 import * as gameModes from "./../../constants/GameModes";
 
 storiesOf("Status", module)
