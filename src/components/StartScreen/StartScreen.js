@@ -19,7 +19,7 @@ class StartScreen extends Component {
   }
 
   render() {
-    let dash = <span>&mdash;</span>;
+    const dash = <span>&mdash;</span>;
     return (
       <div>
         <div className="container mt-5">
@@ -30,7 +30,7 @@ class StartScreen extends Component {
           </div>
           <div className="row justify-content-center mt-3">
             <div className="col-auto">
-              <h1 className="display-3">"Простой дурак"</h1>
+              <h1 className="display-3">Простой дурак</h1>
             </div>
           </div>
           <div className="row justify-content-center mt-5">

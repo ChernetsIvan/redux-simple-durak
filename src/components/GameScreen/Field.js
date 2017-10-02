@@ -1,20 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { uniqueId } from "lodash-es";
+
 import InvisibleCard from "./Card/InvisibleCard";
 import Card from "./Card/Card";
-
-import { uniqueId } from "lodash-es";
 
 const Field = ({ cards }) => {
   let output = null;
 
-  //Чтобы "не скакала" разметка:
+  // Чтобы "не скакала" разметка:
   if (cards.length === 0) {
     output = <InvisibleCard />;
   } else {
-    let out_cards = cards.map(el => {
-      let randKey = uniqueId();
+    const outCards = cards.map(el => {
+      const randKey = uniqueId();
       return (
         <Card
           key={randKey}
@@ -26,7 +26,7 @@ const Field = ({ cards }) => {
     });
     output = (
       <div className="container">
-        <div className="row">{out_cards}</div>
+        <div className="row">{outCards}</div>
       </div>
     );
   }
@@ -36,5 +36,5 @@ const Field = ({ cards }) => {
 export default Field;
 
 Field.propTypes = {
-  cards: PropTypes.array.isRequired
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired
 };

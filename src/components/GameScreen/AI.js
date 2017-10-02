@@ -10,17 +10,17 @@ const AI = ({ cards }) => {
   if (cards.length > 0) {
     let inputCards = [];
     inputCards = cards.concat();
-    let countOfCardsThatNotShown = 0; //сколько карт не видно
-    let out_countOfCardsThatNotShown = null;
-    //Выводим только первые 9 рубашкой кверху карт
+    let countOfCardsThatNotShown = 0; // сколько карт не видно
+    let outCountOfCardsThatNotShown = null;
+    // Выводим только первые 9 рубашкой кверху карт
     while (inputCards.length > 9) {
       inputCards.pop();
-      countOfCardsThatNotShown++;
-      out_countOfCardsThatNotShown = <b>+{countOfCardsThatNotShown}</b>;
+      countOfCardsThatNotShown += 1;
+      outCountOfCardsThatNotShown = <b>+{countOfCardsThatNotShown}</b>;
     }
 
-    let outputCards = inputCards.map(elem => {
-      let randKey = uniqueId();
+    const outputCards = inputCards.map(() => {
+      const randKey = uniqueId();
       return <HiddenCard key={randKey} bootStrapColClass="col-1 ml-3" />;
     });
 
@@ -29,7 +29,7 @@ const AI = ({ cards }) => {
         <div className="row justify-content-center">
           {outputCards}
           <div className="col-1 align-self-center">
-            {out_countOfCardsThatNotShown}
+            {outCountOfCardsThatNotShown}
           </div>
         </div>
       </div>
@@ -51,5 +51,5 @@ const AI = ({ cards }) => {
 export default AI;
 
 AI.propTypes = {
-  cards: PropTypes.array.isRequired
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired
 };

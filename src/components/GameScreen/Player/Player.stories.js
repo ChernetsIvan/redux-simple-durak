@@ -8,7 +8,6 @@ import { createStore } from "redux";
 
 import Player from "./Player";
 import DeckUtils from "./../../../utils/DeckUtils";
-import * as gameModes from "./../../../constants/GameModes";
 
 import reducer from "./../../../reducers";
 

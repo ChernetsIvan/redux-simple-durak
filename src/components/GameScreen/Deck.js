@@ -5,15 +5,15 @@ import Card from "./Card/Card";
 import HiddenCard from "./Card/HiddenCard";
 
 const Deck = ({cards}) => {
-    var cardsWithoutLast = [];
+    let cardsWithoutLast = [];
     cardsWithoutLast = cards.concat();
-    let trumpCard = cardsWithoutLast.pop();
+    const trumpCard = cardsWithoutLast.pop();
 
-    //1)Козырная карта.
-    let output_TrumpCard = null;
+    // 1)Козырная карта.
+    let outputTrumpCard = null;
     if (trumpCard !== undefined) {
-      //"Переопределяем" bootstrap-класс col-6 вместо col-1:
-      output_TrumpCard = (
+      // "Переопределяем" bootstrap-класс col-6 вместо col-1:
+      outputTrumpCard = (
         <Card
           rank={trumpCard.rank}
           suit={trumpCard.suit}
@@ -23,21 +23,21 @@ const Deck = ({cards}) => {
       );
     }
 
-    //2)Имитация колоды.
-    let output_MockDeck = null;
-    let output_CountOfCardsInDeck = null;
+    // 2)Имитация колоды.
+    let outputMockDeck = null;
+    let outputCountOfCardsInDeck = null;
     if (cardsWithoutLast.length > 0) {
-      output_MockDeck = (
+      outputMockDeck = (
         <HiddenCard bootStrapColClass="col-6" />
       );
-      output_CountOfCardsInDeck = cardsWithoutLast.length;
+      outputCountOfCardsInDeck = cardsWithoutLast.length;
     }
 
-    let output = (
+    const output = (
       <div className="container">
         <div className="row">
-          {output_TrumpCard}
-          {output_MockDeck}
+          {outputTrumpCard}
+          {outputMockDeck}
         </div>
         <div className="row">
           <div className="col-6" />
@@ -45,7 +45,7 @@ const Deck = ({cards}) => {
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-auto">
-                  <b>{output_CountOfCardsInDeck}</b>
+                  <b>{outputCountOfCardsInDeck}</b>
                 </div>
               </div>
             </div>
@@ -59,5 +59,5 @@ const Deck = ({cards}) => {
 export default Deck;
 
 Deck.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.arrayOf(PropTypes.object)
 };

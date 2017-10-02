@@ -22,15 +22,15 @@ const initialState = {
 
 export default function game(state = initialState, action) {
   if (action.type === actionTypes.START_GAME_CLICKED) {
-    let fullDeck = [],
-      aiCards = [],
-      aiField = [],
-      playerField = [],
-      playerCards = [];
-    let trumpSuit, gameMode;
+    let fullDeck = [];
+    const aiCards = [];
+    const aiField = [];
+    const playerField = [];
+    const playerCards = [];
+    let gameMode;
 
-    //Вызов именно в таком порядке!
-    trumpSuit = DeckUtils.chooseSuitForTrumpCardInFuture();
+    // Вызов именно в таком порядке!
+    const trumpSuit = DeckUtils.chooseSuitForTrumpCardInFuture();
     fullDeck = DeckUtils.fillCards(trumpSuit);
     fullDeck = DeckUtils.shuffle(fullDeck);
     DeckUtils.moveAnyCardWithTrumpSuitToTailOfFullDeck(trumpSuit, fullDeck);
@@ -42,7 +42,7 @@ export default function game(state = initialState, action) {
       gameMode = gameModes.PlayerAttack;
     } else {
       gameMode = gameModes.AiAttack;
-      //"Заставляем" AI сделать ход:
+      // "Заставляем" AI сделать ход:
       gameMode = AiActions.makeAi_Attack_Move(
         gameMode,
         aiCards,
@@ -56,13 +56,13 @@ export default function game(state = initialState, action) {
     return {
       ...state,
       showStartScreen: false,
-      trumpSuit: trumpSuit,
-      fullDeck: fullDeck,
-      aiCards: aiCards,
-      aiField: aiField,
-      playerField: playerField,
-      playerCards: playerCards,
-      gameMode: gameMode
+      trumpSuit,
+      fullDeck,
+      aiCards,
+      aiField,
+      playerField,
+      playerCards,
+      gameMode
     };
   } else if (action.type === actionTypes.BEGIN_GAME_CLICKED) {
     return {
@@ -80,16 +80,11 @@ export default function game(state = initialState, action) {
     action.type === actionTypes.REMOVE_CARDS_CLICKED ||
     action.type === actionTypes.SOME_PLAYERS_CARD_CLICKED
   ) {
-    let fullDeck = [],
-      aiCards = [],
-      aiField = [],
-      playerField = [],
-      playerCards = [];
-    fullDeck = state.fullDeck.concat();
-    aiCards = state.aiCards.concat();
-    aiField = state.aiField.concat();
-    playerField = state.playerField.concat();
-    playerCards = state.playerCards.concat();
+    const fullDeck = state.fullDeck.concat();
+    const aiCards = state.aiCards.concat();
+    const aiField = state.aiField.concat();
+    const playerField = state.playerField.concat();
+    const playerCards = state.playerCards.concat();
     let gameMode = state.gameMode;
 
     switch (action.type) {
@@ -153,19 +148,19 @@ export default function game(state = initialState, action) {
       }
     }
 
-    let gameResult = analyze(aiCards, playerCards, fullDeck);
+    const gameResult = analyze(aiCards, playerCards, fullDeck);
     if (gameResult !== "") {
       gameMode = gameResult;
     }
 
     return {
       ...state,
-      fullDeck: fullDeck,
-      aiCards: aiCards,
-      aiField: aiField,
-      playerField: playerField,
-      playerCards: playerCards,
-      gameMode: gameMode
+      fullDeck,
+      aiCards,
+      aiField,
+      playerField,
+      playerCards,
+      gameMode
     };
   }
   return state;

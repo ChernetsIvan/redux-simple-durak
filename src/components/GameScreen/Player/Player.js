@@ -44,15 +44,15 @@ class Player extends React.Component {
   render() {
     let output = null;
     if (this.props.cards.length > 0) {
-      //Показ кнопок Prev и Next
-      let out_PrevButton = (
+      // Показ кнопок Prev и Next
+      const outPrevButton = (
         <PrevButton
           startInd={this.state.startInd}
           cards={this.props.cards}
           onPrevClick={this.onPrevClick}
         />
       );
-      let out_NextButton = (
+      const outNextButton = (
         <NextButton
           endInd={this.state.endInd}
           cards={this.props.cards}
@@ -60,9 +60,9 @@ class Player extends React.Component {
         />
       );
 
-      //Выводим максимум 10 карт: от startInd до endInd
-      let cards = this.props.cards.map(el => {
-        let randKey = uniqueId();
+      // Выводим максимум 10 карт: от startInd до endInd
+      const cards = this.props.cards.map(el => {
+        const randKey = uniqueId();
         return (
           <Card
             key={randKey}
@@ -84,9 +84,9 @@ class Player extends React.Component {
       output = (
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-1 align-self-center">{out_PrevButton}</div>
+            <div className="col-1 align-self-center">{outPrevButton}</div>
             {outCards}
-            <div className="col-1 align-self-center">{out_NextButton}</div>
+            <div className="col-1 align-self-center">{outNextButton}</div>
           </div>
         </div>
       );
@@ -116,6 +116,6 @@ class Player extends React.Component {
 export default Player;
 
 Player.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   onCardClick: PropTypes.func.isRequired
 };

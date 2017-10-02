@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import * as gameModes from "./../../../constants/GameModes";
 
 const ShowStatisticsLink = ({ gameMode }) => {
-  let dash = <span>&mdash;</span>;
+  const dash = <span>&mdash;</span>;
   return gameMode === gameModes.AIWin ||
   gameMode === gameModes.PlayerWin ||
   gameMode === gameModes.TheDraw ? (
