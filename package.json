@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "es6-enum": "^1.1.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.6.0",
     "lodash-es": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
