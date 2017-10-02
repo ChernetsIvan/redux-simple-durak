@@ -1,6 +1,6 @@
-import DeckUtils from "./DeckUtils";
-
 import { find } from "lodash-es";
+
+import DeckUtils from "./DeckUtils";
 
 class FieldsUtils {
   static removeCardsFromFieldsAndGiveCards(
@@ -28,17 +28,14 @@ class FieldsUtils {
     DeckUtils.sortInputDeckByPower(playerCards, true);
   }
 
-  //Игровое поле(aiField + playerField) содержит такую же по размеру карту inputCard?
+  // Игровое поле(aiField + playerField) содержит такую же по размеру карту inputCard?
   static isFieldsContainSuchCard(inputCard, aiField, playerField) {
-    let field = aiField.concat(playerField);
-    let card = find(field, card => {
-      return card.rank.cardValue === inputCard.rank.cardValue;
-    });
+    const field = aiField.concat(playerField);
+    const card = find(field, fCard => fCard.rank.cardValue === inputCard.rank.cardValue);
     if (card === undefined) {
       return false;
-    } else {
-      return true;
     }
+    return true;    
   }
 }
 
