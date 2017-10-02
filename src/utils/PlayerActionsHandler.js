@@ -34,7 +34,7 @@ class PlayerActionsHandler {
               playerCards.splice(index, 1);
               gameMode = gameModes.AiDefence;
               //заставляем AI сделать ход защиты
-              gameMode = AiActions.makeAi_Defence_Move(
+              gameMode = AiActions.makeAiDefenceMove(
                 gameMode,
                 playerField,
                 aiCards,
@@ -71,7 +71,7 @@ class PlayerActionsHandler {
                 playerCards.splice(index, 1);
                 gameMode = gameModes.AiAttack;
                 //заставляем AI сделать ход атаки
-                gameMode = AiActions.makeAi_Attack_Move(
+                gameMode = AiActions.makeAiAttackMove(
                   gameMode,
                   aiCards,
                   aiField,
@@ -114,7 +114,7 @@ class PlayerActionsHandler {
     DeckUtils.giveUpToSixCards(fullDeck, aiCards);
 
     gameMode = gameModes.AiAttack;
-    gameMode = AiActions.makeAi_Attack_Move(
+    gameMode = AiActions.makeAiAttackMove(
       gameMode,
       aiCards,
       aiField,

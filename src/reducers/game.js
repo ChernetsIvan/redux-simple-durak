@@ -43,7 +43,7 @@ export default function game(state = initialState, action) {
     } else {
       gameMode = gameModes.AiAttack;
       // "Заставляем" AI сделать ход:
-      gameMode = AiActions.makeAi_Attack_Move(
+      gameMode = AiActions.makeAiAttackMove(
         gameMode,
         aiCards,
         aiField,
@@ -120,7 +120,7 @@ export default function game(state = initialState, action) {
           aiCards
         );
         gameMode = gameModes.AiAttack;
-        gameMode = AiActions.makeAi_Attack_Move(
+        gameMode = AiActions.makeAiAttackMove(
           gameMode,
           aiCards,
           aiField,
