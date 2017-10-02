@@ -94,8 +94,7 @@ export default function game(state = initialState, action) {
           playerCards,
           aiField,
           fullDeck,
-          aiCards,
-          gameMode
+          aiCards
         );
         break;
       }
@@ -105,8 +104,7 @@ export default function game(state = initialState, action) {
           aiCards,
           aiField,
           fullDeck,
-          playerCards,
-          gameMode
+          playerCards
         );
         break;
       }

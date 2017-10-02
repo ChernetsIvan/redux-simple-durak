@@ -98,8 +98,7 @@ class PlayerActionsHandler {
     playerCards,
     aiField,
     fullDeck,
-    aiCards,
-    gameMode
+    aiCards
   ) {
     // TODO - тут написать обработку сброса карт для AI
 
@@ -131,8 +130,7 @@ class PlayerActionsHandler {
     aiCards,
     aiField,
     fullDeck,
-    playerCards,
-    gameMode
+    playerCards
   ) {
     // Позволяем AI Забрать все карты: и с playerField, и с aiField
     while (playerField.length > 0) {

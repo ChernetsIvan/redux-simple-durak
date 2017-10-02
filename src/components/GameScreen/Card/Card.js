@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { uniqueId } from "lodash-es";
+
 import "./Card.css";
 
 import clubSuit from "./../../../assets/card-suits/club.png";
 import diamondSuit from "./../../../assets/card-suits/diamond.png";
 import heartSuit from "./../../../assets/card-suits/heart.png";
 import spadeSuit from "./../../../assets/card-suits/spade.png";
-
-import { uniqueId } from "lodash-es";
 
 class Card extends React.Component {
   constructor(props) {
@@ -17,14 +17,15 @@ class Card extends React.Component {
     this.handleClickOnCard = this.handleClickOnCard.bind(this);
   }
 
-  handleClickOnCard(e) {
+  handleClickOnCard() {
     this.props.onCardClick(this.props.id);
   }
 
   render() {
-    let suit = this.props.suit.suit.toString();
-    let rank = this.props.rank.text.toString();
-    let suitImg, sizeText;
+    const suit = this.props.suit.suit.toString();
+    const rank = this.props.rank.text.toString();
+    let suitImg; 
+    let sizeText;
     switch (suit) {
       case "Ч": {
         suitImg = heartSuit;
@@ -50,9 +51,9 @@ class Card extends React.Component {
         break;
     }
 
-    let classAttr = this.props.bootStrapColClass + " card mb-1";
-    let randKey = uniqueId();
-    let output = (
+    const classAttr = `${this.props.bootStrapColClass} card mb-1`;
+    const randKey = uniqueId();
+    const output = (
       <div key={randKey} onClick={this.handleClickOnCard} className={classAttr}>
         <div className="row">
           <b className="ml-1">{sizeText}</b>
