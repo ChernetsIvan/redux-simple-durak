@@ -3,10 +3,10 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import "./../../../../public/libs/bootstrap/css/bootstrap.min.css";
+import "./../../public/libs/bootstrap/css/bootstrap.min.css";
 // а js-файлы (и bootstrap'a) подключены в .storybook/preview-head.html
 
-import Card from "./Card";
+import Card from "./../components/GameScreen/Card/Card";
 
 storiesOf("Card", module)
   .addDecorator(story => (

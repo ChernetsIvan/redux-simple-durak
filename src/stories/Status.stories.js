@@ -2,8 +2,8 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import Status from "./Status";
-import * as gameModes from "./../../constants/GameModes";
+import Status from "./../components/GameScreen/Status";
+import * as gameModes from "./../constants/GameModes";
 
 storiesOf("Status", module)
   .addDecorator(story => (

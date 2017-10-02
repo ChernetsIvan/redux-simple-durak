@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import GameStatistics from "./GameStatistics";
+import GameStatistics from "./../components/GameStatistics";
 
 storiesOf("GameStatistics", module).add("example", () => (
   <GameStatistics

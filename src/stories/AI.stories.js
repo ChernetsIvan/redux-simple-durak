@@ -2,8 +2,8 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import AI from "./AI";
-import DeckUtils from "./../../utils/DeckUtils";
+import AI from "./../components/GameScreen/AI";
+import DeckUtils from "./../utils/DeckUtils";
 
 const cards = DeckUtils.fillCards({ suit: "Б" });
 

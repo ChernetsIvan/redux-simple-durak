@@ -6,10 +6,10 @@ import { action } from "@storybook/addon-actions";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import Player from "./Player";
-import DeckUtils from "./../../../utils/DeckUtils";
+import Player from "./../components/GameScreen/Player/Player";
+import DeckUtils from "./../utils/DeckUtils";
 
-import reducer from "./../../../reducers";
+import reducer from "./../reducers";
 
 const store = createStore(reducer);
 

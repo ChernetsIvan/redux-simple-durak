@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import HiddenCard from "./HiddenCard";
+import HiddenCard from "./../components/GameScreen/Card/HiddenCard";
 
 storiesOf("HiddenCard", module)
   .addDecorator(story => (

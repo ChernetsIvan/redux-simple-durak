@@ -2,8 +2,8 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import Deck from "./Deck";
-import DeckUtils from "./../../utils/DeckUtils";
+import Deck from "./../components/GameScreen/Deck";
+import DeckUtils from "./../utils/DeckUtils";
 
 const cards = DeckUtils.fillCards({ suit: "Ч" });
 
