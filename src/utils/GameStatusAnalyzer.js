@@ -1,6 +1,6 @@
 import {PlayerWin, AIWin, TheDraw, NoCardsAI} from "./../constants/GameModes";
 
-export const analyze = (aiCards, playerCards, fullDeck) => {
+const analyze = (aiCards, playerCards, fullDeck) => {
   let result = "";
   if(aiCards.length===0){
     result =  NoCardsAI;
@@ -18,3 +18,5 @@ export const analyze = (aiCards, playerCards, fullDeck) => {
   }  
   return result;
 };
+
+export default analyze;
