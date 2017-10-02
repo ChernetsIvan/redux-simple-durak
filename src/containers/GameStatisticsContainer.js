@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { GameStatistics } from "./../components/GameStatistics";
+import GameStatistics from "./../components/GameStatistics";
 
 import { clickOnBeginGameButton } from "./../actions";
 
