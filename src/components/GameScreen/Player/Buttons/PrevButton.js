@@ -17,6 +17,6 @@ export default PrevButton;
 
 PrevButton.propTypes = {
   startInd: PropTypes.number.isRequired,
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   onPrevClick: PropTypes.func.isRequired
 };

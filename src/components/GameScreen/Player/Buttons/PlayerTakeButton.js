@@ -8,7 +8,7 @@ const PlayerTakeButton = ({
   playerCards,
   onPlayerTakeClick
 }) => {
-  let dash = <span>&mdash;</span>;
+  const dash = <span>&mdash;</span>;
   return (gameMode === gameModes.PlayerDefence ||
     gameMode === gameModes.AiAttack) &&
   playerCards.length > 0 ? (
@@ -22,6 +22,6 @@ export default PlayerTakeButton;
 
 PlayerTakeButton.propTypes = {
   gameMode: PropTypes.string.isRequired,
-  playerCards: PropTypes.array.isRequired,
+  playerCards: PropTypes.arrayOf(PropTypes.object).isRequired,
   onPlayerTakeClick: PropTypes.func.isRequired
 };

@@ -17,6 +17,6 @@ export default NextButton;
 
 NextButton.propTypes = {
   endInd: PropTypes.number.isRequired,
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   onNextClick: PropTypes.func.isRequired
 };
