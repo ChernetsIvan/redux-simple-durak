@@ -1,8 +1,8 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Card from './../components/GameScreen/Card/Card';
+import React from "react";
+import renderer from "react-test-renderer";
+import Card from "./../components/GameScreen/Card/Card";
 
-test('Card snapshot testing', () => {
+test("Card snapshot testing", () => {
   const emptyFunc = () => {};
   const component = renderer.create(
     <Card

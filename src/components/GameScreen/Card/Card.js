@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { uniqueId } from "lodash-es";
-
 import "./Card.css";
 
 import clubSuit from "./../../../assets/card-suits/club.png";
@@ -52,9 +50,9 @@ class Card extends React.Component {
     }
 
     const classAttr = `${this.props.bootStrapColClass} card mb-1`;
-    const randKey = uniqueId();
+    const key = `${suit}${rank}`;
     const output = (
-      <div key={randKey} onClick={this.handleClickOnCard} className={classAttr}>
+      <div key={key} onClick={this.handleClickOnCard} className={classAttr}>
         <div className="row">
           <b className="ml-1">{sizeText}</b>
         </div>

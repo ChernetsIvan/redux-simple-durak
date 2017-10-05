@@ -1,5 +1,3 @@
-import { pull, find } from "lodash-es";
-
 import { cardRanks, cardSuits } from "./../constants/GameConstants";
 
 import CardModel from "./../models/CardModel";
@@ -58,8 +56,9 @@ class DeckUtils {
   // Перемещает первую попавшуюся карту с козырной мастью
   // в конец колоды
   static moveAnyCardWithTrumpSuitToTailOfFullDeck(trumpSuit, fullDeck) {
-    const card = find(fullDeck, fCard => fCard.suit.suit === trumpSuit.suit);
-    pull(fullDeck, card);
+    const card = fullDeck.find(fCard => fCard.suit.suit === trumpSuit.suit);
+    const index = fullDeck.indexOf(card);
+    fullDeck.splice(index, 1);
     fullDeck.push(card);
   }
 

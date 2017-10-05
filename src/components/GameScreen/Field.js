@@ -14,10 +14,10 @@ const Field = ({ cards }) => {
     output = <InvisibleCard />;
   } else {
     const outCards = cards.map(el => {
-      const randKey = uniqueId();
+      const key = `${el.suit.suit}${el.rank.text}`;
       return (
         <Card
-          key={randKey}
+          key={key}
           rank={el.rank}
           suit={el.suit}
           bootStrapColClass={"col-1"}

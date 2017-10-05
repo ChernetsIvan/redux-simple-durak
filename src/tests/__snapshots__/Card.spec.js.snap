@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card snapshot testing 1`] = `
+<div
+  className="col-1 card mb-1"
+  onClick={[Function]}
+>
+  <div
+    className="row"
+  >
+    <b
+      className="ml-1"
+    >
+      <b
+        className="blackText"
+      >
+        6
+      </b>
+    </b>
+  </div>
+  <div
+    className="row"
+  >
+    <img
+      alt=""
+      className="littleSuitImg ml-1"
+      src="club.png"
+    />
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <img
+      alt=""
+      className="bigSuitImg my-2"
+      src="club.png"
+    />
+  </div>
+  <div
+    className="row justify-content-end"
+  >
+    <img
+      alt=""
+      className="littleSuitImg rotated mr-1"
+      src="club.png"
+    />
+  </div>
+  <div
+    className="row justify-content-end"
+  >
+    <b
+      className="rotated mr-1"
+    >
+      <b
+        className="blackText"
+      >
+        6
+      </b>
+    </b>
+  </div>
+</div>
+`;

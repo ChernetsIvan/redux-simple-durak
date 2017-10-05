@@ -31,7 +31,7 @@ class FieldsUtils {
   // Игровое поле(aiField + playerField) содержит такую же по размеру карту inputCard?
   static isFieldsContainSuchCard(inputCard, aiField, playerField) {
     const field = aiField.concat(playerField);
-    const card = find(field, fCard => fCard.rank.cardValue === inputCard.rank.cardValue);
+    const card = field.find(fCard => fCard.rank.cardValue === inputCard.rank.cardValue);
     if (card === undefined) {
       return false;
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { uniqueId } from "lodash-es";
 
 import InvisibleCard from "./Card/InvisibleCard";
 import HiddenCard from "./Card/HiddenCard";
@@ -19,9 +18,9 @@ const AI = ({ cards }) => {
       outCountOfCardsThatNotShown = <b>+{countOfCardsThatNotShown}</b>;
     }
 
-    const outputCards = inputCards.map(() => {
-      const randKey = uniqueId();
-      return <HiddenCard key={randKey} bootStrapColClass="col-1 ml-3" />;
+    const outputCards = inputCards.map(el => {
+      const key = `${el.suit.suit}${el.rank.text}`;
+      return <HiddenCard key={key} bootStrapColClass="col-1 ml-3" />;
     });
 
     output = (
