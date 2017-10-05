@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { uniqueId } from "lodash-es";
-
 import InvisibleCard from "./Card/InvisibleCard";
 import Card from "./Card/Card";
 

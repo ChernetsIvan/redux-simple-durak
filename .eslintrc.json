@@ -10,6 +10,7 @@
     "document": true,
     "test": true,
     "expect": true,
-    "describe": true
+    "describe": true,
+    "beforeEach": true
   }
 }

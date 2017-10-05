@@ -6,10 +6,13 @@ import { createStore } from "redux";
 
 import AIContainer from "./../../containers/GameScreen/AIContainer";
 import reducer from "./../../reducers";
-import { clickOnStartGameButton } from "./../../actions";
 
 describe("AIContainer snapshot testing", () => {
-  const store = createStore(reducer);
+  let store;
+
+  beforeEach(() => {
+    store = createStore(reducer);
+  });
 
   test("Store does not contain any card", () => {
     const component = renderer.create(
@@ -20,9 +23,10 @@ describe("AIContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  store.dispatch(clickOnStartGameButton);
-
   test("Store contains some cards", () => {
+    store.dispatch({
+      type: "START_GAME_CLICKED"
+    });
     const component = renderer.create(
       <Provider store={store}>
         <AIContainer />
