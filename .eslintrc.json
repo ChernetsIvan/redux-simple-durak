@@ -7,6 +7,9 @@
     "import/no-extraneous-dependencies": 0
   },
   "globals": {
-    "document": true
+    "document": true,
+    "test": true,
+    "expect": true,
+    "describe": true
   }
 }

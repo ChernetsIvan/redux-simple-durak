@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status tests Ai have not cards 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    У меня закончились карты!
+  </h3>
+</div>
+`;
+
+exports[`Status tests Ai win 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Вы проиграли! Сыграем ещё раз ? :)
+  </h3>
+</div>
+`;
+
+exports[`Status tests Player Attack 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Ваш ход!
+  </h3>
+</div>
+`;
+
+exports[`Status tests Player Defence 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Защищайтесь!
+  </h3>
+</div>
+`;
+
+exports[`Status tests Player Defence 2`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Защищайтесь!
+  </h3>
+</div>
+`;
+
+exports[`Status tests Player Discard 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Беру! Подбрасывать будете?
+  </h3>
+</div>
+`;
+
+exports[`Status tests Player win 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Вы выиграли! Поздравляю :)
+  </h3>
+</div>
+`;
+
+exports[`Status tests The Draw 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+    Ничья!
+  </h3>
+</div>
+`;
