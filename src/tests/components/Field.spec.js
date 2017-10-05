@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Field from "./../components/GameScreen/Field";
-import DeckUtils from "./../utils/DeckUtils";
+import Field from "./../../components/GameScreen/Field";
+import DeckUtils from "./../../utils/DeckUtils";
 
 describe("Field snapshot testing", () => {
   const cards = DeckUtils.fillCards({ suit: "Б" });

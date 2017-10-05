@@ -127,3 +127,18 @@ exports[`Status tests The Draw 1`] = `
   </h3>
 </div>
 `;
+
+exports[`Status tests return null 1`] = `
+<div
+  className="col-auto"
+>
+  <h3
+    className="mt-2"
+  >
+    <span>
+      —
+    </span>
+     
+  </h3>
+</div>
+`;

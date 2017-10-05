@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import AI from "./../components/GameScreen/AI";
-import DeckUtils from "./../utils/DeckUtils";
+import AI from "./../../components/GameScreen/AI";
+import DeckUtils from "./../../utils/DeckUtils";
 
 describe("AI snapshot testing", () => {
 

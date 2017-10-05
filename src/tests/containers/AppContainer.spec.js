@@ -4,8 +4,9 @@ import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import AppContainer from "./../containers/AppContainer";
-import reducer from "./../reducers";
+import AppContainer from "./../../containers/AppContainer";
+import reducer from "./../../reducers";
+import * as actionTypes from "./../../constants/ActionTypes";
 
 describe("AppContainer snapshot testing", () => {
   let store;
@@ -23,25 +24,38 @@ describe("AppContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test("Dispatching with START_GAME_CLICKED-action", () => {
+  test.skip("Dispatch with START_GAME_CLICKED-action", () => {
     store.dispatch({
-      type: "START_GAME_CLICKED"
+      type: actionTypes.START_GAME_CLICKED
     });
     const component = renderer.create(
       <Provider store={store}>
-        <GameScreenContainer />
+        <AppContainer />
       </Provider>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test("Dispatching with BEGIN_GAME_CLICKED-action", () => {
+  test("Dispatch with BEGIN_GAME_CLICKED-action", () => {
     store.dispatch({
-      type: "BEGIN_GAME_CLICKED"
+      type: actionTypes.BEGIN_GAME_CLICKED
     });
     const component = renderer.create(
       <Provider store={store}>
-        <GameScreenContainer />
+        <AppContainer />
+      </Provider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test("Dispatch with WHO_MOVE_FIRST_CHANGED-action", () => {
+    store.dispatch({
+      type: actionTypes.WHO_MOVE_FIRST_CHANGED,
+      payload: false
+    });
+    const component = renderer.create(
+      <Provider store={store}>
+        <AppContainer />
       </Provider>
     );
     expect(component.toJSON()).toMatchSnapshot();

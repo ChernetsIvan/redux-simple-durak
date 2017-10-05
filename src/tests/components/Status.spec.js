@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Status from "./../components/GameScreen/Status";
-import * as gameModes from "./../constants/GameModes";
+import Status from "./../../components/GameScreen/Status";
+import * as gameModes from "./../../constants/GameModes";
 
 describe("Status tests", () => {
   const emptyFunc = () => {};
@@ -61,5 +61,12 @@ describe("Status tests", () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  test("return null", () => {
+    const component = renderer.create(
+      <Status gameMode={""} onGameOver={emptyFunc} />
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  })
 
 });

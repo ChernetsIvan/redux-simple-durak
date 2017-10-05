@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Card from "./../components/GameScreen/Card/Card";
+import Card from "./../../components/GameScreen/Card/Card";
 
 describe("Card snapshot testing", () => {
   test("Card with suit К", () => {
