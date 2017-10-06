@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerTakeButton snapshot testing nothing render 1`] = `null`;
+
+exports[`PlayerTakeButton snapshot testing will render itself markup 1`] = `
+<button
+  className="btn btn-success"
+  onClick={[Function]}
+>
+  <span>
+    —
+  </span>
+   Подбросить нечего, забирай!
+</button>
+`;

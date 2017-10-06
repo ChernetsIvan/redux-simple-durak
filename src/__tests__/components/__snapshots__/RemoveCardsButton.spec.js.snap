@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveCardsButton snapshot testing nothing render 1`] = `null`;
+
+exports[`RemoveCardsButton snapshot testing will render itself markup 1`] = `
+<button
+  className="btn btn-info"
+  onClick={[Function]}
+>
+  <span>
+    —
+  </span>
+   Отбой!
+</button>
+`;
