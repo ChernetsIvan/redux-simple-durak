@@ -24,7 +24,7 @@ describe("AppContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test.skip("Dispatch with START_GAME_CLICKED-action", () => {
+  test("Dispatch with START_GAME_CLICKED-action", () => {
     store.dispatch({
       type: actionTypes.START_GAME_CLICKED
     });
@@ -33,7 +33,7 @@ describe("AppContainer snapshot testing", () => {
         <AppContainer />
       </Provider>
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(component.toJSON().props).toMatchSnapshot();
   });
 
   test("Dispatch with BEGIN_GAME_CLICKED-action", () => {
@@ -52,19 +52,6 @@ describe("AppContainer snapshot testing", () => {
     store.dispatch({
       type: actionTypes.WHO_MOVE_FIRST_CHANGED,
       payload: false
-    });
-    const component = renderer.create(
-      <Provider store={store}>
-        <AppContainer />
-      </Provider>
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  test("Dispatch with WHO_MOVE_FIRST_CHANGED-action, Player move first", () => {
-    store.dispatch({
-      type: actionTypes.WHO_MOVE_FIRST_CHANGED,
-      payload: true
     });
     const component = renderer.create(
       <Provider store={store}>
