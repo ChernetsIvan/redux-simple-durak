@@ -1,0 +1,1288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Player shallow render test Player recieve < 10 cards (5) 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-1"
+    />
+    <div
+      className="col-10"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row justify-content-center"
+        >
+          <div
+            className="col-1 align-self-center"
+          >
+            <PrevButton
+              cards={
+                Array [
+                  CardModel {
+                    "id": 0,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 1,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 2,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 3,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 4,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                ]
+              }
+              onPrevClick={[Function]}
+              startInd={0}
+            />
+          </div>
+          <Card
+            bootStrapColClass="col-1"
+            id={0}
+            key="Ч6"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 1,
+                "text": "6",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={1}
+            key="Ч7"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 2,
+                "text": "7",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={2}
+            key="Ч8"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 3,
+                "text": "8",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={3}
+            key="Ч9"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 4,
+                "text": "9",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={4}
+            key="Ч10"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 5,
+                "text": "10",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <div
+            className="col-1 align-self-center"
+          >
+            <NextButton
+              cards={
+                Array [
+                  CardModel {
+                    "id": 0,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 1,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 2,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 3,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 4,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                ]
+              }
+              endInd={9}
+              onNextClick={[Function]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-1"
+    />
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    >
+      <Connect(RemoveCardsButton) />
+      <Connect(AiTakeButton) />
+      <Connect(PlayerTakeButton) />
+      <Connect(ShowStatisticsLink) />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Player shallow render test Player recieve > 10 cards (36) 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-1"
+    />
+    <div
+      className="col-10"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row justify-content-center"
+        >
+          <div
+            className="col-1 align-self-center"
+          >
+            <PrevButton
+              cards={
+                Array [
+                  CardModel {
+                    "id": 0,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 1,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 2,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 3,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 4,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 5,
+                    "power": 6,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 6,
+                    "power": 7,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 7,
+                    "power": 8,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 8,
+                    "power": 9,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 9,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 10,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 11,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 12,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 13,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 14,
+                    "power": 6,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 15,
+                    "power": 7,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 16,
+                    "power": 8,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 17,
+                    "power": 9,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 18,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 19,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 20,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 21,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 22,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 23,
+                    "power": 6,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 24,
+                    "power": 7,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 25,
+                    "power": 8,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 26,
+                    "power": 9,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 27,
+                    "power": 10,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 28,
+                    "power": 20,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 29,
+                    "power": 30,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 30,
+                    "power": 40,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 31,
+                    "power": 50,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 32,
+                    "power": 60,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 33,
+                    "power": 70,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 34,
+                    "power": 80,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 35,
+                    "power": 90,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                ]
+              }
+              onPrevClick={[Function]}
+              startInd={0}
+            />
+          </div>
+          <Card
+            bootStrapColClass="col-1"
+            id={0}
+            key="Ч6"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 1,
+                "text": "6",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={1}
+            key="Ч7"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 2,
+                "text": "7",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={2}
+            key="Ч8"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 3,
+                "text": "8",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={3}
+            key="Ч9"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 4,
+                "text": "9",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={4}
+            key="Ч10"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 5,
+                "text": "10",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={5}
+            key="ЧВ"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 6,
+                "text": "В",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={6}
+            key="ЧД"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 7,
+                "text": "Д",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={7}
+            key="ЧК"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 8,
+                "text": "К",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={8}
+            key="ЧТ"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 9,
+                "text": "Т",
+              }
+            }
+            suit={
+              Object {
+                "suit": "Ч",
+              }
+            }
+          />
+          <Card
+            bootStrapColClass="col-1"
+            id={9}
+            key="К6"
+            onCardClick={[Function]}
+            rank={
+              Object {
+                "cardValue": 1,
+                "text": "6",
+              }
+            }
+            suit={
+              Object {
+                "suit": "К",
+              }
+            }
+          />
+          <div
+            className="col-1 align-self-center"
+          >
+            <NextButton
+              cards={
+                Array [
+                  CardModel {
+                    "id": 0,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 1,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 2,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 3,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 4,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 5,
+                    "power": 6,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 6,
+                    "power": 7,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 7,
+                    "power": 8,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 8,
+                    "power": 9,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "Ч",
+                    },
+                  },
+                  CardModel {
+                    "id": 9,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 10,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 11,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 12,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 13,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 14,
+                    "power": 6,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 15,
+                    "power": 7,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 16,
+                    "power": 8,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 17,
+                    "power": 9,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "К",
+                    },
+                  },
+                  CardModel {
+                    "id": 18,
+                    "power": 1,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 19,
+                    "power": 2,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 20,
+                    "power": 3,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 21,
+                    "power": 4,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 22,
+                    "power": 5,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 23,
+                    "power": 6,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 24,
+                    "power": 7,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 25,
+                    "power": 8,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 26,
+                    "power": 9,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "П",
+                    },
+                  },
+                  CardModel {
+                    "id": 27,
+                    "power": 10,
+                    "rank": Object {
+                      "cardValue": 1,
+                      "text": "6",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 28,
+                    "power": 20,
+                    "rank": Object {
+                      "cardValue": 2,
+                      "text": "7",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 29,
+                    "power": 30,
+                    "rank": Object {
+                      "cardValue": 3,
+                      "text": "8",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 30,
+                    "power": 40,
+                    "rank": Object {
+                      "cardValue": 4,
+                      "text": "9",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 31,
+                    "power": 50,
+                    "rank": Object {
+                      "cardValue": 5,
+                      "text": "10",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 32,
+                    "power": 60,
+                    "rank": Object {
+                      "cardValue": 6,
+                      "text": "В",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 33,
+                    "power": 70,
+                    "rank": Object {
+                      "cardValue": 7,
+                      "text": "Д",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 34,
+                    "power": 80,
+                    "rank": Object {
+                      "cardValue": 8,
+                      "text": "К",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                  CardModel {
+                    "id": 35,
+                    "power": 90,
+                    "rank": Object {
+                      "cardValue": 9,
+                      "text": "Т",
+                    },
+                    "suit": Object {
+                      "suit": "Б",
+                    },
+                  },
+                ]
+              }
+              endInd={9}
+              onNextClick={[Function]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-1"
+    />
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    >
+      <Connect(RemoveCardsButton) />
+      <Connect(AiTakeButton) />
+      <Connect(PlayerTakeButton) />
+      <Connect(ShowStatisticsLink) />
+    </div>
+  </div>
+</div>
+`;
