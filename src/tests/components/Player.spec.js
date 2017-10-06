@@ -23,48 +23,6 @@ describe("Player snapshot testing", () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-
-  test("Card with suit Б", () => {
-    const emptyFunc = () => {};
-    const component = renderer.create(
-      <Card
-        id={2}
-        rank={{ text: "6", cardValue: 1 }}
-        suit={{ suit: "Б" }}
-        onCardClick={emptyFunc}
-        bootStrapColClass={"col-1"}
-      />
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  test("Card with suit П", () => {
-    const emptyFunc = () => {};
-    const component = renderer.create(
-      <Card
-        id={2}
-        rank={{ text: "6", cardValue: 1 }}
-        suit={{ suit: "П" }}
-        onCardClick={emptyFunc}
-        bootStrapColClass={"col-1"}
-      />
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  test("Card with not existing suit", () => {
-    const emptyFunc = () => {};
-    const component = renderer.create(
-      <Card
-        id={2}
-        rank={{ text: "6", cardValue: 1 }}
-        suit={{ suit: "Й" }}
-        onCardClick={emptyFunc}
-        bootStrapColClass={"col-1"}
-      />
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
 });
 
 Enzyme.configure({ adapter: new Adapter() });
