@@ -48,10 +48,23 @@ describe("AppContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test("Dispatch with WHO_MOVE_FIRST_CHANGED-action", () => {
+  test("Dispatch with WHO_MOVE_FIRST_CHANGED-action, AI move first", () => {
     store.dispatch({
       type: actionTypes.WHO_MOVE_FIRST_CHANGED,
       payload: false
+    });
+    const component = renderer.create(
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test("Dispatch with WHO_MOVE_FIRST_CHANGED-action, Player move first", () => {
+    store.dispatch({
+      type: actionTypes.WHO_MOVE_FIRST_CHANGED,
+      payload: true
     });
     const component = renderer.create(
       <Provider store={store}>

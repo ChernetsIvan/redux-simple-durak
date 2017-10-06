@@ -832,6 +832,230 @@ exports[`AppContainer snapshot testing Dispatch with WHO_MOVE_FIRST_CHANGED-acti
 </div>
 `;
 
+exports[`AppContainer snapshot testing Dispatch with WHO_MOVE_FIRST_CHANGED-action, AI move first 1`] = `
+<div>
+  <div
+    className="container mt-5"
+  >
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col-auto"
+      >
+        <h1
+          className="display-2"
+        >
+          Карточная игра
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-3"
+    >
+      <div
+        className="col-auto"
+      >
+        <h1
+          className="display-3"
+        >
+          Простой дурак
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-5"
+    >
+      <div
+        className="col-auto"
+      >
+        <span
+          className="mr-4"
+        >
+          <b>
+            Первым ходит:
+          </b>
+        </span>
+        <span
+          className="mr-2"
+        >
+          <input
+            checked={false}
+            className=""
+            name="PlayerFirst"
+            onChange={[Function]}
+            type="radio"
+          />
+          <span
+            className="ml-2"
+          >
+            Игрок
+          </span>
+        </span>
+        <span
+          className="mr-2"
+        >
+          <input
+            checked={true}
+            name="AiFirst"
+            onChange={[Function]}
+            type="radio"
+          />
+          <span
+            className="ml-2"
+          >
+            Компьютер
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-3"
+    >
+      <div
+        className="col-auto"
+      >
+        <button
+          className="btn btn-secondary mr-3"
+          onClick={[Function]}
+        >
+          <span>
+            —
+          </span>
+           Поехали!
+        </button>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-3"
+    >
+      <div
+        className="col-auto"
+      >
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Статистика игр
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AppContainer snapshot testing Dispatch with WHO_MOVE_FIRST_CHANGED-action, Player move first 1`] = `
+<div>
+  <div
+    className="container mt-5"
+  >
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col-auto"
+      >
+        <h1
+          className="display-2"
+        >
+          Карточная игра
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-3"
+    >
+      <div
+        className="col-auto"
+      >
+        <h1
+          className="display-3"
+        >
+          Простой дурак
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-5"
+    >
+      <div
+        className="col-auto"
+      >
+        <span
+          className="mr-4"
+        >
+          <b>
+            Первым ходит:
+          </b>
+        </span>
+        <span
+          className="mr-2"
+        >
+          <input
+            checked={true}
+            className=""
+            name="PlayerFirst"
+            onChange={[Function]}
+            type="radio"
+          />
+          <span
+            className="ml-2"
+          >
+            Игрок
+          </span>
+        </span>
+        <span
+          className="mr-2"
+        >
+          <input
+            checked={false}
+            name="AiFirst"
+            onChange={[Function]}
+            type="radio"
+          />
+          <span
+            className="ml-2"
+          >
+            Компьютер
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-3"
+    >
+      <div
+        className="col-auto"
+      >
+        <button
+          className="btn btn-secondary mr-3"
+          onClick={[Function]}
+        >
+          <span>
+            —
+          </span>
+           Поехали!
+        </button>
+      </div>
+    </div>
+    <div
+      className="row justify-content-center mt-3"
+    >
+      <div
+        className="col-auto"
+      >
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Статистика игр
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`AppContainer snapshot testing Store in initial-state mode 1`] = `
 <div>
   <div

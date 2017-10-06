@@ -26,12 +26,6 @@ export const clickOnRemoveCards = () => ({
   type: actionTypes.REMOVE_CARDS_CLICKED
 });
 
-// DELETE THIS
-export const clickOnGameOverLink = gameMode => ({
-  type: actionTypes.GAME_OVER,
-  payload: gameMode
-});
-
 export const gameOver = gameMode => ({
   type: actionTypes.GAME_OVER,
   payload: gameMode
