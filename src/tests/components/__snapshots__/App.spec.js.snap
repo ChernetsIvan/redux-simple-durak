@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App shallow render test App recieve showStartScreen=false 1`] = `<Connect(GameScreen) />`;
+
+exports[`App shallow render test App recieve showStartScreen=true 1`] = `<Connect(StartScreen) />`;

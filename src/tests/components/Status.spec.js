@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import Status from "./../../components/GameScreen/Status";
 import * as gameModes from "./../../constants/GameModes";
@@ -67,6 +68,19 @@ describe("Status tests", () => {
       <Status gameMode={""} onGameOver={emptyFunc} />
     );
     expect(component.toJSON()).toMatchSnapshot();
-  })
+  });
 
+  test("calling of componentDidUpdate-method testing", () => {
+    const node = document.createElement("div");
+    const instance = ReactDOM.render(
+      <Status gameMode={gameModes.PlayerAttack} onGameOver={emptyFunc} />,
+      node
+    );
+    spyOn(instance, "componentDidUpdate");
+    ReactDOM.render(
+      <Status gameMode={gameModes.PlayerWin} onGameOver={emptyFunc} />,
+      node
+    );
+    expect(instance.componentDidUpdate).toHaveBeenCalled();
+  });
 });

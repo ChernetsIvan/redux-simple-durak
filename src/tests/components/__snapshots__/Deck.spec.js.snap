@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Deck snapshot testing 1`] = `
+exports[`Deck testing snapshot testing with cards 1`] = `
 <div
   className="container"
 >
@@ -90,6 +90,40 @@ exports[`Deck snapshot testing 1`] = `
             <b>
               9
             </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Deck testing snapshot testing without cards 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="col-6"
+    />
+    <div
+      className="col-6"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row justify-content-center"
+        >
+          <div
+            className="col-auto"
+          >
+            <b />
           </div>
         </div>
       </div>
