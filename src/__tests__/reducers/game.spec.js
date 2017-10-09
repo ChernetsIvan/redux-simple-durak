@@ -170,4 +170,27 @@ describe("Test of game funtion", () => {
     expect(newState.aiField.length).toEqual(1);
   });
 
+  test("should analyze game result", () => {
+    const initialState = {
+      showStartScreen: true,
+      trumpSuit,
+      fullDeck: cards,
+      aiCards: [],
+      aiField: cards.slice(0, 5),
+      playerField: cards.slice(0, 5),
+      playerCards: [],
+      isPlayerMoveFirst: false,
+      gameMode: gameModes.PlayerAttack
+    };
+
+    const newState = game(initialState, {
+      type: actionTypes.AI_TAKE_CLICKED
+    });
+
+    expect(newState.gameMode).toEqual(gameModes.PlayerAttack);
+    expect(newState.aiField.length).toEqual(0);
+    expect(newState.playerField.length).toEqual(0);
+    expect(newState.aiCards.length).toEqual(10);
+  });
+
 });
