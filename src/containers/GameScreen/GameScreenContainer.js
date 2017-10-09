@@ -9,7 +9,7 @@ const mapStateToProps = store => ({
   playerField: store.game.playerField
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onBeginGameClick: () => {
     dispatch(clickOnBeginGameButton());
   }

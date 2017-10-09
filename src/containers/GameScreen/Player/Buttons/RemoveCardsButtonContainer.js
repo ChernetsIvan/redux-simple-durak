@@ -7,7 +7,7 @@ const mapStateToProps = store => ({
   playerField: store.game.playerField
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onRemoveCardsClick: () => {
     dispatch(clickOnRemoveCards());
   }

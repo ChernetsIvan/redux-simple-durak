@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameScreen shallow render test test 1`] = `
+<div>
+  <div
+    className="container  my-1"
+  >
+    <div
+      className="row justify-content-between"
+    >
+      <div
+        className="col-auto"
+      >
+        <button
+          className="btn btn-secondary mr-3"
+          onClick={[Function]}
+        >
+          Новая игра
+        </button>
+      </div>
+      <Connect(Status) />
+      <div
+        className="col-2"
+      />
+    </div>
+  </div>
+  <div>
+    <Connect(AI) />
+    <div
+      className="container"
+    >
+      <div
+        className="row align-items-center"
+      >
+        <div
+          className="col-10"
+        >
+          <Field
+            cards={
+              Array [
+                CardModel {
+                  "id": 0,
+                  "power": 1,
+                  "rank": Object {
+                    "cardValue": 1,
+                    "text": "6",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 1,
+                  "power": 2,
+                  "rank": Object {
+                    "cardValue": 2,
+                    "text": "7",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 2,
+                  "power": 3,
+                  "rank": Object {
+                    "cardValue": 3,
+                    "text": "8",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 3,
+                  "power": 4,
+                  "rank": Object {
+                    "cardValue": 4,
+                    "text": "9",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 4,
+                  "power": 5,
+                  "rank": Object {
+                    "cardValue": 5,
+                    "text": "10",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+              ]
+            }
+          />
+          <Field
+            cards={
+              Array [
+                CardModel {
+                  "id": 0,
+                  "power": 1,
+                  "rank": Object {
+                    "cardValue": 1,
+                    "text": "6",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 1,
+                  "power": 2,
+                  "rank": Object {
+                    "cardValue": 2,
+                    "text": "7",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 2,
+                  "power": 3,
+                  "rank": Object {
+                    "cardValue": 3,
+                    "text": "8",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 3,
+                  "power": 4,
+                  "rank": Object {
+                    "cardValue": 4,
+                    "text": "9",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+                CardModel {
+                  "id": 4,
+                  "power": 5,
+                  "rank": Object {
+                    "cardValue": 5,
+                    "text": "10",
+                  },
+                  "suit": Object {
+                    "suit": "Ч",
+                  },
+                },
+              ]
+            }
+          />
+        </div>
+        <div
+          className="col-2"
+        >
+          <Connect(Deck) />
+        </div>
+      </div>
+    </div>
+    <Connect(Player) />
+  </div>
+</div>
+`;

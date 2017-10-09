@@ -78,21 +78,11 @@ describe("GameStatisticsContainer snapshot testing", () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-
-  /*
-  test("Checking mapDispatchToProps-function", () => {
-    store.dispatch({
-      type: actionTypes.BEGIN_GAME_CLICKED
-    });
-    const action = store.getActions();
-    expect(action[0].type).toBe("BEGIN_GAME_CLICKED");
-  });
-  */
 });
 
 describe("Map Dispatch To Props", () => {
-  test("should call onBeginGameClick action", () => {
-    const mockFunction = jest.fn(() => 'Mock function');
+  test("should call clickOnBeginGameButton action-creator", () => {
+    const mockFunction = jest.fn(() => "Mock function");
     const { onBeginGameClick } = mapDispatchToProps(mockFunction);
     onBeginGameClick();
     expect(mockFunction).toBeCalled();

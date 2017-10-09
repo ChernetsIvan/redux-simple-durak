@@ -7,7 +7,7 @@ const mapStateToProps = store => ({
   playerCards: store.game.playerCards
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onPlayerTakeClick: () => {
     dispatch(clickOnPlayerTake());
   }

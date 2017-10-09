@@ -24,18 +24,6 @@ describe("AppContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test.skip("Dispatch with START_GAME_CLICKED-action", () => {
-    store.dispatch({
-      type: actionTypes.START_GAME_CLICKED
-    });
-    const component = renderer.create(
-      <Provider store={store}>
-        <AppContainer />
-      </Provider>
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
   test("Dispatch with BEGIN_GAME_CLICKED-action", () => {
     store.dispatch({
       type: actionTypes.BEGIN_GAME_CLICKED

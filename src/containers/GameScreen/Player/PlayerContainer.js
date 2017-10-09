@@ -6,7 +6,7 @@ const mapStateToProps = store => ({
   cards: store.game.playerCards
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onCardClick: cardId => {
     dispatch(clickOnCard(cardId));
   }

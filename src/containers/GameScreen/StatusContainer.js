@@ -7,7 +7,7 @@ const mapStateToProps = store => ({
   gameMode: store.game.gameMode
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onGameOver: gameMode => {
     dispatch(gameOver(gameMode));
   }
