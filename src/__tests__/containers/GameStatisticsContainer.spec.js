@@ -76,15 +76,12 @@ describe("GameStatisticsContainer snapshot testing", () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-});
 
-/*
-describe("Checking mapDispatchToProps-function", () => {
-  test("calls myFnProp on submit", () => {
-    const myFnProp = jest.fn();
-    const component = mounted(<MyComponent myFnProp={myFnProp} />);
-    component.simulate("submit");
-    expect(myFnProp).toHaveBeenCalled();
+  test("Checking mapDispatchToProps-function", () => {
+    store.dispatch({
+      type: actionTypes.BEGIN_GAME_CLICKED
+    });
+    const action = store.getActions();
+    expect(action[0].type).toBe("BEGIN_GAME_CLICKED");
   });
 });
-*/

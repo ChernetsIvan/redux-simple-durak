@@ -24,7 +24,7 @@ describe("PlayerContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test("Dispatch with START_GAME_CLICKED-action", () => {
+  test.skip("Dispatch with START_GAME_CLICKED-action", () => {
     store.dispatch({
       type: actionTypes.START_GAME_CLICKED
     });
