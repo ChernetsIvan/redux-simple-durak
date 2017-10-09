@@ -1,9 +1,393 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PlayerContainer snapshot testing Dispatch with START_GAME_CLICKED-action 1`] = `
-Object {
-  "className": "container",
-}
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-1"
+    />
+    <div
+      className="col-10"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row justify-content-center"
+        >
+          <div
+            className="col-1 align-self-center"
+          />
+          <div
+            className="col-1 card mb-1"
+            onClick={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <b
+                className="ml-1"
+              >
+                <b
+                  className="redText"
+                >
+                  6
+                </b>
+              </b>
+            </div>
+            <div
+              className="row"
+            >
+              <img
+                alt=""
+                className="littleSuitImg ml-1"
+                src="heart.png"
+              />
+            </div>
+            <div
+              className="row justify-content-center"
+            >
+              <img
+                alt=""
+                className="bigSuitImg my-2"
+                src="heart.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <img
+                alt=""
+                className="littleSuitImg rotated mr-1"
+                src="heart.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <b
+                className="rotated mr-1"
+              >
+                <b
+                  className="redText"
+                >
+                  6
+                </b>
+              </b>
+            </div>
+          </div>
+          <div
+            className="col-1 card mb-1"
+            onClick={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <b
+                className="ml-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  10
+                </b>
+              </b>
+            </div>
+            <div
+              className="row"
+            >
+              <img
+                alt=""
+                className="littleSuitImg ml-1"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-center"
+            >
+              <img
+                alt=""
+                className="bigSuitImg my-2"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <img
+                alt=""
+                className="littleSuitImg rotated mr-1"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <b
+                className="rotated mr-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  10
+                </b>
+              </b>
+            </div>
+          </div>
+          <div
+            className="col-1 card mb-1"
+            onClick={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <b
+                className="ml-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  Д
+                </b>
+              </b>
+            </div>
+            <div
+              className="row"
+            >
+              <img
+                alt=""
+                className="littleSuitImg ml-1"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-center"
+            >
+              <img
+                alt=""
+                className="bigSuitImg my-2"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <img
+                alt=""
+                className="littleSuitImg rotated mr-1"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <b
+                className="rotated mr-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  Д
+                </b>
+              </b>
+            </div>
+          </div>
+          <div
+            className="col-1 card mb-1"
+            onClick={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <b
+                className="ml-1"
+              >
+                <b
+                  className="redText"
+                >
+                  К
+                </b>
+              </b>
+            </div>
+            <div
+              className="row"
+            >
+              <img
+                alt=""
+                className="littleSuitImg ml-1"
+                src="heart.png"
+              />
+            </div>
+            <div
+              className="row justify-content-center"
+            >
+              <img
+                alt=""
+                className="bigSuitImg my-2"
+                src="heart.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <img
+                alt=""
+                className="littleSuitImg rotated mr-1"
+                src="heart.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <b
+                className="rotated mr-1"
+              >
+                <b
+                  className="redText"
+                >
+                  К
+                </b>
+              </b>
+            </div>
+          </div>
+          <div
+            className="col-1 card mb-1"
+            onClick={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <b
+                className="ml-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  Т
+                </b>
+              </b>
+            </div>
+            <div
+              className="row"
+            >
+              <img
+                alt=""
+                className="littleSuitImg ml-1"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-center"
+            >
+              <img
+                alt=""
+                className="bigSuitImg my-2"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <img
+                alt=""
+                className="littleSuitImg rotated mr-1"
+                src="spade.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <b
+                className="rotated mr-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  Т
+                </b>
+              </b>
+            </div>
+          </div>
+          <div
+            className="col-1 card mb-1"
+            onClick={[Function]}
+          >
+            <div
+              className="row"
+            >
+              <b
+                className="ml-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  10
+                </b>
+              </b>
+            </div>
+            <div
+              className="row"
+            >
+              <img
+                alt=""
+                className="littleSuitImg ml-1"
+                src="club.png"
+              />
+            </div>
+            <div
+              className="row justify-content-center"
+            >
+              <img
+                alt=""
+                className="bigSuitImg my-2"
+                src="club.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <img
+                alt=""
+                className="littleSuitImg rotated mr-1"
+                src="club.png"
+              />
+            </div>
+            <div
+              className="row justify-content-end"
+            >
+              <b
+                className="rotated mr-1"
+              >
+                <b
+                  className="blackText"
+                >
+                  10
+                </b>
+              </b>
+            </div>
+          </div>
+          <div
+            className="col-1 align-self-center"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-1"
+    />
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    />
+  </div>
+</div>
 `;
 
 exports[`PlayerContainer snapshot testing Store in initial-state mode 1`] = `

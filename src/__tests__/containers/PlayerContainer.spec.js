@@ -33,7 +33,7 @@ describe("PlayerContainer snapshot testing", () => {
         <PlayerContainer />
       </Provider>
     );
-    expect(component.toJSON().props).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });
 

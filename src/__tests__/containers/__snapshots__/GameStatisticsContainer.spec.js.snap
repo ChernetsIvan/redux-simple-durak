@@ -1,27 +1,307 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GameStatisticsContainer snapshot testing Dispatch with GAME_OVER-action, AI win 1`] = `
-Object {
-  "className": "container",
-}
+<div
+  className="container"
+>
+  <div
+    className="row justify-content-center mb-3 mt-5"
+  >
+    <div
+      className="col-auto"
+    >
+      <h2>
+        Статистика
+      </h2>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center mb-5"
+  >
+    <div
+      className="col-6"
+    >
+      <h4
+        className="text-right"
+      >
+        Побед:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Ничьих:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Поражений:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Всего сыграно, игр:
+      </h4>
+    </div>
+    <div
+      className="col-6"
+    >
+      <h4>
+        0
+      </h4>
+      <h4>
+        0
+      </h4>
+      <h4>
+        1
+      </h4>
+      <h4>
+        1
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    >
+      <a
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Новая игра
+      </a>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`GameStatisticsContainer snapshot testing Dispatch with GAME_OVER-action, Player win 1`] = `
-Object {
-  "className": "container",
-}
+<div
+  className="container"
+>
+  <div
+    className="row justify-content-center mb-3 mt-5"
+  >
+    <div
+      className="col-auto"
+    >
+      <h2>
+        Статистика
+      </h2>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center mb-5"
+  >
+    <div
+      className="col-6"
+    >
+      <h4
+        className="text-right"
+      >
+        Побед:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Ничьих:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Поражений:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Всего сыграно, игр:
+      </h4>
+    </div>
+    <div
+      className="col-6"
+    >
+      <h4>
+        1
+      </h4>
+      <h4>
+        0
+      </h4>
+      <h4>
+        0
+      </h4>
+      <h4>
+        1
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    >
+      <a
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Новая игра
+      </a>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`GameStatisticsContainer snapshot testing Dispatch with GAME_OVER-action, incorrect payload 1`] = `
-Object {
-  "className": "container",
-}
+<div
+  className="container"
+>
+  <div
+    className="row justify-content-center mb-3 mt-5"
+  >
+    <div
+      className="col-auto"
+    >
+      <h2>
+        Статистика
+      </h2>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center mb-5"
+  >
+    <div
+      className="col-6"
+    >
+      <h4
+        className="text-right"
+      >
+        Побед:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Ничьих:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Поражений:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Всего сыграно, игр:
+      </h4>
+    </div>
+    <div
+      className="col-6"
+    >
+      <h4>
+        0
+      </h4>
+      <h4>
+        0
+      </h4>
+      <h4>
+        0
+      </h4>
+      <h4>
+        0
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    >
+      <a
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Новая игра
+      </a>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`GameStatisticsContainer snapshot testing Dispatch with GAME_OVER-action, the draw 1`] = `
-Object {
-  "className": "container",
-}
+<div
+  className="container"
+>
+  <div
+    className="row justify-content-center mb-3 mt-5"
+  >
+    <div
+      className="col-auto"
+    >
+      <h2>
+        Статистика
+      </h2>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center mb-5"
+  >
+    <div
+      className="col-6"
+    >
+      <h4
+        className="text-right"
+      >
+        Побед:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Ничьих:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Поражений:
+      </h4>
+      <h4
+        className="text-right"
+      >
+        Всего сыграно, игр:
+      </h4>
+    </div>
+    <div
+      className="col-6"
+    >
+      <h4>
+        0
+      </h4>
+      <h4>
+        1
+      </h4>
+      <h4>
+        0
+      </h4>
+      <h4>
+        1
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-auto"
+    >
+      <a
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Новая игра
+      </a>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`GameStatisticsContainer snapshot testing Store in initial-state mode 1`] = `
