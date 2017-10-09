@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NextButton test of rendering with < 10 cards 1`] = `""`;
+
+exports[`NextButton test of rendering with > 10 cards 1`] = `
+<button
+  className="btn btn-info"
+  onClick={[Function]}
+>
+  <b>
+    34
+    →
+  </b>
+</button>
+`;

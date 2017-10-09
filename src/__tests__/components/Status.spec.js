@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
+import Enzyme, { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-15";
+
 import Status from "./../../components/GameScreen/Status";
 import * as gameModes from "./../../constants/GameModes";
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe("Status tests", () => {
   const emptyFunc = () => {};
@@ -70,17 +75,39 @@ describe("Status tests", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test("calling of componentDidUpdate-method testing", () => {
-    const node = document.createElement("div");
-    const instance = ReactDOM.render(
-      <Status gameMode={gameModes.PlayerAttack} onGameOver={emptyFunc} />,
-      node
+  test("test of calling onGameOver when AiWin", () => {
+    const mockCallBack = jest.fn();
+    const wrapper = shallow(
+      <Status gameMode={gameModes.AIWin} onGameOver={mockCallBack} />
     );
-    spyOn(instance, "componentDidUpdate");
-    ReactDOM.render(
-      <Status gameMode={gameModes.PlayerWin} onGameOver={emptyFunc} />,
-      node
+    wrapper.instance().componentDidUpdate();
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+
+  test("test of calling onGameOver when PlayerWin", () => {
+    const mockCallBack = jest.fn();
+    const wrapper = shallow(
+      <Status gameMode={gameModes.PlayerWin} onGameOver={mockCallBack} />
     );
-    expect(instance.componentDidUpdate).toHaveBeenCalled();
+    wrapper.instance().componentDidUpdate();
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+
+  test("test of calling onGameOver when TheDraw", () => {
+    const mockCallBack = jest.fn();
+    const wrapper = shallow(
+      <Status gameMode={gameModes.TheDraw} onGameOver={mockCallBack} />
+    );
+    wrapper.instance().componentDidUpdate();
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+
+  test("test of calling onGameOver when game is not over yet", () => {
+    const mockCallBack = jest.fn();
+    const wrapper = shallow(
+      <Status gameMode={gameModes.PlayerAttack} onGameOver={mockCallBack} />
+    );
+    wrapper.instance().componentDidUpdate();
+    expect(mockCallBack.mock.calls.length).toEqual(0);
   });
 });

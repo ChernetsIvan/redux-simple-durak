@@ -18,7 +18,24 @@ describe("Player shallow render test", () => {
   });
 
   test("Player recieve < 10 cards (5)", () => {
-    const component = shallow(<Player cards={cards.slice(0,5)} onCardClick={emptyFunc} />);
+    const component = shallow(
+      <Player cards={cards.slice(0, 5)} onCardClick={emptyFunc} />
+    );
     expect(toJson(component)).toMatchSnapshot();
+  });
+
+  test("Test onNextClick event", () => {
+    const wrapper = shallow(<Player cards={cards} onCardClick={emptyFunc} />);
+    wrapper.instance().onNextClick();
+    expect(wrapper.instance().state.startInd).toEqual(1);
+    expect(wrapper.instance().state.endInd).toEqual(10);
+  });
+
+  test("Test onPrevClick event", () => {
+    const wrapper = shallow(<Player cards={cards} onCardClick={emptyFunc} />);
+    wrapper.instance().onNextClick();
+    wrapper.instance().onPrevClick();
+    expect(wrapper.instance().state.startInd).toEqual(0);
+    expect(wrapper.instance().state.endInd).toEqual(9);
   });
 });

@@ -11,7 +11,7 @@ const mapStateToProps = store => ({
   isPlayerMoveFirst: store.game.isPlayerMoveFirst
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onClickStartGame: () => {
     dispatch(clickOnStartGameButton());
   },
