@@ -4,7 +4,9 @@ import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import GameStatisticsContainer from "./../../containers/GameStatisticsContainer";
+import GameStatisticsContainer, {
+  mapDispatchToProps
+} from "./../../containers/GameStatisticsContainer";
 import reducer from "./../../reducers";
 import * as actionTypes from "./../../constants/ActionTypes";
 import { AIWin, PlayerWin, TheDraw } from "./../../constants/GameModes";
@@ -77,11 +79,22 @@ describe("GameStatisticsContainer snapshot testing", () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  /*
   test("Checking mapDispatchToProps-function", () => {
     store.dispatch({
       type: actionTypes.BEGIN_GAME_CLICKED
     });
     const action = store.getActions();
     expect(action[0].type).toBe("BEGIN_GAME_CLICKED");
+  });
+  */
+});
+
+describe("Map Dispatch To Props", () => {
+  test("should call onBeginGameClick action", () => {
+    const mockFunction = jest.fn(() => 'Mock function');
+    const { onBeginGameClick } = mapDispatchToProps(mockFunction);
+    onBeginGameClick();
+    expect(mockFunction).toBeCalled();
   });
 });

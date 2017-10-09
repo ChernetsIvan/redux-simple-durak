@@ -11,6 +11,7 @@
     "test": true,
     "expect": true,
     "describe": true,
-    "beforeEach": true
+    "beforeEach": true,
+    "jest": true
   }
 }

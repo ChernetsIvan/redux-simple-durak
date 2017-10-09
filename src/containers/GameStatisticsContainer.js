@@ -10,7 +10,7 @@ const mapStateToProps = store => ({
   draws: store.statistics.draws
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onBeginGameClick: () => {
     dispatch(clickOnBeginGameButton());
   }
