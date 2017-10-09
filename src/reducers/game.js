@@ -128,7 +128,8 @@ export default function game(state = initialState, action) {
         );
         break;
       }
-      case actionTypes.SOME_PLAYERS_CARD_CLICKED: {
+      // action.type === actionTypes.SOME_PLAYERS_CARD_CLICKED
+      default: {
         gameMode = PlayerActionsHandler.handleClickOnCard(
           action.payload,
           playerCards,
@@ -139,9 +140,6 @@ export default function game(state = initialState, action) {
           fullDeck,
           aiCards
         );
-        break;
-      }
-      default: {
         break;
       }
     }
