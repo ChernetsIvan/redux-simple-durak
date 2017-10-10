@@ -2,6 +2,7 @@ import AiActions from "./../../utils/AiActions";
 import * as gameModes from "./../../constants/GameModes";
 import DeckUtils from "./../../utils/DeckUtils";
 
+const trumpSuit = { suit: "Ч" };
 const testCards = [
   {
     id: 10,
@@ -47,8 +48,7 @@ const testCards = [
   }
 ];
 
-describe("AiActions: makeAiAttackMove and its aiStopAttack and aiContinueAttack methods", () => {
-  const trumpSuit = { suit: "Ч" };
+describe("AiActions: makeAiAttackMove and its aiStopAttack and aiContinueAttack methods", () => { 
   const cards = DeckUtils.fillCards(trumpSuit);
 
   test("aiStopAttack method test", () => {
@@ -226,6 +226,61 @@ describe("AiActions: makeAiDefenceMove - method", () => {
       [],
       [],
       {}
+    );
+    expect(result).toEqual(gameModes.PlayerDiscard);
+  });
+
+  test("makeAiDefenceMove should return PlayerAttack string, if gameModes=AiDefence, AI beat with trump card", () => {
+    const result = AiActions.makeAiDefenceMove(
+      gameModes.AiDefence,
+      [testCards[0]],
+      [testCards[5]],
+      [],
+      trumpSuit
+    );
+    expect(result).toEqual(gameModes.PlayerAttack);
+  });
+
+  test("makeAiDefenceMove should return PlayerDiscard string, if gameModes=AiDefence, AI beat with non-trump card, cardToBeat has less power, but suits not same", () => {
+    const result = AiActions.makeAiDefenceMove(
+      gameModes.AiDefence,
+      [testCards[1]],
+      [testCards[2]],
+      [],
+      trumpSuit
+    );
+    expect(result).toEqual(gameModes.PlayerDiscard);
+  });
+
+  test("makeAiDefenceMove should return PlayerDiscard string, if gameModes=AiDefence, AI beat with trump card, but cardToBeat has higher power", () => {
+    const result = AiActions.makeAiDefenceMove(
+      gameModes.AiDefence,
+      [testCards[6]],
+      [testCards[5]],
+      [],
+      trumpSuit
+    );
+    expect(result).toEqual(gameModes.PlayerDiscard);
+  });
+
+  test("makeAiDefenceMove should return PlayerAttack string, if gameModes=AiDefence, AI beat with non-trump card", () => {
+    const result = AiActions.makeAiDefenceMove(
+      gameModes.AiDefence,
+      [testCards[0]],
+      [testCards[1]],
+      [],
+      trumpSuit
+    );
+    expect(result).toEqual(gameModes.PlayerAttack);
+  });
+
+  test("makeAiDefenceMove should return PlayerDiscard string, if gameModes=AiDefence, AI beat with non-trump card, but cardToBeat has higher power", () => {
+    const result = AiActions.makeAiDefenceMove(
+      gameModes.AiDefence,
+      [testCards[1]],
+      [testCards[0]],
+      [],
+      trumpSuit
     );
     expect(result).toEqual(gameModes.PlayerDiscard);
   });
