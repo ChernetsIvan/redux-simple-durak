@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 
+import CurrentPlayer from "./CurrentPlayer";
+
 class StartScreen extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +35,13 @@ class StartScreen extends Component {
               <h1 className="display-3">Простой дурак</h1>
             </div>
           </div>
+
+          <div className="row justify-content-center mt-5">
+            <div className="col-auto">
+              <CurrentPlayer />
+            </div>
+          </div>
+
           <div className="row justify-content-center mt-5">
             <div className="col-auto">
               <span className="mr-4">

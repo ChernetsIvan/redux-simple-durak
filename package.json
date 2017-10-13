@@ -2,6 +2,7 @@
   "name": "redux-simple-durak",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "jest": {
     "snapshotSerializers": ["enzyme-to-json/serializer"],
     "collectCoverageFrom": [
